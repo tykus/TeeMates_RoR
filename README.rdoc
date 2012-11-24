@@ -1,0 +1,21 @@
+== TeeMates
+=== A Golf Society Web Application
+
+TeeMates is a Ruby on Rails web application which allows a golf society to promote and administer its society events
+(competitions).
+
+==== Background & Functionality
+
+This is a college project which involves the implementation of a web application to support administration of a golf
+society and provide society members with a social network to help to promote the golf society.
+
+1.  The application will allow an administrator create competitions and enter the results of individual rounds which will
+determine the outcome of the competition.
+2.  The administrator will be able to apply handicap adjustments based on scores returned by members
+3.  Members will be able to make posts and comment on posts.
+
+
+==== Implementation Information
+1.  Built with Ruby on Rails 3
+2.  MySQL database
+3.  Uses Twitter Bootstrap
