@@ -11,12 +11,36 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121124003121) do
+ActiveRecord::Schema.define(:version => 20121126232730) do
+
+  create_table "courses", :force => true do |t|
+    t.string   "name",                                     :null => false
+    t.string   "crest"
+    t.string   "photo"
+    t.decimal  "latitude",   :precision => 9, :scale => 6
+    t.decimal  "longitude",  :precision => 9, :scale => 6
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+    t.string   "address"
+  end
+
+  create_table "holes", :force => true do |t|
+    t.integer  "number"
+    t.integer  "course_id"
+    t.string   "tee"
+    t.integer  "par"
+    t.integer  "handicap"
+    t.integer  "distance"
+    t.string   "image"
+    t.text     "strokesaver"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "users", :force => true do |t|
-    t.string   "firstname"
-    t.string   "surname"
-    t.string   "email"
+    t.string   "firstname",                             :null => false
+    t.string   "surname",                               :null => false
+    t.string   "email",                                 :null => false
     t.string   "password_digest"
     t.string   "avatar_url"
     t.string   "role",            :default => "member"

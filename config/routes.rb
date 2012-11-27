@@ -1,5 +1,11 @@
 TeeMates::Application.routes.draw do
 
+  resources :holes
+
+
+  resources :courses
+
+
   # Set application root
   root :to => 'sessions#new'
 

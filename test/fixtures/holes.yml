@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  number: 1
+  course_id: 1
+  tee: MyString
+  par: 1
+  handicap: 1
+  distance: 1
+  image: MyString
+  strokesaver: MyText
+
+two:
+  number: 1
+  course_id: 1
+  tee: MyString
+  par: 1
+  handicap: 1
+  distance: 1
+  image: MyString
+  strokesaver: MyText

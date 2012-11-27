@@ -1,0 +1,18 @@
+<%- model_class = Course -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+
+
+<!-- Loop through courses -->
+<div class="row">
+  <% @courses.each do |course| %>
+
+    <div class="span4 offset1 courses">
+          <%=  link_to (image_tag course.crest), course_path(course), :class => 'pull-left' %>
+          <h3><%= course.name %></h3>
+          <p><%= course.address %></p>
+        </div>
+
+  <% end %>
+</div>

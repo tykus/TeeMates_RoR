@@ -1,0 +1,56 @@
+<%= form_for @hole, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :number, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :number, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :course_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select(:course_id, Course.all, :id, :name, {:include_blank => 'Please Select'}) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :tee, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :tee, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :par, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :par, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :handicap, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :handicap, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :distance, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :distance, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :image, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :image, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :strokesaver, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :strokesaver, :class => 'text_area' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                holes_path, :class => 'btn' %>
+  </div>
+<% end %>
