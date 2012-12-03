@@ -1,5 +1,18 @@
 TeeMates::Application.routes.draw do
 
+
+
+  get "comments/new"
+
+  get "comments/create"
+
+  get "comments/destroy"
+
+  resources :posts do
+      resources :comments
+    end
+
+
   resources :holes
 
 
@@ -7,7 +20,7 @@ TeeMates::Application.routes.draw do
 
 
   # Set application root
-  root :to => 'sessions#new'
+  root :to => 'pages#wall'
 
   resources :users
   resources :sessions
@@ -19,7 +32,10 @@ TeeMates::Application.routes.draw do
 
 
 
-
+  # Temporary Static Pages routes
+  get 'wall' => 'pages#wall', :as => 'wall'
+  get 'competition' => 'pages#competition', :as => 'competition'
+  get 'competitions' => 'pages#competitions', :as => 'competitions'
 
 
 

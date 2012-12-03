@@ -1,8 +1,30 @@
 class User < ActiveRecord::Base
-  attr_accessible :avatar_url, :email, :firstname, :password, :password_confirmation, :role, :surname
+  attr_accessible :avatar, :email, :firstname, :password, :password_confirmation, :role, :surname
 
+  # Image attachment (Paperclip)
+  # ============================
+  has_attached_file :avatar,
+                    :styles => {
+                        :thumb => "",
+                        :micro => ""
+                    },
+                    :convert_options => {
+                        :thumb => "-gravity north -thumbnail 100x100^ -extent 100x100" ,
+                        :micro => "-gravity north -thumbnail 50x50^ -extent 50x50"
+                    }
+
+  # Associations
+  # ============
+  has_many :posts
+  has_many :comments, :through => :posts
+
+  # Authentication
+  # ==============
   has_secure_password
 
+
+  # Validation
+  # ==========
   validates :email,
             :uniqueness => true,
             :length => {:within => 5..50},
@@ -12,6 +34,5 @@ class User < ActiveRecord::Base
             :confirmation => true,
             :length => {:within => 5..20},
             :presence => true
-
 
 end

@@ -7,27 +7,40 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if current_user %>
+
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
             <%= link_to 'TeeMates', users_path, :class =>"brand" %>
             <ul class="nav">
-              <li><%= link_to '<i class="icon-home icon-white"></i>Home'.html_safe, users_path %></li>
-              <li><%= link_to '<i class="icon-user icon-white"></i>My Profile'.html_safe, users_path %></li>
+              <li><%= link_to '<i class="icon-home icon-white"></i>My Wall'.html_safe, wall_path %></li>
+              <li><%= link_to '<i class="icon-user icon-white"></i>My Profile'.html_safe, user_path(current_user) %></li>
               <li><%= link_to '<i class="icon-envelope icon-white"></i>My Messages'.html_safe, users_path %></li>
               <li><%= link_to '<i class="icon-edit icon-white"></i>My Rounds'.html_safe, users_path %></li>
-              <li><%= link_to '<i class="icon-trophy icon-white"></i>Competitions'.html_safe, users_path %></li>
+              <li><%= link_to '<i class="icon-trophy icon-white"></i>Competitions'.html_safe, competitions_path %></li>
               <li><%= link_to '<i class="icon-flag icon-white"></i>Courses'.html_safe, courses_path %></li>
               <li><%= link_to "<i class=\"icon-signout icon-white\"></i>Logout #{ current_user.firstname }".html_safe, logout_path %></li>
             </ul>
         </div>
       </div>
     </div>
+  <% end %>
 
 
 
     <div class="container">
-        <%= yield %>
+
+      <!-- Display any notices/alerts/errors -->
+      <% if notice %>
+          <div class="alert alert-info">
+            <%=  notice %>
+          </div>
+      <% end %>
+
+      <!-- Render content from the view -->
+      <%= yield %>
+
     </div>
 </body>
 </html>

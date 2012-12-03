@@ -1,0 +1,30 @@
+<div class="hero-unit">
+  <%= image_tag @post.user.avatar.url(:thumb), :class => "img-polaroid pull-left" %>
+  <h3><%= @post.user.firstname + " " + @post.user.surname %></h3>
+  <p><%= @post.message %></p>
+  <p><%= time_ago_in_words(@post.created_at) %></p>
+</div>
+<div class="row">
+  <div class="span3">
+    <h4>Add Comment:</h4>
+    <%= form_for [@post, @post.comments.build] do |f| %>
+      <%= f.text_area :comment %>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+      <%= f.submit "Add comment" %>
+    <% end %>
+  </div>
+  <div class="span9">
+    <h3>Comments:</h3>
+    <% @post.comments.each do |comment| %>
+      <div class="row post">
+        <div span class="span2">
+          <%= comment.user.avatar.url %>
+        </div>
+        <div span class="span2">
+          <%= comment.comment %>
+          <%= comment.created_at %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

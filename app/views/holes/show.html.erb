@@ -3,7 +3,7 @@
 
   <div class="hero-unit">
     <h1>
-      <%= image_tag @hole.course.crest %>
+      <%= image_tag @hole.course.crest, :class => 'img-polaroid' %>
       <%= @hole.course.name %>
       #<%= @hole.number %>
     </h1>
@@ -32,10 +32,17 @@
     </div>
 
     <div class="span3 offset1">
+      <% if @hole.image %>
+        <%=  image_tag "holes/" << @hole.image, :alt => @hole.course.name << " - " << @hole.number, :class => 'img-polaroid' %>
+      <% else %>
+        <%=  image_tag "http://placehold.it/300x400", :class => 'img-polaroid' %>
+      <% end %>
 
-      <%=  image_tag "holes/" << @hole.image, :alt => @hole.course.name << " - " << @hole.number %>
-      <%= link_to "Next", hole_path(@hole.id+1), :class => "btn btn-mini" %>
-
+      <!-- Links to previous and next holes -->
+      <div class="row">
+          <%= link_to "Prev", (hole_path(@hole.id-1) unless (@hole.number == 1)), :class => "btn btn-inverse" %>
+          <%= link_to "Next", (hole_path(@hole.id+1) unless (@hole.number == 18)), :class => "btn btn-inverse" %>
+      </div>
     </div>
 
   </div>
@@ -51,7 +58,7 @@
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
-              holes_path, :class => 'btn'  %>
+              course_path(@hole.course.id), :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_hole_path(@hole), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

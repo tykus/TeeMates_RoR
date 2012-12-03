@@ -1,0 +1,135 @@
+<% provide(:title, 'Wall') %>
+
+
+<div class="hero-unit" id="wall">
+
+    <div class="row">
+
+      <div class="span11">
+        <div class="row">
+          <div class="span2">
+            <%= image_tag "courses/luttrellstown.jpg", :class => 'pull-left img-polaroid' %>
+          </div>
+          <div class="span9">
+            <h1>Competition: Luttrellstown</h1>
+            <p>We are playing the July competition in Luttrellstown Castle on Saturday 23rd July.  Our tee times are booked
+            between 2 and 3 pm, so we're going out in fourballs, but places are limited. Please make sure to sign up by clicking the sign up button below.</p>
+            <p>Look forward to seeing you all there!</p>
+            <%=  link_to "Sign Up!", wall_path, :class => "pull-right btn-large btn-primary" %>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+</div>
+
+<!-- Posts and comments -->
+<div class="row">
+  <div class="span8">
+    <% @posts.each do |post| %>
+      <div class="row post">
+        <div class="span2 post-img">
+          <%=  image_tag post.user.avatar.url(:thumb), :class => "img-polaroid" %>
+        </div>
+        <div class="span5">
+          <h3><%= post.user.firstname + " " + post.user.surname %></h3>
+          <blockquote>
+            <%= post.message %>
+          </blockquote>
+          <p>
+            <span class="pull-left"><b><%= time_ago_in_words(post.created_at) %> ago</b></span>
+            <span class="pull-right"><%= link_to "View comments", post_path(post) %></span>
+          </p>
+
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+<div class="span4">
+
+  <div class="row">
+
+    <div class="widget span4">
+      <ul class="nav nav-list">
+        <li class="nav-header">Actions</li>
+        <li><a href="#myModal" data-toggle="modal">
+            Post to your wall
+        </a></li>
+
+
+        <li><%= link_to "Post a picture on your wall", new_post_path %></li>
+        <li><%= link_to "Add a video to your wall", new_post_path %></li>
+        <% if is_admin %>
+            <li><%= link_to "Users Administration", users_path %></li>
+            <li><%= link_to "Create a new competition" %></li>
+            <li><%= link_to "Create a new course", new_course_path %></li>
+        <% end %>
+      </ul>
+
+      <!-- Modal -->
+      <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+          <h3 id="myModalLabel">Write a post to your wall</h3>
+        </div>
+        <div class="modal-body">
+          <%= render "posts/form", :@post => Post.new %>
+          <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cancel</button>
+        </div>
+      </div>
+
+
+
+    </div><!-- end widget -->
+
+    <div class="widget span4">
+      <h3>Last Competition</h3>
+      <table class="table table-striped">
+        <thead>
+          <th></th>
+          <th>Name</th>
+          <th>Points</th>
+          <th>Back 9</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Tiger Woods</td>
+            <td class="number">43</td>
+            <td class="number">19</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Adam Scott</td>
+            <td class="number">41</td>
+            <td class="number">21</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Rory McIlroy</td>
+            <td class="number">41</td>
+            <td class="number">19</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Bubba Watson</td>
+            <td class="number">40</td>
+            <td class="number">23</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Luke Donald</td>
+            <td class="number">39</td>
+            <td class="number">20</td>
+          </tr>
+        </tbody>
+      </table>
+      <%= link_to "Full Result", competition_path, :class => "btn btn-mini btn-primary pull-right" %>
+    </div><!-- end widget -->
+
+  </div><!-- end widget row -->
+
+</div><!-- end sidebar -->
+
+</div>

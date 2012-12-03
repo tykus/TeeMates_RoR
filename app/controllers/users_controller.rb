@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+
+  # Only an admin user should be able to view a full list of users
+  before_filter :is_admin
+
   # GET /users
   # GET /users.json
   def index
@@ -60,11 +64,9 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to users_path, notice: 'User was successfully updated.' }
       else
-        format.html { render action: "edit" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.html { render action: "edit", :error => 'Failed to update user' }
       end
     end
   end

@@ -1,7 +1,7 @@
 <%- model_class = Course -%>
 <div class="container">
   <div class="hero-unit">
-    <%= image_tag(@course.crest, :alt => @course.name, :class => "pull-right") %>
+    <%= image_tag(@course.crest, :alt => @course.name, :class => "pull-left img-polaroid") %>
     <h1><%= @course.name %></h1>
   </div>
 
@@ -10,47 +10,61 @@
     <div class="span7">
 
       <h3>Scorecard</h3>
-      <table class="table table-striped">
-        <thead>
-        <th>Number</th>
-        <th>Par</th>
-        <th>Tee</th>
-        <th>Index</th>
-        <th>Length</th>
-        <th></th>
-        </thead>
-        <tbody>
-        <!-- Display holes for the current course -->
-        <% @course.holes.each do |hole| %>
+      <div class="tabbable tabs-left">
+        <ul class="nav nav-tabs">
 
-            <tr>
-              <td><%= hole.number %></td>
-              <td><%= hole.par %></td>
-              <td>
-                <div class='tee' style="background-color:<%=hole.tee%>;"></div>
-              </td>
-              <td><%= hole.handicap %></td>
-              <td><%= hole.distance %></td>
-              <td><%= link_to 'Details', hole_path(hole), :class => 'btn btn-mini' %></td>
-            </tr>
-
-        <% end %>
-        </tbody>
-      </table>
-
-    </div>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="rA">
+              <table class="table table-striped">
+            <thead>
+              <th>Number</th>
+              <th>Par</th>
+              <th>Tee</th>
+              <th>Index</th>
+              <th>Length</th>
+              <th></th>
+              </thead>
+              <tbody>
+              <!-- Display holes for the current course -->
+              <% @course.holes.each do |hole| %>
+                <tr>
+                  <td><%= hole.number %></td>
+                  <td><%= hole.par %></td>
+                  <td>
+                    <div class='tee' style="background-color:<%=hole.tee%>;"></div>
+                  </td>
+                  <td><%= hole.handicap %></td>
+                  <td><%= hole.distance %></td>
+                  <td><%= link_to 'Details', hole_path(hole), :class => 'btn btn-mini' %></td>
+                </tr>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+          <div class="tab-pane" id="rB"> </div>
+          <div class="tab-pane" id="rC"> </div>
+      </div>
+      </div>
+    </div> <!-- close span7 -->
 
     <div class="span4 offset1">
 
-      <%= link_to (image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{@course.latitude},#{@course.longitude}&zoom=12&size=400x400&markers=icon:http://aux.iconpedia.net/uploads/194516261179468230.png|#{@course.latitude},#{@course.longitude}&sensor=true")), "http://maps.google.ie/?q=#{@course.latitude},#{@course.longitude}&ll=#{@course.latitude},#{@course.longitude}&spn=0.019836,0.066047&t=m&z=15" %>
-      <b>Address: </b><%=  @course.address %> <br />
+      <%= link_to (image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{@course.latitude},#{@course.longitude}&zoom=12&size=400x400&markers=icon:http://aux.iconpedia.net/uploads/194516261179468230.png|#{@course.latitude},#{@course.longitude}&sensor=true", :class => 'img-polaroid')), "http://maps.google.ie/?q=#{@course.latitude},#{@course.longitude}&ll=#{@course.latitude},#{@course.longitude}&spn=0.019836,0.066047&t=m&z=15" %>
+
+      <dl class="dl-vertical">
+        <dt>Address:</dt>
+        <dd><%=  @course.address %></dd>
+        <dt>GPS Co-ordinates:</dt>
+        <dd><%= @course.latitude %>, <%= @course.longitude %></dd>
+      </dl>
 
     </div>
-  </div>
+
+  </div> <!-- close row -->
 
 
 
-  </div>
 
 
   <div class="form-actions">
@@ -64,3 +78,4 @@
                 :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                 :class => 'btn btn-danger' %>
   </div>
+</div>

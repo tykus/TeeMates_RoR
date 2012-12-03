@@ -1,31 +1,79 @@
 <%- model_class = User -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+<div class="span2">
+  <%= image_tag(@user.avatar.url, :class => "img-polaroid pull-left")%>
 </div>
+<div class="span9 offset 1">
+  <h1>User Profile</h1>
+  <h3><%= @user.firstname << " " << @user.surname %></h3>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:firstname) %>:</strong></dt>
-  <dd><%= @user.firstname %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:surname) %>:</strong></dt>
-  <dd><%= @user.surname %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
-  <dd><%= @user.email %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:password_digest) %>:</strong></dt>
-  <dd><%= @user.password_digest %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:avatar_url) %>:</strong></dt>
-  <dd><%= @user.avatar_url %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:role) %>:</strong></dt>
-  <dd><%= @user.role %></dd>
-</dl>
 
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              users_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_user_path(@user), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              user_path(@user),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+    <div class="row">
+      <div class="span3">
+        <h4>My Rounds</h4>
+        <table class="table-striped">
+          <thead>
+            <th>Date</th>
+            <th>Course</th>
+            <th>Score</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>20/05/2012</td>
+              <td>Craddockstown</td>
+              <td>40</td>
+            </tr>
+            <tr>
+              <td>13/05/2012</td>
+              <td>Beaverstown</td>
+              <td>41</td>
+            </tr>
+            <tr>
+              <td>20/05/2012</td>
+              <td>Royal Tara</td>
+              <td>44</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="span3 offset1">
+        <h4>My Handicap</h4>
+        <p>Current: 5</p>
+        <table class="table-striped">
+          <thead>
+          <th>Date</th>
+          <th>Handicap</th>
+          </thead>
+          <tbody>
+          <tr>
+            <td>20/05/2012</td>
+            <td>5.5</td>
+          </tr>
+          <tr>
+            <td>13/05/2012</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>20/05/2012</td>
+            <td>5.9</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="span3 offset1">
+        <h4>Stats</h4>
+      </div>
+    </div>
 </div>
+<% if current_user == @user %>
+    <div class="form-actions">
+      <%= link_to t('.back', :default => t("helpers.links.back")),
+                  users_path, :class => 'btn'  %>
+      <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                  edit_user_path(@user), :class => 'btn' %>
+      <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                  user_path(@user),
+                  :method => 'delete',
+                  :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                  :class => 'btn btn-danger' %>
+    </div>
+<% end %>

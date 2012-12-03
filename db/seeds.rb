@@ -15,29 +15,60 @@ User.delete_all
 
 # Create seed records
 User.create(
-    :firstname => "Brian",
-    :surname => "O'Sullivan",
-    :email => "brian@tykus.ie",
-    :password => "secret",
+    :firstname => "Bubba",
+    :surname => "Watson",
+    :email => "bubba@golf.com",
+    :password => "bubba",
+    :avatar_url => "users/bubba.jpg",
     :role => "admin"
 )
 User.create(
-    :firstname => "Brendan",
-    :surname => "Gogan",
-    :email => "goganbj@hotmail.com",
-    :password => "password",
+    :firstname => "Tiger",
+    :surname => "Woods",
+    :email => "tiger@golf.com",
+    :password => "tiger",
+    :avatar_url => "users/tiger.jpg",
 )
 User.create(
-    :firstname => "Alan",
-    :surname => "Power",
-    :email => "alan.power@gmail.com",
-    :password => "password",
+    :firstname => "Rory",
+    :surname => "McIlroy",
+    :email => "rory@golf.com",
+    :password => "rory1",
+    :avatar_url => "users/rory.jpg",
+)
+User.create(
+    :firstname => "Darren",
+    :surname => "Clarke",
+    :email => "darren@golf.com",
+    :password => "darren",
+    :avatar_url => "users/darren.jpg",
+)
+User.create(
+    :firstname => "Luke",
+    :surname => "Donald",
+    :email => "luke@golf.com",
+    :password => "luke1",
+    :avatar_url => "users/luke.jpg",
+)
+User.create(
+    :firstname => "Padraig",
+    :surname => "Harrington",
+    :email => "padraig@golf.com",
+    :password => "padraig",
+    :avatar_url => "users/padraig.jpg",
+)
+User.create(
+    :firstname => "Adam",
+    :surname => "Scott",
+    :email => "adam@golf.com",
+    :password => "adam1",
+    :avatar_url => "users/adam.jpg",
 )
 
 
 
 # COURSES
-# Delete aLL existing records
+# Delete all existing records
 Course.delete_all
 
 # Create new records
