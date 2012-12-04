@@ -1,21 +1,8 @@
 TeeMates::Application.routes.draw do
 
-
-
-  get "comments/new"
-
-  get "comments/create"
-
-  get "comments/destroy"
-
-  resources :posts do
-      resources :comments
-    end
-
-
+  resources :comments
+  resources :posts
   resources :holes
-
-
   resources :courses
 
 

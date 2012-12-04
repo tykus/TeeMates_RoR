@@ -26,37 +26,68 @@
 
 <!-- Posts and comments -->
 <div class="row">
-  <div class="span8">
+  <div class="span9">
     <% @posts.each do |post| %>
-      <div class="row post">
+      <div class="row">
         <div class="span2 post-img">
           <%=  image_tag post.user.avatar.url(:thumb), :class => "img-polaroid" %>
-        </div>
-        <div class="span5">
-          <h3><%= post.user.firstname + " " + post.user.surname %></h3>
-          <blockquote>
-            <%= post.message %>
-          </blockquote>
+          <h4><%= post.user.firstname + " " + post.user.surname %></h4>
+          <p><%= time_ago_in_words(post.created_at) %> ago</p>
           <p>
-            <span class="pull-left"><b><%= time_ago_in_words(post.created_at) %> ago</b></span>
-            <span class="pull-right"><%= link_to "View comments", post_path(post) %></span>
+            <% if is_admin or post.user == current_user %>
+                <%= link_to 'Delete Post', post, method: :delete, data: { confirm: 'Are you sure, all comments will be deleted also?' }, :class => "btn btn-danger btn-mini" %>
+            <% end %>
           </p>
+        </div>
+
+        <div class="span7">
+          <!-- the post and post title -->
+          <p class="post-title"><%= h(post.title) %></b></p>
+          <p><%= h(post.message) %></p>
+
+          <!-- Associated comments -->
+          <table class="table table-hover">
+          <% post.comments.each do |comment| %>
+            <tr>
+              <td>
+                <%= image_tag comment.user.avatar.url(:micro), :class => "img-polaroid pull-left" %>
+                <span class="user"><%= comment.user.firstname %> <%= comment.user.surname %></span><br />
+                <%= comment.comment %>
+                <span class="comment-date"><%= time_ago_in_words(comment.created_at) %> ago</span><br />
+                <% if is_admin or comment.user == current_user %>
+                    <%= link_to 'Delete Comment', comment, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-mini pull-right" %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+          </table>
+
+          <!-- Add a new comment -->
+          <%= form_for @comment do |f| %>
+            <%=  f.hidden_field :post_id, :value => post.id %>
+            <%=  f.hidden_field :user_id, :value => current_user.id %>
+            <%=  f.text_area :comment, :placeholder => "Write a comment...", :class => "text_area" %>
+            <%=  f.submit %>
+          <% end %>
 
         </div>
       </div>
+       <hr>
     <% end %>
   </div>
 
-<div class="span4">
+<div class="span3">
 
   <div class="row">
 
-    <div class="widget span4">
+    <div class="widget span3">
       <ul class="nav nav-list">
         <li class="nav-header">Actions</li>
-        <li><a href="#myModal" data-toggle="modal">
+        <li>
+          <a href="#myModal" data-toggle="modal">
             Post to your wall
-        </a></li>
+          </a>
+        </li>
 
 
         <li><%= link_to "Post a picture on your wall", new_post_path %></li>
@@ -68,24 +99,13 @@
         <% end %>
       </ul>
 
-      <!-- Modal -->
-      <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-header">
-          <h3 id="myModalLabel">Write a post to your wall</h3>
-        </div>
-        <div class="modal-body">
-          <%= render "posts/form", :@post => Post.new %>
-          <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cancel</button>
-        </div>
-      </div>
 
 
+    </div>
 
-    </div><!-- end widget -->
-
-    <div class="widget span4">
+    <div class="widget span3">
       <h3>Last Competition</h3>
-      <table class="table table-striped">
+      <table class="table table-hover">
         <thead>
           <th></th>
           <th>Name</th>
@@ -126,10 +146,21 @@
         </tbody>
       </table>
       <%= link_to "Full Result", competition_path, :class => "btn btn-mini btn-primary pull-right" %>
-    </div><!-- end widget -->
+    </div>
 
-  </div><!-- end widget row -->
+  </div>
 
-</div><!-- end sidebar -->
+</div>
 
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <h3 id="myModalLabel">Write a post to your wall</h3>
+  </div>
+  <div class="modal-body">
+    <%= render "posts/form", :@post => Post.new %>
+    <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cancel</button>
+  </div>
 </div>

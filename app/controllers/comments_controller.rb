@@ -3,13 +3,19 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.build(params[:comment])
+    @comment = Comment.new(params[:comment])
     @comment.save
 
-    redirect_to @post
+    redirect_to wall_path
   end
 
   def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+
+    respond_to do |format|
+      format.html { redirect_to wall_path }
+      format.json { head :no_content }
+    end
   end
 end

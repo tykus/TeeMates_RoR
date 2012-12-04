@@ -12,6 +12,7 @@
   <% end %>
 
   <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.text_field :title, :class => "text_area" %>
   <%= f.text_area :message, :class => "text_area" %>
   <p><%= f.submit "Add Post", :class => "btn btn-success" %></p>
 <% end %>

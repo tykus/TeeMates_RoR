@@ -4,6 +4,7 @@ class PagesController < ApplicationController
 
   def wall
     @posts = Post.desc
+    @comment = Comment.new
   end
 
   def competition
