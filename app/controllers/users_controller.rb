@@ -59,17 +59,34 @@ class UsersController < ApplicationController
 
   # PUT /users/1
   # PUT /users/1.json
+#  def update
+#    @user = User.find(params[:id])
+#
+#    respond_to do |format|
+#      if @user.update_attributes(params[:user])
+#        format.html { redirect_to wall_path, notice: 'User was successfully updated.' }
+#      else
+#        format.html { render action: "edit", notice: 'Failed to update user' }
+#      end
+#    end
+#  end
+
   def update
     @user = User.find(params[:id])
+    if params[:new_password].blank?
+      params[:new_password].delete
+      params[:new_password_confirmation].delete
+    end
 
-    respond_to do |format|
-      if @user.update_attributes(params[:user])
-        format.html { redirect_to users_path, notice: 'User was successfully updated.' }
-      else
-        format.html { render action: "edit", :error => 'Failed to update user' }
-      end
+    if @user.update_attributes(params[:user])
+      flash[:success] = "Edit Successful."
+      redirect_to @user
+    else
+      @title = "Edit user"
+      render 'edit'
     end
   end
+
 
   # DELETE /users/1
   # DELETE /users/1.json

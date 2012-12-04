@@ -6,10 +6,13 @@
     <div class="row">
 
       <div class="span11">
+
         <div class="row">
+
           <div class="span2">
             <%= image_tag "courses/luttrellstown.jpg", :class => 'pull-left img-polaroid' %>
           </div>
+
           <div class="span9">
             <h1>Competition: Luttrellstown</h1>
             <p>We are playing the July competition in Luttrellstown Castle on Saturday 23rd July.  Our tee times are booked
@@ -17,7 +20,9 @@
             <p>Look forward to seeing you all there!</p>
             <%=  link_to "Sign Up!", wall_path, :class => "pull-right btn-large btn-primary" %>
           </div>
+
         </div>
+
       </div>
 
     </div>
@@ -30,12 +35,12 @@
     <% @posts.each do |post| %>
       <div class="row">
         <div class="span2 post-img">
-          <%=  image_tag post.user.avatar.url(:thumb), :class => "img-polaroid" %>
+          <%= link_to (image_tag post.user.avatar.url(:thumb), :class => "img-polaroid"), user_path(post.user) %>
           <h4><%= post.user.firstname + " " + post.user.surname %></h4>
           <p><%= time_ago_in_words(post.created_at) %> ago</p>
           <p>
             <% if is_admin or post.user == current_user %>
-                <%= link_to 'Delete Post', post, method: :delete, data: { confirm: 'Are you sure, all comments will be deleted also?' }, :class => "btn btn-danger btn-mini" %>
+                <%= link_to 'Delete Post', post, method: :delete, data: { confirm: 'Are you sure, all comments will be deleted also?' } %>
             <% end %>
           </p>
         </div>
@@ -50,12 +55,12 @@
           <% post.comments.each do |comment| %>
             <tr>
               <td>
-                <%= image_tag comment.user.avatar.url(:micro), :class => "img-polaroid pull-left" %>
+                <%= link_to (image_tag comment.user.avatar.url(:micro), :class => "img-polaroid pull-left"), user_path(comment.user) %>
                 <span class="user"><%= comment.user.firstname %> <%= comment.user.surname %></span><br />
                 <%= comment.comment %>
                 <span class="comment-date"><%= time_ago_in_words(comment.created_at) %> ago</span><br />
                 <% if is_admin or comment.user == current_user %>
-                    <%= link_to 'Delete Comment', comment, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-mini pull-right" %>
+                    <%= link_to 'Delete Comment', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
                 <% end %>
               </td>
             </tr>
@@ -67,7 +72,7 @@
             <%=  f.hidden_field :post_id, :value => post.id %>
             <%=  f.hidden_field :user_id, :value => current_user.id %>
             <%=  f.text_area :comment, :placeholder => "Write a comment...", :class => "text_area" %>
-            <%=  f.submit %>
+            <%=  f.submit "Add Comment" %>
           <% end %>
 
         </div>
@@ -98,8 +103,6 @@
             <li><%= link_to "Create a new course", new_course_path %></li>
         <% end %>
       </ul>
-
-
 
     </div>
 

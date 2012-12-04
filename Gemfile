@@ -5,7 +5,7 @@ gem 'mysql2'                        # database
 gem 'paperclip',  '~> 3.3.1'        # file uploading
 gem 'jquery-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'       # use ActiveModel with has_secure_password
-
+gem 'bootstrap-will_paginate'       # Pagination working with Twitter Bootstrap styles
 
 # Gems used only for assets and not required
 # in production environments by default.

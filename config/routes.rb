@@ -4,6 +4,7 @@ TeeMates::Application.routes.draw do
   resources :posts
   resources :holes
   resources :courses
+  resources :rounds
 
 
   # Set application root
@@ -23,6 +24,7 @@ TeeMates::Application.routes.draw do
   get 'wall' => 'pages#wall', :as => 'wall'
   get 'competition' => 'pages#competition', :as => 'competition'
   get 'competitions' => 'pages#competitions', :as => 'competitions'
+  get 'scorecard' => 'pages#scorecard', :as => 'scorecard'
 
 
 

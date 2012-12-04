@@ -19,7 +19,6 @@ User.create(
     :surname => "Watson",
     :email => "bubba@golf.com",
     :password => "bubba",
-    :avatar_url => "users/bubba.jpg",
     :role => "admin"
 )
 User.create(
@@ -27,42 +26,36 @@ User.create(
     :surname => "Woods",
     :email => "tiger@golf.com",
     :password => "tiger",
-    :avatar_url => "users/tiger.jpg",
 )
 User.create(
     :firstname => "Rory",
     :surname => "McIlroy",
     :email => "rory@golf.com",
     :password => "rory1",
-    :avatar_url => "users/rory.jpg",
 )
 User.create(
     :firstname => "Darren",
     :surname => "Clarke",
     :email => "darren@golf.com",
     :password => "darren",
-    :avatar_url => "users/darren.jpg",
 )
 User.create(
     :firstname => "Luke",
     :surname => "Donald",
     :email => "luke@golf.com",
     :password => "luke1",
-    :avatar_url => "users/luke.jpg",
 )
 User.create(
     :firstname => "Padraig",
     :surname => "Harrington",
     :email => "padraig@golf.com",
     :password => "padraig",
-    :avatar_url => "users/padraig.jpg",
 )
 User.create(
     :firstname => "Adam",
     :surname => "Scott",
     :email => "adam@golf.com",
     :password => "adam1",
-    :avatar_url => "users/adam.jpg",
 )
 
 
@@ -221,3 +214,57 @@ Course.create(
     :longitude => -6.376111,
     :address => "Tyrellstown, Dublin 15"
 )
+
+
+# ROUNDS
+# Delete all existing records
+Round.delete_all
+
+# Seed the new records
+Round.create(:user_id =>1, :course_id => 7, :tee => 'white', :handicap => 30, :date => '2011-07-20')
+Round.create(:user_id =>1, :course_id => 1, :tee => 'blue', :handicap => 30, :date => '2011-07-23')
+Round.create(:user_id =>1, :course_id => 8, :tee => 'white', :handicap => 30, :date => '2011-10-27')
+Round.create(:user_id =>1, :course_id => 5, :tee => 'white', :handicap => 30, :date => '2011-06-14')
+Round.create(:user_id =>1, :course_id => 10, :tee => 'white', :handicap => 30, :date => '2011-10-05')
+Round.create(:user_id =>1, :course_id => 11, :tee => 'blue', :handicap => 30, :date => '2011-08-18')
+Round.create(:user_id =>1, :course_id => 12, :tee => 'white', :handicap => 30, :date => '2011-11-01')
+Round.create(:user_id =>1, :course_id => 3, :tee => 'yellow', :handicap => 30, :date => '2011-11-05')
+Round.create(:user_id =>1, :course_id => 7, :tee => 'green', :handicap => 30, :date => '2011-11-11')
+Round.create(:user_id =>1, :course_id => 7, :tee => 'green', :handicap => 30, :date => '2011-11-23')
+Round.create(:user_id =>1, :course_id => 13, :tee => 'white', :handicap => 30, :date => '2011-10-08')
+Round.create(:user_id =>1, :course_id => 7, :tee => 'green', :handicap => 30, :date => '2011-12-22')
+Round.create(:user_id =>1, :course_id => 12, :tee => 'white', :handicap => 28, :date => '2012-01-24')
+Round.create(:user_id =>1, :course_id => 3, :tee => 'yellow', :handicap => 28, :date => '2012-02-08')
+Round.create(:user_id =>1, :course_id => 12, :tee => 'green', :handicap => 28, :date => '2012-02-16')
+Round.create(:user_id =>1, :course_id => 14, :tee => 'yellow', :handicap => 28, :date => '2012-02-25')
+Round.create(:user_id =>1, :course_id => 15, :tee => 'green', :handicap => 28, :date => '2012-03-01')
+Round.create(:user_id =>1, :course_id => 12, :tee => 'green', :handicap => 28, :date => '2012-03-06')
+Round.create(:user_id =>1, :course_id => 12, :tee => 'green', :handicap => 28, :date => '2012-03-14')
+Round.create(:user_id =>1, :course_id => 17, :tee => 'white', :handicap => 28, :date => '2012-03-28')
+Round.create(:user_id =>1, :course_id => 8, :tee => 'white', :handicap => 28, :date => '2012-04-04')
+Round.create(:user_id =>1, :course_id => 8, :tee => 'white', :handicap => 28, :date => '2012-04-12')
+Round.create(:user_id =>1, :course_id => 18, :tee => 'green', :handicap => 28, :date => '2012-04-18')
+Round.create(:user_id =>1, :course_id => 10, :tee => 'white', :handicap => 28, :date => '2012-04-27')
+Round.create(:user_id =>1, :course_id => 7, :tee => 'green', :handicap => 28, :date => '2012-05-02')
+Round.create(:user_id =>1, :course_id => 2, :tee => 'yellow', :handicap => 28, :date => '2012-05-30')
+Round.create(:user_id =>1, :course_id => 7, :tee => 'green', :handicap => 28, :date => '2012-06-06')
+Round.create(:user_id =>1, :course_id => 7, :tee => 'green', :handicap => 26, :date => '2012-06-27')
+Round.create(:user_id =>1, :course_id => 12, :tee => 'green', :handicap => 26, :date => '2012-06-20')
+Round.create(:user_id =>1, :course_id => 19, :tee => 'yellow', :handicap => 26, :date => '2012-07-05')
+Round.create(:user_id =>1, :course_id => 20, :tee => 'yellow', :handicap => 26, :date => '2012-07-14')
+Round.create(:user_id =>1, :course_id => 12, :tee => 'green', :handicap => 26, :date => '2012-07-30')
+Round.create(:user_id =>1, :course_id => 8, :tee => 'white', :handicap => 26, :date => '2012-08-15')
+Round.create(:user_id =>1, :course_id => 12, :tee => 'white', :handicap => 26, :date => '2012-08-21')
+Round.create(:user_id =>1, :course_id => 19, :tee => 'yellow', :handicap => 26, :date => '2012-08-31')
+Round.create(:user_id =>1, :course_id => 7, :tee => 'green', :handicap => 26, :date => '2012-09-04')
+Round.create(:user_id =>1, :course_id => 7, :tee => 'green', :handicap => 26, :date => '2012-09-14')
+Round.create(:user_id =>1, :course_id => 7, :tee => 'green', :handicap => 26, :date => '2012-10-03')
+Round.create(:user_id =>1, :course_id => 8, :tee => 'white', :handicap => 26, :date => '2012-09-28')
+Round.create(:user_id =>1, :course_id => 12, :tee => 'green', :handicap => 26, :date => '2012-10-09')
+Round.create(:user_id =>1, :course_id => 21, :tee => 'yellow', :handicap => 26, :date => '2012-09-18')
+Round.create(:user_id =>1, :course_id => 12, :tee => 'green', :handicap => 26, :date => '2012-10-16')
+Round.create(:user_id =>1, :course_id => 18, :tee => 'green', :handicap => 26, :date => '2012-10-22')
+Round.create(:user_id =>1, :course_id => 12, :tee => 'green', :handicap => 26, :date => '2012-10-30')
+Round.create(:user_id =>1, :course_id => 19, :tee => 'yellow', :handicap => 26, :date => '2012-11-14')
+Round.create(:user_id =>1, :course_id => 7, :tee => 'green', :handicap => 26, :date => '2012-11-28')
+
