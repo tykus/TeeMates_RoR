@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   # This controller is for prototyping purposes only; it will serve static pages within the Rails framework.
 
   def wall
-    @posts = Post.desc
+    @posts = Post.desc_by_comment
     @comment = Comment.new
   end
 
@@ -13,6 +13,11 @@ class PagesController < ApplicationController
 
   def competitions
 
+  end
+
+  def new_round
+    @courses = Course.all
+    @round = Comment.new
   end
 
 end

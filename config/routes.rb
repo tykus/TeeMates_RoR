@@ -25,7 +25,7 @@ TeeMates::Application.routes.draw do
   get 'competition' => 'pages#competition', :as => 'competition'
   get 'competitions' => 'pages#competitions', :as => 'competitions'
   get 'scorecard' => 'pages#scorecard', :as => 'scorecard'
-
+  get 'new_round' => 'pages#new_round', :as => 'new_round'
 
 
 
