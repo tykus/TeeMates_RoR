@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <style type="text/css">
+    body { background-color: #333333; color: #ffffff; }
+  </style>
+
+</head>
+<body>
+<img src='http://localhost:3000/assets/logo-white.png' alt="TeeMates" />
+
+<h1>Welcome to TeeMates, <%= @user.firstname %></h1>
+<p>
+  You have been signed up to TeeMates by the site's administrator.
+</p>
+<p>
+  Your username is your email: <%= @user.email %>.<br/>
+  Your temporary password is <b>xxxxxx</b>, you should change this
+  to your preferred password immediately.
+</p>
+<p>
+  To login to the site, just follow this link: <%= @url %>.
+</p>
+<p>Thanks for joining and have a great day!</p>
+</body>
+</html>

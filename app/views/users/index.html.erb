@@ -8,13 +8,9 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th><%= model_class.human_attribute_name(:id) %></th>
-              <th><%= model_class.human_attribute_name(:firstname) %></th>
-              <th><%= model_class.human_attribute_name(:surname) %></th>
-              <th><%= model_class.human_attribute_name(:email) %></th>
-              <th><%= model_class.human_attribute_name(:avatar) %></th>
-              <th><%= model_class.human_attribute_name(:role) %></th>
-              <th><%= model_class.human_attribute_name(:created_at) %></th>
+              <th>Avatar</th>
+              <th>Name</th>
+              <th>Email</th>
               <th></th>
             </tr>
           </thead>
@@ -25,10 +21,6 @@
               <% else %>
                 <tr>
               <% end %>
-                <td><%= user.id %></td>
-                <td><%= user.firstname %></td>
-                <td><%= user.surname %></td>
-                <td><%= user.email %></td>
                 <td>
                   <% if user.avatar.exists? %>
                     <%= image_tag user.avatar.url(:micro), :class => "img-polaroid center" %>
@@ -36,18 +28,24 @@
                     <%= image_tag 'user.png', :class => 'img-polaroid center micro' %>  <!-- displaying the default user image -->
                   <% end %>
                 </td>
-                <td><%= user.role %></td>
-                <td><%= l user.created_at %></td>
+                <td><%= user.firstname %> <%= user.surname %></td>
+                <td><%= user.email %></td>
                 <td>
-                  <%= link_to 'Show', user_path(user), :class => 'btn btn-mini' %>
-                  <%= link_to 'Edit', edit_user_path(user), :class => 'btn btn-mini' %>
+                  <%= link_to 'Profile', user_path(user), :class => 'btn' %>
+                  <% if is_admin %>
+                  <% end %>
                 </td>
               </tr>
             <% end %>
           </tbody>
         </table>
 
-        <%= link_to 'New User', new_user_path, :class => 'btn btn-primary' %>
+
+        <% if is_admin %>
+            <%= link_to 'New User', new_user_path, :class => 'btn btn-primary' %>
+        <% end %>
+
+
 
   </div>
 </div>
