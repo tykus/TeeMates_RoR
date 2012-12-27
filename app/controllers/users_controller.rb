@@ -6,8 +6,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
-
+    @users = User.order('role', 'surname') # orders the list of users by role first, then surname
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }

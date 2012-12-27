@@ -1,46 +1,44 @@
-<div class='row'>
+<div class="container">
+    <div class='row'>
 
-  <div class='span4 offset4' id="title">
-      <%= image_tag 'logo-white.png', :class => 'pull-left' %>
-      <h1>TeeMates</h1>
-      <p>A Golf Society Web Application</p>
+      <div class='span4 offset4' id="title">
+          <%= image_tag 'logo-white.png', :class => 'pull-left' %>
+          <h1>TeeMates</h1>
+          <p>A Golf Society Web Application</p>
+      </div>
 
-  </div>
+    </div>
 
-</div>
+    <div class="row">
 
+      <div class="span4 offset4" id='login'>
+        <h1>Log in</h1>
+        <!-- login error alerts -->
+        <% [:notice, :error, :alert].each do |level| %>
+            <% unless flash[level].blank? %>
 
-<div class="row">
-  <div class="span4 offset4" id='login'>
-    <h1>Log in</h1>
-
-
-    <!-- login error alerts -->
-    <% [:notice, :error, :alert].each do |level| %>
-        <% unless flash[level].blank? %>
-
-            <div class="alert <%= flash_class(level) %>">
-              <button type="button" class="close" data-dismiss="alert">×</button>
-              <%= content_tag :p, flash[level] %>
-            </div>
+                <div class="alert <%= flash_class(level) %>">
+                  <button type="button" class="close" data-dismiss="alert">×</button>
+                  <%= content_tag :p, flash[level] %>
+                </div>
+            <% end %>
         <% end %>
-    <% end %>
 
+        <!-- login form -->
+        <%= form_tag sessions_path do %>
+            <div class="field">
+              <%= label_tag :email %>
+              <%= text_field_tag :email, params[:email], :placeholder => "Email" %>
+            </div>
+            <div class="field">
+              <%= label_tag :password %>
+              <%= password_field_tag :password, :placeholder => "Password" %>
+            </div>
+            <div class="actions"><%= submit_tag "Log in", :class => 'btn-large btn-success' %></div>
+        <% end %>
 
-    <!-- login form -->
+      </div>
 
-    <%= form_tag sessions_path do %>
-        <div class="field">
-          <%= label_tag :email %>
-          <%= text_field_tag :email, params[:email] %>
-        </div>
-        <div class="field">
-          <%= label_tag :password %>
-          <%= password_field_tag :password %>
-        </div>
-        <div class="actions"><%= submit_tag "Log in", :class => 'btn-large btn-success' %></div>
-    <% end %>
-
-  </div>
+    </div>
 
 </div>
