@@ -17,3 +17,5 @@ This is a college project which involves the implementation of a web application
 1.  Built with Ruby on Rails 3
 2.  MySQL database
 3.  Uses Twitter Bootstrap
+4.  Paperclip uploading
+5.  Video encoding using ffmpeg
