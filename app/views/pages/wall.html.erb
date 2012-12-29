@@ -30,14 +30,6 @@
 </div>
 
 
-<!-- Display any notices/alerts/errors -->
-<% if notice %>
-    <div class="alert alert-info">
-      <%=  notice %>
-    </div>
-<% end %>
-
-
 <!-- Posts and comments -->
 <div class="row">
   <div class="span9">
@@ -60,7 +52,20 @@
                 <%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_post_path(post), :class => "pull-right", :title => "Edit Post" %>
           <% end %>
           </p>
+
+          <!-- display an image if it exists -->
+          <% if post.photo.exists? %>
+            <p align="center">
+              <%= image_tag post.photo.url(:wall), :class => 'img img-polaroid' %>
+            </p>
+          <% end %>
+
+
+
+          <!-- the message -->
           <p><%= h(post.message) %></p>
+
+
           <!-- Associated comments -->
           <table class="table table-hover">
           <% post.comments.each do |comment| %>
@@ -96,44 +101,44 @@
     <% end %>
   </div>
 
-<div class="span3">
+  <div class="span3">
 
-  <div class="row">
+    <div class="row">
 
-    <div class="widget span3">
-      <ul class="nav nav-list">
-        <li class="nav-header">Actions</li>
-        <li>
-          <a href="#myModal" data-toggle="modal">
-            Post to your wall
-          </a>
-        </li>
+      <div class="widget span3">
+        <ul class="nav nav-list">
+          <li class="nav-header">Actions</li>
+          <li>
+            <a href="#myModal" data-toggle="modal">
+              Post to your wall
+            </a>
+          </li>
 
 
-        <li><%= link_to "Post a picture on your wall", new_post_path %></li>
-        <li><%= link_to "Add a video to your wall", new_post_path %></li>
-        <li><%= link_to "Record New Round", new_round_path %></li>
-        <% if is_admin %>
-            <li><%= link_to "Users Administration", users_path %></li>
-            <li><%= link_to "Create a new competition" %></li>
-            <li><%= link_to "Competition Administration" %></li>
-            <li><%= link_to "Create a new course", new_course_path %></li>
-            <li><%= link_to "Course Administration", new_course_path %></li>
-        <% end %>
-      </ul>
+          <li><%= link_to "Post a picture on your wall", new_post_path %></li>
+          <li><%= link_to "Add a video to your wall", new_post_path %></li>
+          <li><%= link_to "Record New Round", new_round_path %></li>
+          <% if is_admin %>
+              <li><%= link_to "Users Administration", users_path %></li>
+              <li><%= link_to "Create a new competition" %></li>
+              <li><%= link_to "Competition Administration" %></li>
+              <li><%= link_to "Create a new course", new_course_path %></li>
+              <li><%= link_to "Course Administration", new_course_path %></li>
+          <% end %>
+        </ul>
 
-    </div>
+      </div>
 
-    <div class="widget span3">
-      <h3>Last Competition</h3>
-      <table class="table table-hover">
-        <thead>
+      <div class="widget span3">
+        <h3>Last Competition</h3>
+        <table class="table table-hover">
+          <thead>
           <th></th>
           <th>Name</th>
           <th>Points</th>
           <th>Back 9</th>
-        </thead>
-        <tbody>
+          </thead>
+          <tbody>
           <tr>
             <td>1</td>
             <td>Tiger Woods</td>
@@ -164,12 +169,15 @@
             <td class="number">39</td>
             <td class="number">20</td>
           </tr>
-        </tbody>
-      </table>
-      <%= link_to "Full Result", competition_path, :class => "btn btn-mini btn-primary pull-right" %>
+          </tbody>
+        </table>
+        <%= link_to "Full Result", competition_path, :class => "btn btn-mini btn-primary pull-right" %>
+      </div>
+
     </div>
 
   </div>
+
 
 </div>
 

@@ -27,6 +27,16 @@
   <% end %>
 
     <div class="container">
+
+      <!-- Display any notices/alerts/errors -->
+      <% [:notice, :error, :alert].each do |level| %>
+          <% unless flash[level].blank? %>
+              <div class="alert <%= flash_class(level) %>">
+                <%= content_tag :p, flash[level] %>
+              </div>
+          <% end %>
+      <% end %>
+
       <!-- Render content from the view -->
       <%= yield %>
 

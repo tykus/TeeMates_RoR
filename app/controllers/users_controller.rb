@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   # Only an admin user should be able to view a full list of users
-  before_filter :is_admin
+  before_filter :admin_only, :except => [:show, :edit]
 
   # GET /users
   # GET /users.json
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-
+    @posts = @user.posts
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
