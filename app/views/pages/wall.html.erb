@@ -37,7 +37,7 @@
       <div class="row">
         <div class="span2 post-img">
           <%= link_to (image_tag post.user.avatar.url(:thumb), :class => "img-polaroid"), user_path(post.user) %>
-          <h4><%= h(post.user.firstname) + " " + h(post.user.surname) %></h4>
+          <h4><%= h(post.user.firstname) %> <%= h(post.user.surname) %></h4>
           <p><%= time_ago_in_words(post.created_at) %> ago</p>
         </div>
 
@@ -55,15 +55,12 @@
 
           <!-- display an image if it exists -->
           <% if post.photo.exists? %>
-            <p align="center">
               <%= image_tag post.photo.url(:wall), :class => 'img img-polaroid' %>
-            </p>
           <% end %>
 
 
-
           <!-- the message -->
-          <p><%= h(post.message) %></p>
+          <p><%= post.message %></p>
 
 
           <!-- Associated comments -->

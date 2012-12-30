@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :title, :message, :user_id, :photo
+  attr_accessible :title, :message, :user_id, :photo, :photo_file_name, :photo_content_type, :photo_file_size, :photo_updated_at
 
   # Photo attachment
   # ================

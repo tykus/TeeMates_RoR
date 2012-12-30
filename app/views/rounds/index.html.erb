@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="span2">
+      <%= image_tag current_user.avatar.url, :class => 'img-polaroid' %>
+    </div>
+
+
+    <div class="span10">
+
+      <h2><%= current_user.firstname %>'s Rounds</h2>
+
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th>Date Played</th>
+          <th>Course</th>
+          <th>Tee</th>
+          <th>Strokes</th>
+          <th>Stableford</th>
+          <th>Handicap</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @rounds.each do |round| %>
+            <tr>
+              <td><%= round.date_played %></td>
+              <td><%= image_tag round.course.crest, :class => "img img-polaroid" %> <%= round.course.name %></td>
+              <td><%= round.tee %></td>
+              <td><%= round.total_strokes %></td>
+              <td><%= round.total_score %></td>
+              <td>26</td>
+              <td>
+                <div class="btn-group btn-group-vertical">
+                  <%= link_to "Details", round_path(round), :class => "btn" %>
+                  <%= link_to "Edit", rounds_path, :class => "btn" %>
+                  <%= link_to "Delete", rounds_path, :class => "btn btn-danger" %>
+                </div>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <%= will_paginate @rounds %>
+    </div>
+  </div>
+</div>

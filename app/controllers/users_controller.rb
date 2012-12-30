@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   # Only an admin user should be able to view a full list of users
-  before_filter :admin_only, :except => [:show, :edit]
+  before_filter :admin_only, :except => [:show, :edit, :update]
 
   # GET /users
   # GET /users.json
@@ -75,11 +75,6 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if params[:new_password].blank?
-      params[:new_password].delete
-      params[:new_password_confirmation].delete
-    end
-
     if @user.update_attributes(params[:user])
       flash[:success] = "Edit Successful."
       redirect_to @user

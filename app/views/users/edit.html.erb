@@ -8,28 +8,7 @@
 </div>
 
 <div class="row">
-  <div class="span4 offset 1">
-    <h3>Change Password</h3>
-    <%= form_for @user do |f| %>
-        <table>
-          <tr>
-            <td>Password: </td>
-            <td><%= f.password_field :new_password, :placeholder => "Enter new password", :class => 'text_field', :value => "" %></td>
-          </tr>
-          <tr>
-            <td>Confirm Password</td>
-            <td><%= f.password_field :new_password_confirmation, :placeholder => "Confirm password", :class => 'text_field' %></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td><%=  f.submit "Change Password", :class => "btn btn-danger" %></td>
-          </tr>
-       </table>
-  <% end %>
-  </div>
-
-
-  <div class="span4 offset 1">
+  <div class="span4">
     <h3>Edit Details</h3>
     <%= form_for @user, :html => { :multipart => true, :class => 'form-horizontal' } do |f| %>
       <table>

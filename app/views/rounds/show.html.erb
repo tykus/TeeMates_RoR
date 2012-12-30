@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="row">
+    <div class="span2">
+        <%= image_tag @round.user.avatar.url, :class => "img-polaroid" %>
+      <h3 align="center">
+        <%= @round.user.firstname %> <%= @round.user.surname %>
+      </h3>
+      <p align="center">
+        Played: <%= @round.date_played %><br />
+        <%= image_tag @round.tee + ".jpg", :alt => @round.tee.capitalize + " tees", :title => @round.tee.capitalize + " tees" %>
+      </p>
+
+    </div>
+
+    <div class="span10">
+      <h1><%= image_tag @round.course.crest, :class => "img" %><%= @round.course.name %></h1>
+      <p>
+
+      </p>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Hole</th>
+            <th>Length</th>
+            <th>Index</th>
+            <th>Par</th>
+            <th>Strokes</th>
+            <th>Putts</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @scores.each do |score| %>
+          <tr>
+            <td><%= score.hole.number %></td>
+            <td><%= score.hole.distance %></td>
+            <td><%= score.hole.handicap %></td>
+            <td><%= score.hole.par %></td>
+            <td><%= score.strokes %></td>
+            <td><%= score.putts %></td>
+            <td><%= score.stableford %></td>
+          </tr>
+
+          <% if score.hole.number%9 == 0 %>
+            <tr class="info">
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><%= @round.front_nine %></td>
+            </tr>
+          <% end %>
+        <% end %>
+        <tr class="info">
+          <td></td>
+          <td><%= @round.course.total_length %></td>
+          <td></td>
+          <td><%= @round.course.total_par %></td>
+          <td><%= @round.total_strokes %></td>
+          <td><%= @round.total_putts %></td>
+          <td><%= @round.total_score %></td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+
+</div>

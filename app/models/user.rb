@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  attr_accessible :avatar, :email, :firstname, :password, :password_confirmation, :role, :surname
+  attr_accessible :avatar, :email, :firstname, :password, :password_confirmation, :role, :surname, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at
+
 
   # Image attachment (Paperclip)
   # ============================
@@ -22,7 +23,6 @@ class User < ActiveRecord::Base
   # Authentication
   # ==============
   has_secure_password
-
 
   # Validation
   # ==========

@@ -4,4 +4,6 @@ class Hole < ActiveRecord::Base
   # A hole belongs to a golf course
   belongs_to :course
 
+  has_many :scorecards
+
 end

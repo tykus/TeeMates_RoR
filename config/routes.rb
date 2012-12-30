@@ -1,17 +1,19 @@
 TeeMates::Application.routes.draw do
 
+
   resources :comments
   resources :posts
   resources :holes
   resources :courses
   resources :rounds
-
+  resources :users
+  resources :sessions
+  resources :scorecards
 
   # Set application root
   root :to => 'pages#wall'
 
-  resources :users
-  resources :sessions
+
 
 
   # Route aliases
@@ -19,13 +21,8 @@ TeeMates::Application.routes.draw do
   get 'logout' => 'sessions#destroy', :as => 'logout'
 
 
-
   # Temporary Static Pages routes
   get 'wall' => 'pages#wall', :as => 'wall'
-  get 'competition' => 'pages#competition', :as => 'competition'
-  get 'competitions' => 'pages#competitions', :as => 'competitions'
-  get 'scorecard' => 'pages#scorecard', :as => 'scorecard'
-  get 'new_round' => 'pages#new_round', :as => 'new_round'
 
 
 
