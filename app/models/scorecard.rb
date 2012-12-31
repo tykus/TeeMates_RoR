@@ -7,8 +7,6 @@ class Scorecard < ActiveRecord::Base
   belongs_to :hole
 
 
-
-
   # Methods
   # =======
 
@@ -47,5 +45,23 @@ class Scorecard < ActiveRecord::Base
     return score
 
   end
+
+  # Determine if the score is a birdie, par, bogey etc
+  def score_type
+
+    # Establish the difference between the strokes made and par
+    difference = hole.par - strokes unless strokes.nil?
+
+    # Return the score type
+    case difference
+      when 3 then return "eagle"
+      when 2 then return "eagle"
+      when 1 then return "birdie"
+      when 0 then return "par"
+      when -1 then return "bogey"
+      else return "dbl_bogey"
+    end
+  end
+
 
 end

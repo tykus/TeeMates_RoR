@@ -19,6 +19,10 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :comments, :through => :posts
   has_many :rounds
+  has_many :handicaps # the most important one is the last!
+
+
+
 
   # Authentication
   # ==============

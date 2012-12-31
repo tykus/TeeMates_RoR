@@ -7,13 +7,15 @@
 
     <div class="span10">
 
-      <h2><%= current_user.firstname %>'s Rounds</h2>
+      <h2>
+        My Rounds
+      </h2>
 
       <table class="table table-hover">
         <thead>
         <tr>
           <th>Date Played</th>
-          <th>Course</th>
+          <th colspan="2">Course</th>
           <th>Tee</th>
           <th>Strokes</th>
           <th>Stableford</th>
@@ -25,8 +27,9 @@
         <% @rounds.each do |round| %>
             <tr>
               <td><%= round.date_played %></td>
-              <td><%= image_tag round.course.crest, :class => "img img-polaroid" %> <%= round.course.name %></td>
-              <td><%= round.tee %></td>
+              <td><%= image_tag round.course.crest, :class => "img img-polaroid", :size => "50x50" %></td>
+              <td><%= round.course.name %></td>
+              <td><%= image_tag round.tee + ".jpg", :size => "30x30" %></td>
               <td><%= round.total_strokes %></td>
               <td><%= round.total_score %></td>
               <td>26</td>

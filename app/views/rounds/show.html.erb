@@ -7,16 +7,21 @@
       </h3>
       <p align="center">
         Played: <%= @round.date_played %><br />
-        <%= image_tag @round.tee + ".jpg", :alt => @round.tee.capitalize + " tees", :title => @round.tee.capitalize + " tees" %>
+        <span class="label <%= label_color(@round.tee) %>">
+          <%= @round.tee.capitalize %> Tees
+        </span><br />
+        Handicap: <%= hcp_to_i(@handicap) %>
       </p>
 
     </div>
 
     <div class="span10">
-      <h1><%= image_tag @round.course.crest, :class => "img" %><%= @round.course.name %></h1>
-      <p>
+      <h1 class="pull-right">
+        <%= @round.course.name %>
+        &nbsp;
+        <%= image_tag @round.course.crest, :class => "img" %>
+      </h1>
 
-      </p>
       <table class="table table-striped">
         <thead>
           <tr>
@@ -36,22 +41,16 @@
             <td><%= score.hole.distance %></td>
             <td><%= score.hole.handicap %></td>
             <td><%= score.hole.par %></td>
-            <td><%= score.strokes %></td>
+            <td>
+              <% unless score.strokes.nil? %>
+              <span class="label <%= score_label(score.score_type) %>">
+                <%= score.strokes %>
+              </span>
+              <% end %>
+            </td>
             <td><%= score.putts %></td>
             <td><%= score.stableford %></td>
           </tr>
-
-          <% if score.hole.number%9 == 0 %>
-            <tr class="info">
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><%= @round.front_nine %></td>
-            </tr>
-          <% end %>
         <% end %>
         <tr class="info">
           <td></td>

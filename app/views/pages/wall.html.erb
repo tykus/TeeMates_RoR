@@ -64,11 +64,13 @@
 
 
           <!-- Associated comments -->
-          <table class="table table-hover">
           <% post.comments.each do |comment| %>
-            <tr>
-              <td>
+            <div class="row">
+              <hr>
+              <div class="span1">
                 <%= link_to (image_tag comment.user.avatar.url(:micro), :class => "img-polaroid pull-left"), user_path(comment.user) %>
+              </div>
+              <div class="span6">
                 <span class="user"><%= comment.user.firstname %> <%= comment.user.surname %></span>
                 <% if is_admin or comment.user == current_user %>
                     <!-- the admin or comment author can delete a comment -->
@@ -79,18 +81,26 @@
                   <%= comment.comment %>
                   <span class="comment-date"><%= time_ago_in_words(comment.created_at) %> ago</span>
                 </p>
-              </td>
-            </tr>
+              </div>
+            </div>
           <% end %>
-          </table>
+
 
           <!-- Add a new comment -->
-          <%= form_for @comment do |f| %>
-            <%=  f.hidden_field :post_id, :value => post.id %>
-            <%=  f.hidden_field :user_id, :value => current_user.id %>
-            <%=  f.text_area :comment, :placeholder => "Write a comment...", :class => "text_area" %>
-            <%=  f.submit "Add Comment", :class=>'btn btn-primary pull-right' %>
-          <% end %>
+          <div class="row">
+            <hr>
+            <div class="span1">
+              <%=  image_tag current_user.avatar(:micro), :class => "img-polaroid" %>
+             </div>
+            <div class="span6">
+              <%= form_for @comment do |f| %>
+                <%=  f.hidden_field :post_id, :value => post.id %>
+                <%=  f.hidden_field :user_id, :value => current_user.id %>
+                <%=  f.text_area :comment, :placeholder => "Write a comment...", :class => "text_area" %>
+                <%=  f.submit "Add Comment", :class=>'btn btn-primary pull-right' %>
+              <% end %>
+            </div>
+          </div>
 
         </div>
       </div>
@@ -168,7 +178,7 @@
           </tr>
           </tbody>
         </table>
-        <%= link_to "Full Result", competition_path, :class => "btn btn-mini btn-primary pull-right" %>
+        <%= link_to "Full Result", rounds_path, :class => "btn btn-mini btn-primary pull-right" %>
       </div>
 
     </div>

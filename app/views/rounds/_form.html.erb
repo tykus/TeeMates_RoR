@@ -1,0 +1,22 @@
+<%= form_for @round, :html => { :class => 'form-horizontal' } do |f| %>
+
+  <table class="table">
+    <tr>
+      <th><%= f.label :course_id %></th>
+      <th><%= f.label :competition_id %></th>
+      <th><%= f.label :date_played %></th>
+      <th><%= f.label :tee %></th>
+      <th><%= f.hidden_field :user_id, {:value => current_user.id} %></th>
+    </tr>
+    <tr>
+      <td><%= f.collection_select(:course_id, @courses, :id, :name, {:include_blank => 'Please Select'}) %></td>
+      <td><%= f.text_field :competition_id, :class => 'text_field' %></td><!-- change to collection_select for competition model -->
+      <td><%= f.text_field :date_played, :class => 'text_field' %></td>
+      <td><%= f.text_field :tee, :class => 'text_field' %></td><!-- dynamically created collection_select from available tees -->
+      <td><%= f.submit nil, :class => 'btn btn-primary' %></td>
+    </tr>
+  </table>
+
+<% end %>
+
+<hr />

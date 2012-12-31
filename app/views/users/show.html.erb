@@ -1,280 +1,123 @@
-<h1>User Profile</h1>
-<div class="row">
-  <div class="span2">
-    <%= image_tag(@user.avatar.url, :class => "img-polaroid")%>
-    <% if current_user == @user %>
-      <%= link_to 'Edit Profile', edit_user_path(@user), :class => 'btn btn-primary e_button' %>
-    <% end %>
-  </div>
-  <div class="span10">
-    <h3><%= @user.firstname + " " + @user.surname %></h3>
-      <div class="row">
-        <div class="span3">
-          <h4 class="user">My Rounds</h4>
-          <table class="table-striped">
-            <thead>
-              <th>Date</th>
-              <th>Course</th>
-              <th>Score</th>
-            </thead>
-            <tbody>
-              <tr>
-                <td>20/05/2012</td>
-                <td>Craddockstown</td>
-                <td>40</td>
-              </tr>
-              <tr>
-                <td>13/05/2012</td>
-                <td>Beaverstown</td>
-                <td>41</td>
-              </tr>
-              <tr>
-                <td>20/05/2012</td>
-                <td>Royal Tara</td>
-                <td>44</td>
-              </tr>
-            </tbody>
-          </table>
-          <%= link_to "More", rounds_path, :class => "btn btn-link pull-right" %>
-        </div>
-        <div class="span6">
-          <h4 class="user">My Handicap Progress</h4>
-          <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-          <script type="text/javascript">
-            google.load('visualization', '1', {packages: ['corechart']});
-          </script>
-          <script type="text/javascript">
-            function drawVisualization() {
-                // Create and populate the data table.
-                var data = google.visualization.arrayToDataTable([
-                    ['x',  'Handicap'],
-                    ['J',      8.1],
-                    ['F',      7.8],
-                    ['M',      7.2],
-                    ['A',      6.1],
-                    ['M',      6.6],
-                    ['J',      6.6],
-                    ['J',      6.8],
-                    ['A',      6.1],
-                    ['S',      6.0],
-                    ['O',      6.0],
-                    ['N',      6.0],
-                    ['D',      5.3]
-                ]);
-
-                // Create and draw the visualization.
-                new google.visualization.LineChart(document.getElementById('visualization')).
-                        draw(data, {curveType: "function",
-                            width: 600, height: 300,
-                            vAxis: {maxValue: 10}}
-                );
-            }
-            google.setOnLoadCallback(drawVisualization);
-          </script>
-          <div id="visualization"></div>
-        </div>
-      </div>
-    </div>
-</div>
-
-<hr>
-
-<% if @posts.any? %>
+<div class="container">
   <div class="row">
     <div class="span12">
-      <h3><%= @user.firstname %>'s Photos</h3>
-      <ul class="thumbnails">
-      <% @posts.each do |post| %>
-        <% if post.photo.exists? %>
-          <li class="span2">
-            <a href="#" class="thumbnails">
-              <%= image_tag post.photo.url(:thumb), :class=>"thumbnail" %>
-            </a>
-          </li>
-        <% end %>
-      <% end %>
-      </ul>
+      <div class="page-header">
+        <h1>User Profile</h1>
+      </div>
     </div>
   </div>
-  <hr>
-<% end %>
 
-<div class="row">
-  <div class="span12">
-    <h3>Best Round</h3>
-    <h5>Knightbrook :: 20/11/2012</h5>
-    <table class="table table-bordered">
-      <thead>
-        <th>Hole</th>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-        <th>6</th>
-        <th>7</th>
-        <th>8</th>
-        <th>9</th>
-        <th>10</th>
-        <th>11</th>
-        <th>12</th>
-        <th>13</th>
-        <th>14</th>
-        <th>15</th>
-        <th>16</th>
-        <th>17</th>
-        <th>18</th>
-        <th>IN</th>
-        <th>OUT</th>
-        <th>TOTAL</th>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Par</td>
-          <td>4</td>
-          <td>4</td>
-          <td>3</td>
-          <td>5</td>
-          <td>3</td>
-          <td>5</td>
-          <td>4</td>
-          <td>4</td>
-          <td>4</td>
-          <td>4</td>
-          <td>4</td>
-          <td>4</td>
-          <td>5</td>
-          <td>4</td>
-          <td>4</td>
-          <td>3</td>
-          <td>5</td>
-          <td>3</td>
-          <td>36</td>
-          <td>36</td>
-          <td>72</td>
-        </tr>
-        <tr>
-          <td class='green'>Yards</td>
-          <td class='green'>409</td>
-          <td class='green'>403</td>
-          <td class='green'>127</td>
-          <td class='green'>494</td>
-          <td class='green'>158</td>
-          <td class='green'>501</td>
-          <td class='green'>378</td>
-          <td class='green'>439</td>
-          <td class='green'>383</td>
-          <td class='green'>357</td>
-          <td class='green'>412</td>
-          <td class='green'>409</td>
-          <td class='green'>481</td>
-          <td class='green'>434</td>
-          <td class='green'>377</td>
-          <td class='green'>160</td>
-          <td class='green'>523</td>
-          <td class='green'>160</td>
-          <td class='green'>3313</td>
-          <td class='green'>3292</td>
-          <td class='green'>6605</td>
-        </tr>
-        <tr>
-          <td>SI</td>
-          <td>4</td>
-          <td>2</td>
-          <td>18</td>
-          <td>14</td>
-          <td>10</td>
-          <td>16</td>
-          <td>12</td>
-          <td>6</td>
-          <td>8</td>
-          <td>13</td>
-          <td>7</td>
-          <td>3</td>
-          <td>17</td>
-          <td>1</td>
-          <td>5</td>
-          <td>15</td>
-          <td>9</td>
-          <td>11</td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Strokes</td>
-          <td>5</td>
-          <td>6</td>
-          <td>3</td>
-          <td>7</td>
-          <td>5</td>
-          <td>6</td>
-          <td>6</td>
-          <td>5</td>
-          <td>5</td>
-          <td>4</td>
-          <td>4</td>
-          <td>6</td>
-          <td>6</td>
-          <td>6</td>
-          <td>6</td>
-          <td>4</td>
-          <td>5</td>
-          <td>4</td>
-          <td>45</td>
-          <td>48</td>
-          <td>93</td>
-        </tr>
-        <tr>
-          <td>Score</td>
-          <td>2</td>
-          <td>1</td>
-          <td>2</td>
-          <td>1</td>
-          <td>1</td>
-          <td>2</td>
-          <td>1</td>
-          <td>2</td>
-          <td>2</td>
-          <td>3</td>
-          <td>3</td>
-          <td>1</td>
-          <td>2</td>
-          <td>1</td>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-          <td>2</td>
-          <td>18</td>
-          <td>14</td>
-          <td>32</td>
-        </tr>
-        <tr>
-          <td>Shots</td>
-          <td>*</td>
-          <td>*</td>
-          <td></td>
-          <td>*</td>
-          <td>*</td>
-          <td>*</td>
-          <td>*</td>
-          <td>*</td>
-          <td>*</td>
-          <td>*</td>
-          <td>*</td>
-          <td>*</td>
-          <td>*</td>
-          <td>*</td>
-          <td>*</td>
-          <td>*</td>
-          <td>*</td>
-          <td>*</td>
-          <td>*</td>
-          <td>*</td>
-          <td>*</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="row">
+    <!-------------------------------------------------------------------
+                               USER DETAILS
+    -------------------------------------------------------------------->
+    <div class="span2 profile">
+      <%= image_tag(@user.avatar.url, :class => "img-polaroid")%>
+      <h3><%= @user.firstname + " " + @user.surname %></h3>
+      <p><%= @user.email %></p>
+      <p>
+        Current handicap:<br />
+        <%= @handicaps.last.handicap %> (<%= @handicaps.last.date_adjusted %>)<br />
+      </p>
+      <% if current_user == @user %>
+        <%= link_to 'Edit Profile', edit_user_path(@user), :class => 'btn btn-primary e_button' %>
+      <% end %>
+    </div>
+
+    <!-------------------------------------------------------------------
+                           USER HANDICAP PROGRESS
+    -------------------------------------------------------------------->
+    <div class="span6 offset2">
+      <h4 class="user"><%= @user.firstname %>'s Handicap Progress in <%= Time.now.year %></h4>
+      <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+      <script type="text/javascript">
+          google.load('visualization', '1', {packages: ['corechart']});
+      </script>
+      <script type="text/javascript">
+          function drawVisualization() {
+              // Create and populate the data table.
+              var data = google.visualization.arrayToDataTable([
+                  ['Month',  'Handicap'],
+                  <% @handicaps.each do |hcap| %>
+                    ['<%= hcap.date_adjusted.strftime("%b") %>', <%= hcap.handicap %> ],
+                  <% end %>
+              ]);
+
+              // Create and draw the visualization.
+              new google.visualization.LineChart(document.getElementById('visualization')).
+                      draw(data, {curveType: "function",
+                          width: 600, height: 300,
+                          vAxis: {maxValue: 10}}
+              );
+          }
+          google.setOnLoadCallback(drawVisualization);
+      </script>
+      <div id="visualization"></div>
+    </div>
   </div>
-</div>
+  <hr />
 
+  <!-------------------------------------------------------------------
+                            USER ROUNDS
+   -------------------------------------------------------------------->
+  <div class="row">
+    <div class="span12">
+      <h3><%= @user.firstname %>'s Recent Rounds</h3>
+      <table class="table table-hover">
+        <thead>
+        <tr>
+          <th>Date Played</th>
+          <th>Course</th>
+          <th>Tee</th>
+          <th>Strokes</th>
+          <th>Stableford</th>
+          <th>Handicap</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @rounds.each do |round| %>
+          <tr>
+            <td><%= round.date_played %></td>
+            <td><%= round.course.name %></td>
+            <td><%= round.tee %></td>
+            <td><%= round.total_strokes %></td>
+            <td><%= round.total_score %></td>
+            <td>26</td>
+            <td><%= link_to "Show", round_path(round), :class => "btn btn-mini" %></td>
+          </tr>
+
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <hr />
+
+  <!-------------------------------------------------------------------
+                           USER PHOTOS
+  -------------------------------------------------------------------->
+  <div class="row">
+    <div class="span12">
+      <% if @posts.any? %>
+        <div class="row">
+          <div class="span12">
+            <h3><%= @user.firstname %>'s Photos</h3>
+            <ul class="thumbnails">
+              <% @posts.each do |post| %>
+                <% if post.photo.exists? %>
+                  <li class="span2">
+                    <a href="#" class="thumbnails">
+                      <%= image_tag post.photo.url(:thumb), :class=>"thumbnail" %>
+                    </a>
+                  </li>
+                 <% end %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>

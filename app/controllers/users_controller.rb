@@ -18,6 +18,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts
+    @rounds = @user.rounds.recent.first(5)  # five most recent rounds for the user
+    @handicaps = @user.handicaps.this_year
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }

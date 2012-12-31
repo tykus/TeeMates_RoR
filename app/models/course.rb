@@ -7,6 +7,7 @@ class Course < ActiveRecord::Base
   has_many :rounds, :foreign_key => :course_id
 
 
+
   # Methods
   def total_length
     length = 0
@@ -19,6 +20,4 @@ class Course < ActiveRecord::Base
     holes.where("tee='green'").each { |hole| par += hole.par unless hole.par.nil? }
     return par
   end
-
-
 end

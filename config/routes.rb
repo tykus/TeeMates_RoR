@@ -1,6 +1,19 @@
 TeeMates::Application.routes.draw do
 
 
+  resources :handicaps
+
+
+  get "handicap/new"
+
+  get "handicap/create"
+
+  get "handicap/edit"
+
+  get "handicap/update"
+
+  get "handicap/destroy"
+
   resources :comments
   resources :posts
   resources :holes

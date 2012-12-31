@@ -1,0 +1,29 @@
+<h1>Listing handicaps</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Competition</th>
+    <th>Handicap</th>
+    <th>Date adjusted</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @handicaps.each do |handicap| %>
+  <tr>
+    <td><%= handicap.user_id %></td>
+    <td><%= handicap.competition_id %></td>
+    <td><%= handicap.handicap %></td>
+    <td><%= handicap.date_adjusted %></td>
+    <td><%= link_to 'Show', handicap %></td>
+    <td><%= link_to 'Edit', edit_handicap_path(handicap) %></td>
+    <td><%= link_to 'Destroy', handicap, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Handicap', new_handicap_path %>

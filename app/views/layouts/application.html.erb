@@ -17,7 +17,7 @@
               <li><%= link_to '<i class="icon-home icon-white"></i>My Wall'.html_safe, wall_path %></li>
               <li><%= link_to '<i class="icon-user icon-white"></i>My Profile'.html_safe, user_path(current_user) %></li>
               <li><%= link_to '<i class="icon-edit icon-white"></i>My Rounds'.html_safe, rounds_path %></li>
-              <li><%= link_to '<i class="icon-trophy icon-white"></i>Competitions'.html_safe, competitions_path %></li>
+              <li><%= link_to '<i class="icon-trophy icon-white"></i>Competitions'.html_safe, rounds_path %></li>
               <li><%= link_to '<i class="icon-flag icon-white"></i>Courses'.html_safe, courses_path %></li>
               <li><%= link_to "<i class=\"icon-signout icon-white\"></i>Logout #{ current_user.firstname }".html_safe, logout_path %></li>
             </ul>
