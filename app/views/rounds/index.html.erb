@@ -4,13 +4,10 @@
       <%= image_tag current_user.avatar.url, :class => 'img-polaroid' %>
     </div>
 
-
     <div class="span10">
 
-      <h2>
-        My Rounds
-      </h2>
-
+      <h2 class="pull-left">My Rounds</h2>
+      <%= link_to "New Round", new_round_path, :class => "btn btn-primary pull-right" %>
       <table class="table table-hover">
         <thead>
         <tr>
@@ -29,10 +26,14 @@
               <td><%= round.date_played %></td>
               <td><%= image_tag round.course.crest, :class => "img img-polaroid", :size => "50x50" %></td>
               <td><%= round.course.name %></td>
-              <td><%= image_tag round.tee + ".jpg", :size => "30x30" %></td>
+              <td>
+                <span class="label <%= label_color(round.tee) %>">
+                  <%= round.tee.capitalize %>
+                </span>
+              </td>
               <td><%= round.total_strokes %></td>
               <td><%= round.total_score %></td>
-              <td>26</td>
+              <td><%= hcp_to_i(round.user.handicaps.last) %></td>
               <td>
                 <div class="btn-group btn-group-vertical">
                   <%= link_to "Details", round_path(round), :class => "btn" %>
@@ -44,6 +45,7 @@
         <% end %>
         </tbody>
       </table>
+
       <%= will_paginate @rounds %>
     </div>
   </div>

@@ -40,4 +40,5 @@ class User < ActiveRecord::Base
             :length => {:within => 5..20},
             :presence => true
 
+
 end
