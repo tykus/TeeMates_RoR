@@ -14,4 +14,9 @@ class Handicap < ActiveRecord::Base
   scope :this_year, Handicap.where("date_adjusted >= ? and date_adjusted <= ?", "#{Time.now.year}-01-01", "#{Time.now.year}-12-31").order("date_adjusted ASC")
   scope :on_this_date, lambda{ |date| where("date_adjusted <= ?", date) } # NEED THIS TO RETURN HANDICAP CORRESPONDING TO MAX(date_adjusted)
 
+
+
+
+
+
 end

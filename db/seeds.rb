@@ -91,7 +91,7 @@ User.create(
 # =========
 Handicap.delete_all
 
-Handicap.create(:user_id => 1,:competition_id => 0,:handicap => 28.0,:date_adjusted => '2012-01-20')
+Handicap.create(:user_id => 1,:competition_id => 0,:handicap => 28.0,:date_adjusted => '2011-01-20')
 Handicap.create(:user_id => 1,:competition_id => 0,:handicap => 26.7,:date_adjusted => '2012-02-20')
 Handicap.create(:user_id => 1,:competition_id => 0,:handicap => 26.8,:date_adjusted => '2012-03-20')
 Handicap.create(:user_id => 1,:competition_id => 0,:handicap => 25.1,:date_adjusted => '2012-04-20')
@@ -103,12 +103,12 @@ Handicap.create(:user_id => 1,:competition_id => 0,:handicap => 25.0,:date_adjus
 Handicap.create(:user_id => 1,:competition_id => 0,:handicap => 24.0,:date_adjusted => '2012-10-20')
 Handicap.create(:user_id => 1,:competition_id => 0,:handicap => 23.0,:date_adjusted => '2012-11-20')
 Handicap.create(:user_id => 1,:competition_id => 0,:handicap => 23.1,:date_adjusted => '2012-12-20')
-Handicap.create(:user_id => 2,:competition_id => 0,:handicap => 23.1,:date_adjusted => DateTime.now)
-Handicap.create(:user_id => 3,:competition_id => 0,:handicap => 26.2,:date_adjusted => DateTime.now)
-Handicap.create(:user_id => 4,:competition_id => 0,:handicap => 24.8,:date_adjusted => DateTime.now)
-Handicap.create(:user_id => 5,:competition_id => 0,:handicap => 27.5,:date_adjusted => DateTime.now)
-Handicap.create(:user_id => 6,:competition_id => 0,:handicap => 25.5,:date_adjusted => DateTime.now)
-Handicap.create(:user_id => 7,:competition_id => 0,:handicap => 18.0,:date_adjusted => DateTime.now)
+Handicap.create(:user_id => 2,:competition_id => 0,:handicap => 23.1,:date_adjusted => '2011-01-20')
+Handicap.create(:user_id => 3,:competition_id => 0,:handicap => 26.2,:date_adjusted => '2011-01-20')
+Handicap.create(:user_id => 4,:competition_id => 0,:handicap => 24.8,:date_adjusted => '2011-01-20')
+Handicap.create(:user_id => 5,:competition_id => 0,:handicap => 27.5,:date_adjusted => '2011-01-20')
+Handicap.create(:user_id => 6,:competition_id => 0,:handicap => 25.5,:date_adjusted => '2011-01-20')
+Handicap.create(:user_id => 7,:competition_id => 0,:handicap => 18.0,:date_adjusted => '2011-01-20')
 # COURSES
 # Delete all existing records
 Course.delete_all
@@ -189,6 +189,23 @@ Round.create(:user_id =>3,:course_id => 12,:tee => 'green',:date_played => '2012
 Round.create(:user_id =>5,:course_id => 19,:tee => 'yellow',:date_played => '2012-11-14')
 Round.create(:user_id =>7,:course_id => 7,:tee => 'green',:date_played => '2012-11-28')
 
+# Competition rounds
+Round.create(:user_id =>1,:course_id => 7,:tee => 'green',:date_played => '2013-01-01', :competition_id => 1)
+Round.create(:user_id =>2,:course_id => 7,:tee => 'green',:date_played => '2013-01-01', :competition_id => 1)
+Round.create(:user_id =>3,:course_id => 7,:tee => 'green',:date_played => '2013-01-01', :competition_id => 1)
+Round.create(:user_id =>4,:course_id => 7,:tee => 'green',:date_played => '2013-01-01', :competition_id => 1)
+Round.create(:user_id =>5,:course_id => 7,:tee => 'green',:date_played => '2013-01-01', :competition_id => 1)
+Round.create(:user_id =>6,:course_id => 7,:tee => 'green',:date_played => '2013-01-01', :competition_id => 1)
+Round.create(:user_id =>7,:course_id => 7,:tee => 'green',:date_played => '2013-01-01', :competition_id => 1)
+
+
+#COMPETITIONS
+Competition.delete_all
+
+Competition.create(:course_id => 7, :competition_date => '2013-01-01', :css => 72)
+
+
+
 
 # POSTS
 # Delete all existing records
@@ -199,7 +216,7 @@ Post.create(
     :title => "Welcome to TeeMates!",
     :message => "This is the place where our golf society will promote and organise its activities.  This wall allows
                   society members to interact with each other through posts and comments.  You will be able to upload
-                  photos, videos and messages, which your colleagues can comment on.<br /> Keep it civil!"
+                  photos, videos and messages, which your colleagues can comment on. Keep it civil!"
 )
 
 Post.create(
@@ -211,6 +228,26 @@ Post.create(
     :photo_file_size =>2506910,
     :photo_updated_at => DateTime.now
 )
+
+
+
+
+# COMMENTS
+# ========
+
+Comment.delete_all
+
+Comment.create(:post_id => 1, :comment => "Excellent - I love it!", :user_id => 2)
+Comment.create(:post_id => 1, :comment => "Yeah, it should be great.  Looking forward to the competitions!", :user_id => 3)
+Comment.create(:post_id => 1, :comment => "Super job - I'm impressed", :user_id => 4)
+Comment.create(:post_id => 1, :comment => "Any 'like' button?", :user_id => 2)
+Comment.create(:post_id => 1, :comment => "This isn't Facebook!", :user_id => 5)
+Comment.create(:post_id => 1, :comment => "We'll look at implementing a 'like' function sometime in a later release.", :user_id => 1)
+Comment.create(:post_id => 1, :comment => "That'll do!", :user_id => 2)
+Comment.create(:post_id => 2, :comment => "That is just stunning!", :user_id => 2)
+Comment.create(:post_id => 2, :comment => "^ What he said!", :user_id => 7)
+Comment.create(:post_id => 2, :comment => "We're you out today and didn't call me?", :user_id => 6)
+Comment.create(:post_id => 2, :comment => "Eh, yeah...", :user_id => 4)
 
 
 
@@ -1023,3 +1060,144 @@ Scorecard.create(:round_id => 46, :hole_id => 207, :strokes => 4, :putts => 2)
 Scorecard.create(:round_id => 46, :hole_id => 208, :strokes => 6, :putts => 3)
 Scorecard.create(:round_id => 46, :hole_id => 209, :strokes => 7, :putts => 1)
 Scorecard.create(:round_id => 46, :hole_id => 210, :strokes => 3, :putts => 1)
+
+# Competition rounds
+# user_id = 1
+Scorecard.create(:round_id => 47, :hole_id => 193, :strokes => 5, :putts => 3)
+Scorecard.create(:round_id => 47, :hole_id => 194, :strokes => 6, :putts => 2)
+Scorecard.create(:round_id => 47, :hole_id => 195, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 47, :hole_id => 196, :strokes => 6, :putts => 2)
+Scorecard.create(:round_id => 47, :hole_id => 197, :strokes => 5, :putts => 3)
+Scorecard.create(:round_id => 47, :hole_id => 198, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 47, :hole_id => 199, :strokes => 6, :putts => 1)
+Scorecard.create(:round_id => 47, :hole_id => 200, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 47, :hole_id => 201, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 47, :hole_id => 202, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 47, :hole_id => 203, :strokes => 6, :putts => 2)
+Scorecard.create(:round_id => 47, :hole_id => 204, :strokes => 6, :putts => 2)
+Scorecard.create(:round_id => 47, :hole_id => 205, :strokes => 6, :putts => 2)
+Scorecard.create(:round_id => 47, :hole_id => 206, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 47, :hole_id => 207, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 47, :hole_id => 208, :strokes => 4, :putts => 3)
+Scorecard.create(:round_id => 47, :hole_id => 209, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 47, :hole_id => 210, :strokes => 4, :putts => 3)
+
+# user_id = 2
+Scorecard.create(:round_id => 48, :hole_id => 193, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 48, :hole_id => 194, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 48, :hole_id => 195, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 48, :hole_id => 196, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 48, :hole_id => 197, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 48, :hole_id => 198, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 48, :hole_id => 199, :strokes => 5, :putts => 1)
+Scorecard.create(:round_id => 48, :hole_id => 200, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 48, :hole_id => 201, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 48, :hole_id => 202, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 48, :hole_id => 203, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 48, :hole_id => 204, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 48, :hole_id => 205, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 48, :hole_id => 206, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 48, :hole_id => 207, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 48, :hole_id => 208, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 48, :hole_id => 209, :strokes => 4, :putts => 1)
+Scorecard.create(:round_id => 48, :hole_id => 210, :strokes => 3, :putts => 2)
+
+# user_id = 3
+Scorecard.create(:round_id => 49, :hole_id => 193, :strokes => 5, :putts => 3)
+Scorecard.create(:round_id => 49, :hole_id => 194, :strokes => 6, :putts => 2)
+Scorecard.create(:round_id => 49, :hole_id => 195, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 49, :hole_id => 196, :strokes => 6, :putts => 2)
+Scorecard.create(:round_id => 49, :hole_id => 197, :strokes => 5, :putts => 3)
+Scorecard.create(:round_id => 49, :hole_id => 198, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 49, :hole_id => 199, :strokes => 6, :putts => 1)
+Scorecard.create(:round_id => 49, :hole_id => 200, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 49, :hole_id => 201, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 49, :hole_id => 202, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 49, :hole_id => 203, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 49, :hole_id => 204, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 49, :hole_id => 205, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 49, :hole_id => 206, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 49, :hole_id => 207, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 49, :hole_id => 208, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 49, :hole_id => 209, :strokes => 4, :putts => 1)
+Scorecard.create(:round_id => 49, :hole_id => 210, :strokes => 3, :putts => 2)
+
+# user_id = 4
+Scorecard.create(:round_id => 50, :hole_id => 193, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 50, :hole_id => 194, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 50, :hole_id => 195, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 50, :hole_id => 196, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 50, :hole_id => 197, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 50, :hole_id => 198, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 50, :hole_id => 199, :strokes => 5, :putts => 1)
+Scorecard.create(:round_id => 50, :hole_id => 200, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 50, :hole_id => 201, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 50, :hole_id => 202, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 50, :hole_id => 203, :strokes => 6, :putts => 2)
+Scorecard.create(:round_id => 50, :hole_id => 204, :strokes => 6, :putts => 2)
+Scorecard.create(:round_id => 50, :hole_id => 205, :strokes => 6, :putts => 2)
+Scorecard.create(:round_id => 50, :hole_id => 206, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 50, :hole_id => 207, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 50, :hole_id => 208, :strokes => 4, :putts => 3)
+Scorecard.create(:round_id => 50, :hole_id => 209, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 50, :hole_id => 210, :strokes => 4, :putts => 3)
+
+# user_id = 5
+Scorecard.create(:round_id => 51, :hole_id => 193, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 51, :hole_id => 194, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 51, :hole_id => 195, :strokes => 3, :putts => 2)
+Scorecard.create(:round_id => 51, :hole_id => 196, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 51, :hole_id => 197, :strokes => 3, :putts => 2)
+Scorecard.create(:round_id => 51, :hole_id => 198, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 51, :hole_id => 199, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 51, :hole_id => 200, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 51, :hole_id => 201, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 51, :hole_id => 202, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 51, :hole_id => 203, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 51, :hole_id => 204, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 51, :hole_id => 205, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 51, :hole_id => 206, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 51, :hole_id => 207, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 51, :hole_id => 208, :strokes => 3, :putts => 2)
+Scorecard.create(:round_id => 51, :hole_id => 209, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 51, :hole_id => 210, :strokes => 3, :putts => 2)
+
+# user_id = 6
+Scorecard.create(:round_id => 52, :hole_id => 193, :strokes => 3, :putts => 2)
+Scorecard.create(:round_id => 52, :hole_id => 194, :strokes => 3, :putts => 2)
+Scorecard.create(:round_id => 52, :hole_id => 195, :strokes => 2, :putts => 2)
+Scorecard.create(:round_id => 52, :hole_id => 196, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 52, :hole_id => 197, :strokes => 1, :putts => 0)
+Scorecard.create(:round_id => 52, :hole_id => 198, :strokes => 3, :putts => 2)
+Scorecard.create(:round_id => 52, :hole_id => 199, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 52, :hole_id => 200, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 52, :hole_id => 201, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 52, :hole_id => 202, :strokes => 3, :putts => 2)
+Scorecard.create(:round_id => 52, :hole_id => 203, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 52, :hole_id => 204, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 52, :hole_id => 205, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 52, :hole_id => 206, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 52, :hole_id => 207, :strokes => 3, :putts => 2)
+Scorecard.create(:round_id => 52, :hole_id => 208, :strokes => 3, :putts => 2)
+Scorecard.create(:round_id => 52, :hole_id => 209, :strokes => 7, :putts => 2)
+Scorecard.create(:round_id => 52, :hole_id => 210, :strokes => 3, :putts => 2)
+
+# user_id = 7
+Scorecard.create(:round_id => 53, :hole_id => 193, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 53, :hole_id => 194, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 53, :hole_id => 195, :strokes => 3, :putts => 2)
+Scorecard.create(:round_id => 53, :hole_id => 196, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 53, :hole_id => 197, :strokes => 3, :putts => 2)
+Scorecard.create(:round_id => 53, :hole_id => 198, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 53, :hole_id => 199, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 53, :hole_id => 200, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 53, :hole_id => 201, :strokes => 4, :putts => 2)
+Scorecard.create(:round_id => 53, :hole_id => 202, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 53, :hole_id => 203, :strokes => 6, :putts => 2)
+Scorecard.create(:round_id => 53, :hole_id => 204, :strokes => 6, :putts => 2)
+Scorecard.create(:round_id => 53, :hole_id => 205, :strokes => 6, :putts => 2)
+Scorecard.create(:round_id => 53, :hole_id => 206, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 53, :hole_id => 207, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 53, :hole_id => 208, :strokes => 4, :putts => 3)
+Scorecard.create(:round_id => 53, :hole_id => 209, :strokes => 5, :putts => 2)
+Scorecard.create(:round_id => 53, :hole_id => 210, :strokes => 4, :putts => 3)

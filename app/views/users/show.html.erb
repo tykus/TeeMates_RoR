@@ -17,10 +17,10 @@
       <p><%= @user.email %></p>
       <p>
         Current handicap:<br />
-        <%= @handicaps.last.handicap %> (<%= @handicaps.last.date_adjusted %>)<br />
+        <%= @user.handicap_now %>
       </p>
       <% if current_user == @user %>
-        <%= link_to 'Edit Profile', edit_user_path(@user), :class => 'btn btn-primary e_button' %>
+        <%= link_to 'Edit Profile', edit_user_path(@user), :class => 'btn btn-primary' %>
       <% end %>
     </div>
 
@@ -36,12 +36,9 @@
       <script type="text/javascript">
           function drawVisualization() {
               // Create and populate the data table.
-              var data = google.visualization.arrayToDataTable([
-                  ['Month',  'Handicap'],
-                  <% @handicaps.each do |hcap| %>
-                    ['<%= hcap.date_adjusted.strftime("%b") %>', <%= hcap.handicap %> ],
-                  <% end %>
-              ]);
+              var data = google.visualization.arrayToDataTable(
+                  <%= @user.handicap_history.to_json.html_safe %>
+              );
 
               // Create and draw the visualization.
               new google.visualization.LineChart(document.getElementById('visualization')).

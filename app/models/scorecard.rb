@@ -12,25 +12,10 @@ class Scorecard < ActiveRecord::Base
 
   def stableford
     # The stableford score is calculated based on the strokes taken relative to par adjusted for the player's handicap
-    hcap = 26
-
-    a = hcap - 18
-    if a > 0
-      if hole.handicap <= a
-        strokes_gained = 2
-      else
-        strokes_gained = 1
-      end
-    else
-      if hole.handicap <= a.abs
-        strokes_gained = 0
-      end
-    end
-
+    hcap = round.user.handicap_on(round.date_played).to_i
 
     unless strokes.nil?
-      # par  + strokes_gained - strokes_taken
-      score = hole.par+strokes_gained-strokes+2
+      score = hole.par + hole.strokes_gained(hcap) - strokes + 2
     else
       score = 0
     end
@@ -45,6 +30,8 @@ class Scorecard < ActiveRecord::Base
     return score
 
   end
+
+
 
   # Determine if the score is a birdie, par, bogey etc
   def score_type

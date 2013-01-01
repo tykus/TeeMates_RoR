@@ -5,7 +5,7 @@ class Course < ActiveRecord::Base
   # ============
   has_many :holes, :foreign_key => :course_id
   has_many :rounds, :foreign_key => :course_id
-
+  has_many :competitions
 
 
   # Methods

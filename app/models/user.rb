@@ -41,4 +41,31 @@ class User < ActiveRecord::Base
             :presence => true
 
 
+  # Methods
+  # =======
+
+  # Returns the user's current handicap
+  def handicap_now
+    return handicaps.last.handicap
+  end
+
+  # Returns the user's handicap at a given date
+  def handicap_on(date)
+    return handicaps.where("date_adjusted <= ?", date).last.handicap
+  end
+
+  # Returns the user's recent handicap history in array form to suit Google Chart in user#show
+  def handicap_history
+
+    hcap_array = Array.new
+    hcap_array << ['Month',  'Handicap']
+
+    handicaps.each do |hcap|
+      hcap_array << [ hcap.date_adjusted.strftime('%b'),hcap.handicap.to_f ]
+    end
+     return hcap_array
+  end
+
+
+
 end

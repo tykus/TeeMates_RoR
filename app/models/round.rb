@@ -5,6 +5,7 @@ class Round < ActiveRecord::Base
   # =============
   belongs_to :user
   belongs_to :course
+  belongs_to :competition
 
   has_many :scorecards, :dependent => :destroy
 
@@ -28,6 +29,13 @@ class Round < ActiveRecord::Base
     total_score = 0
     scorecards.each { |score| total_score += score.stableford }
     return total_score
+  end
+
+  # Calculates the score for the back 9 holes
+  def back_nine
+    total = 0
+    scorecards.each { |score| total += score.stableford if score.hole.number > 9}
+    total
   end
 
   # Calculates the total number of strokes taken for a round of golf
@@ -62,5 +70,8 @@ class Round < ActiveRecord::Base
 
   end
 
+  def gross_score
+
+  end
 
 end
