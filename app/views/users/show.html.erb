@@ -17,7 +17,7 @@
       <p><%= @user.email %></p>
       <p>
         Current handicap:<br />
-        <%= @user.handicap_now %>
+        <%= @user.handicap_on(Time.now) %>
       </p>
       <% if current_user == @user %>
         <%= link_to 'Edit Profile', edit_user_path(@user), :class => 'btn btn-primary' %>
@@ -27,8 +27,8 @@
     <!-------------------------------------------------------------------
                            USER HANDICAP PROGRESS
     -------------------------------------------------------------------->
-    <div class="span6 offset2">
-      <h4 class="user"><%= @user.firstname %>'s Handicap Progress in <%= Time.now.year %></h4>
+    <div class="span10">
+      <h4 class="user"><%= @user.firstname %>'s Handicap Progress</h4>
       <script type="text/javascript" src="http://www.google.com/jsapi"></script>
       <script type="text/javascript">
           google.load('visualization', '1', {packages: ['corechart']});
@@ -43,7 +43,7 @@
               // Create and draw the visualization.
               new google.visualization.LineChart(document.getElementById('visualization')).
                       draw(data, {curveType: "function",
-                          width: 600, height: 300,
+                          width: 970, height: 300,
                           vAxis: {maxValue: 10}}
               );
           }
@@ -80,7 +80,7 @@
             <td><%= round.tee %></td>
             <td><%= round.total_strokes %></td>
             <td><%= round.total_score %></td>
-            <td>26</td>
+            <td><%= round.user.handicap_on(round.date_played).round %></td>
             <td><%= link_to "Show", round_path(round), :class => "btn btn-mini" %></td>
           </tr>
 

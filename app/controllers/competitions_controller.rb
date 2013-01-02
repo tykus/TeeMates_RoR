@@ -81,8 +81,21 @@ class CompetitionsController < ApplicationController
     @competition.destroy
 
     respond_to do |format|
-      format.html { redirect_to competitions_url }
+      format.html { redirect_to competitions_path }
       format.json { head :no_content }
     end
   end
+
+  def admin
+    @competition = Competition.find(params[:id])
+    @competition.adjust_handicap
+    @competition.hcp_adjusted=true
+    @competition.save
+    respond_to do |format|
+      format.html { redirect_to competitions_path,
+                                notice: "Handicaps adjusted for #{@competition.course.name} on #{@competition.competition_date}" }
+      format.json { head :no_content }
+    end
+  end
+
 end

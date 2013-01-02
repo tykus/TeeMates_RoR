@@ -2,8 +2,9 @@ class User < ActiveRecord::Base
   attr_accessible :avatar, :email, :firstname, :password, :password_confirmation, :role, :surname, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at
 
 
-  # Image attachment (Paperclip)
-  # ============================
+  # ===================================================================================================================
+  # ATTACHMENTS
+  # ===================================================================================================================
   has_attached_file :avatar,
                     :styles => {
                         :thumb => "",
@@ -14,8 +15,11 @@ class User < ActiveRecord::Base
                         :micro => "-gravity north -thumbnail 50x50^ -extent 50x50"
                     }
 
-  # Associations
-  # ============
+
+
+  # ===================================================================================================================
+  # ASSOCIATIONS
+  # ===================================================================================================================
   has_many :posts
   has_many :comments, :through => :posts
   has_many :rounds
@@ -24,12 +28,17 @@ class User < ActiveRecord::Base
 
 
 
-  # Authentication
-  # ==============
+  # ===================================================================================================================
+  # AUTHENTICATION
+  # ===================================================================================================================
   has_secure_password
 
-  # Validation
-  # ==========
+
+
+
+  # ===================================================================================================================
+  # VALIDATION
+  # ===================================================================================================================
   validates :email,
             :uniqueness => true,
             :length => {:within => 5..50},
@@ -41,29 +50,37 @@ class User < ActiveRecord::Base
             :presence => true
 
 
-  # Methods
-  # =======
 
-  # Returns the user's current handicap
-  def handicap_now
-    return handicaps.last.handicap
-  end
+  # ===================================================================================================================
+  # METHODS
+  # ===================================================================================================================
 
-  # Returns the user's handicap at a given date
+  # handicap_on(date)
+  # -----------------
+  # Returns the user's handicap as at a given date
   def handicap_on(date)
     return handicaps.where("date_adjusted <= ?", date).last.handicap
   end
 
+
+  # handicap_history
+  # ----------------
   # Returns the user's recent handicap history in array form to suit Google Chart in user#show
   def handicap_history
-
     hcap_array = Array.new
-    hcap_array << ['Month',  'Handicap']
-
+    hcap_array << %w['Month',  'Handicap']
     handicaps.each do |hcap|
-      hcap_array << [ hcap.date_adjusted.strftime('%b'),hcap.handicap.to_f ]
+      hcap_array << [ hcap.date_adjusted.strftime('%b %Y'),hcap.handicap.to_f ]
     end
-     return hcap_array
+    return hcap_array
+  end
+
+
+  # category_on(date)
+  # -----------------
+  # Takes a date and returns the user's handicap category at that date
+  def category_on(date)
+    HandicapCategory.for_hcp(handicap_on(date))
   end
 
 

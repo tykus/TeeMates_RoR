@@ -9,6 +9,7 @@
       <th>Course</th>
       <th>CSS</th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -23,6 +24,7 @@
 
             <% if is_admin %>
               <%= link_to "Edit", edit_competition_path(competition), :class => "btn" %>
+              <%= link_to "Handicaps", admin_path(competition), :class => "btn #{disabled(competition)}", :id => "hcpLink" %>
               <%= link_to "Delete", competition_path(competition),
                           :method => :delete,
                           :data => { :confirm => 'Are you sure?' },

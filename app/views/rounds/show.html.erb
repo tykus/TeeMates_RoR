@@ -54,9 +54,9 @@
         <% end %>
         <tr class="info">
           <td></td>
-          <td><%= @round.course.total_length %></td>
+          <td><%= @round.course.total_length(@round.tee) %></td>
           <td></td>
-          <td><%= @round.course.total_par %></td>
+          <td><%= @round.course.total_par(@round.tee) %></td>
           <td><%= @round.total_strokes %></td>
           <td><%= @round.total_putts %></td>
           <td><%= @round.total_score %></td>

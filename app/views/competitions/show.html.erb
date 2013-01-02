@@ -18,7 +18,12 @@
       </thead>
       <tbody>
       <% @competition.results.each do |round| %>
-        <tr>
+
+        <% if round.user == current_user %>
+          <tr class="info">
+        <% else %>
+          <tr>
+        <% end %>
           <td><%= image_tag round.user.avatar.url(:micro), :class => "img img-polaroid" %></td>
           <td><%= round.user.firstname %> <%= round.user.surname %></td>
           <td><%= round.user.handicap_on(round.date_played).round %></td>

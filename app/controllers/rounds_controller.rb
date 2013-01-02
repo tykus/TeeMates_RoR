@@ -38,4 +38,14 @@ class RoundsController < ApplicationController
       end
     end
   end
+
+  def destroy
+    @round = Round.find(params[:id])
+    @round.destroy
+
+    respond_to do |format|
+      format.html { redirect_to rounds_path }
+      format.json { head :no_content }
+    end
+  end
 end

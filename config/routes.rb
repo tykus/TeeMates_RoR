@@ -2,21 +2,7 @@ TeeMates::Application.routes.draw do
 
 
   resources :competitions
-
-
   resources :handicaps
-
-
-  get "handicap/new"
-
-  get "handicap/create"
-
-  get "handicap/edit"
-
-  get "handicap/update"
-
-  get "handicap/destroy"
-
   resources :comments
   resources :posts
   resources :holes
@@ -36,6 +22,7 @@ TeeMates::Application.routes.draw do
   get 'login' => 'sessions#new', :as => 'login'
   get 'logout' => 'sessions#destroy', :as => 'logout'
 
+  match 'admin/:id', :to => 'competitions#admin', :as => "admin"
 
   # Temporary Static Pages routes
   get 'wall' => 'pages#wall', :as => 'wall'

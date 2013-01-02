@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121231204658) do
+ActiveRecord::Schema.define(:version => 20130102030519) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20121231204658) do
     t.integer  "css"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.boolean  "hcp_adjusted"
   end
 
   create_table "courses", :force => true do |t|
@@ -38,6 +39,16 @@ ActiveRecord::Schema.define(:version => 20121231204658) do
     t.datetime "created_at",                               :null => false
     t.datetime "updated_at",                               :null => false
     t.string   "address"
+  end
+
+  create_table "handicap_categories", :force => true do |t|
+    t.float    "range_low"
+    t.float    "range_high"
+    t.integer  "buffer"
+    t.float    "reduction"
+    t.float    "increase"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "handicaps", :force => true do |t|

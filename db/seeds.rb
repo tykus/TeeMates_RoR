@@ -9,11 +9,26 @@
 
 
 
+# ===================================================================================================================
+# HANDICAP CATEGORIES
+# ===================================================================================================================
+
+HandicapCategory.delete_all
+
+HandicapCategory.create(:range_low =>  0.0, :range_high =>  5.4, :buffer => 1, :reduction => 0.1, :increase => 0.1)
+HandicapCategory.create(:range_low =>  5.5, :range_high => 12.4, :buffer => 2, :reduction => 0.2, :increase => 0.1)
+HandicapCategory.create(:range_low => 12.5, :range_high => 20.4, :buffer => 3, :reduction => 0.3, :increase => 0.1)
+HandicapCategory.create(:range_low => 20.5, :range_high => 28.0, :buffer => 4, :reduction => 0.4, :increase => 0.1)
+
+
+
+
+# ===================================================================================================================
 # USERS
-# Delete all existing records
+# ===================================================================================================================
+
 User.delete_all
 
-# Create seed records
 User.create(
     :firstname => "Bubba",
     :surname => "Watson",
@@ -87,33 +102,134 @@ User.create(
 )
 
 
+# ===================================================================================================================
 # HANDICAPS
-# =========
+# ===================================================================================================================
+
 Handicap.delete_all
 
-Handicap.create(:user_id => 1,:competition_id => 0,:handicap => 28.0,:date_adjusted => '2011-01-20')
-Handicap.create(:user_id => 1,:competition_id => 0,:handicap => 26.7,:date_adjusted => '2012-02-20')
-Handicap.create(:user_id => 1,:competition_id => 0,:handicap => 26.8,:date_adjusted => '2012-03-20')
-Handicap.create(:user_id => 1,:competition_id => 0,:handicap => 25.1,:date_adjusted => '2012-04-20')
-Handicap.create(:user_id => 1,:competition_id => 0,:handicap => 25.1,:date_adjusted => '2012-05-20')
-Handicap.create(:user_id => 1,:competition_id => 0,:handicap => 25.2,:date_adjusted => '2012-06-20')
-Handicap.create(:user_id => 1,:competition_id => 0,:handicap => 25.3,:date_adjusted => '2012-07-20')
-Handicap.create(:user_id => 1,:competition_id => 0,:handicap => 25.3,:date_adjusted => '2012-08-20')
-Handicap.create(:user_id => 1,:competition_id => 0,:handicap => 25.0,:date_adjusted => '2012-09-20')
-Handicap.create(:user_id => 1,:competition_id => 0,:handicap => 24.0,:date_adjusted => '2012-10-20')
-Handicap.create(:user_id => 1,:competition_id => 0,:handicap => 23.0,:date_adjusted => '2012-11-20')
-Handicap.create(:user_id => 1,:competition_id => 0,:handicap => 23.1,:date_adjusted => '2012-12-20')
-Handicap.create(:user_id => 2,:competition_id => 0,:handicap => 23.1,:date_adjusted => '2011-01-20')
-Handicap.create(:user_id => 3,:competition_id => 0,:handicap => 26.2,:date_adjusted => '2011-01-20')
-Handicap.create(:user_id => 4,:competition_id => 0,:handicap => 24.8,:date_adjusted => '2011-01-20')
-Handicap.create(:user_id => 5,:competition_id => 0,:handicap => 27.5,:date_adjusted => '2011-01-20')
-Handicap.create(:user_id => 6,:competition_id => 0,:handicap => 25.5,:date_adjusted => '2011-01-20')
-Handicap.create(:user_id => 7,:competition_id => 0,:handicap => 18.0,:date_adjusted => '2011-01-20')
+Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 10.2, :date_adjusted => '2011-04-26')
+Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 9.8,  :date_adjusted => '2011-05-28')
+Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 8.9,  :date_adjusted => '2011-06-29')
+Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 9.0,  :date_adjusted => '2011-07-31')
+Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 9.1,  :date_adjusted => '2011-09-01')
+Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 9.0,  :date_adjusted => '2011-10-03')
+Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 8.7,  :date_adjusted => '2012-03-11')
+Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 7.8,  :date_adjusted => '2012-04-12')
+Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 7.8,  :date_adjusted => '2012-05-14')
+Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 7.9,  :date_adjusted => '2012-06-15')
+Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 8.0,  :date_adjusted => '2012-07-17')
+Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 8.1,  :date_adjusted => '2012-08-18')
+Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 8.2,  :date_adjusted => '2012-09-19')
+Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 8.3,  :date_adjusted => '2012-10-21')
+Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 8.4,  :date_adjusted => '2012-11-22')
+Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 8.5,  :date_adjusted => '2012-12-24')
+Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 15.0, :date_adjusted => '2011-04-26')
+Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 14.0, :date_adjusted => '2011-05-28')
+Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 14.1, :date_adjusted => '2011-06-29')
+Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 14.2, :date_adjusted => '2011-07-31')
+Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 13.8, :date_adjusted => '2011-09-01')
+Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 13.7, :date_adjusted => '2011-10-03')
+Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 12.9, :date_adjusted => '2012-03-11')
+Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 13.0, :date_adjusted => '2012-04-12')
+Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 13.1, :date_adjusted => '2012-05-14')
+Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 13.2, :date_adjusted => '2012-06-15')
+Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 12.9, :date_adjusted => '2012-07-17')
+Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 12.9, :date_adjusted => '2012-08-18')
+Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 12.5, :date_adjusted => '2012-09-19')
+Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 12.8, :date_adjusted => '2012-10-21')
+Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 12.6, :date_adjusted => '2012-11-22')
+Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 12.7, :date_adjusted => '2012-12-24')
+Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 24.6, :date_adjusted => '2011-04-26')
+Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 24.7, :date_adjusted => '2011-05-28')
+Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 24.8, :date_adjusted => '2011-06-29')
+Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 24.9, :date_adjusted => '2011-07-31')
+Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 24.8, :date_adjusted => '2011-09-01')
+Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 24.9, :date_adjusted => '2011-10-03')
+Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 25.0, :date_adjusted => '2012-03-11')
+Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 25.1, :date_adjusted => '2012-04-12')
+Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 24.4, :date_adjusted => '2012-05-14')
+Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 23.1, :date_adjusted => '2012-06-15')
+Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 23.2, :date_adjusted => '2012-07-17')
+Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 23.3, :date_adjusted => '2012-08-18')
+Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 23.4, :date_adjusted => '2012-09-19')
+Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 23.5, :date_adjusted => '2012-10-21')
+Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 23.5, :date_adjusted => '2012-11-22')
+Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 23.5, :date_adjusted => '2012-12-24')
+Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 16.2, :date_adjusted => '2011-04-26')
+Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.3, :date_adjusted => '2011-05-28')
+Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.4, :date_adjusted => '2011-06-29')
+Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.2, :date_adjusted => '2011-07-31')
+Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.0, :date_adjusted => '2011-09-01')
+Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.1, :date_adjusted => '2011-10-03')
+Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.2, :date_adjusted => '2012-03-11')
+Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.0, :date_adjusted => '2012-04-12')
+Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.0, :date_adjusted => '2012-05-14')
+Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.0, :date_adjusted => '2012-06-15')
+Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 14.8, :date_adjusted => '2012-07-17')
+Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 14.9, :date_adjusted => '2012-08-18')
+Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.0, :date_adjusted => '2012-09-19')
+Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.0, :date_adjusted => '2012-10-21')
+Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.1, :date_adjusted => '2012-11-22')
+Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.2, :date_adjusted => '2012-12-24')
+Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 6.0,  :date_adjusted => '2011-04-26')
+Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 6.1,  :date_adjusted => '2011-05-28')
+Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.9,  :date_adjusted => '2011-06-29')
+Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.8,  :date_adjusted => '2011-07-31')
+Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.7,  :date_adjusted => '2011-09-01')
+Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.5,  :date_adjusted => '2011-10-03')
+Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.5,  :date_adjusted => '2012-03-11')
+Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.5,  :date_adjusted => '2012-04-12')
+Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.2,  :date_adjusted => '2012-05-14')
+Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.3,  :date_adjusted => '2012-06-15')
+Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.3,  :date_adjusted => '2012-07-17')
+Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.1,  :date_adjusted => '2012-08-18')
+Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.1,  :date_adjusted => '2012-09-19')
+Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.1,  :date_adjusted => '2012-10-21')
+Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.2,  :date_adjusted => '2012-11-22')
+Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 4.9,  :date_adjusted => '2012-12-24')
+Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 4.9,  :date_adjusted => '2011-04-26')
+Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 4.8,  :date_adjusted => '2011-05-28')
+Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 4.6,  :date_adjusted => '2011-06-29')
+Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 4.2,  :date_adjusted => '2011-07-31')
+Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 4.3,  :date_adjusted => '2011-09-01')
+Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 3.5,  :date_adjusted => '2011-10-03')
+Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 3.5,  :date_adjusted => '2012-03-11')
+Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 3.2,  :date_adjusted => '2012-04-12')
+Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 3.1,  :date_adjusted => '2012-05-14')
+Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 3.0,  :date_adjusted => '2012-06-15')
+Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 2.5,  :date_adjusted => '2012-07-17')
+Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 2.0,  :date_adjusted => '2012-08-18')
+Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 2.1,  :date_adjusted => '2012-09-19')
+Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 1.5,  :date_adjusted => '2012-10-21')
+Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 1.1,  :date_adjusted => '2012-11-22')
+Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 1.0,  :date_adjusted => '2012-12-24')
+Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 0.5,  :date_adjusted => '2011-04-26')
+Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 0.6,  :date_adjusted => '2011-05-28')
+Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 0.7,  :date_adjusted => '2011-06-29')
+Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 0.8,  :date_adjusted => '2011-07-31')
+Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 0.9,  :date_adjusted => '2011-09-01')
+Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 1.0,  :date_adjusted => '2011-10-03')
+Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 1.1,  :date_adjusted => '2012-03-11')
+Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 1.2,  :date_adjusted => '2012-04-12')
+Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 1.2,  :date_adjusted => '2012-05-14')
+Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 1.1,  :date_adjusted => '2012-06-15')
+Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 1.0,  :date_adjusted => '2012-07-17')
+Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 1.1,  :date_adjusted => '2012-08-18')
+Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 0.8,  :date_adjusted => '2012-09-19')
+Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 0.5,  :date_adjusted => '2012-10-21')
+Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 0.1,  :date_adjusted => '2012-11-22')
+Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 0.2,  :date_adjusted => '2012-12-24')
+
+
+
+
+# ===================================================================================================================
 # COURSES
-# Delete all existing records
+# ===================================================================================================================
+
 Course.delete_all
 
-# Create new records
 Course.create(:name => "Elmgreen",:crest => "courses/elmgreen.jpg",:photo => "courses/elmgreen.jpg",:latitude => 53.387398,:longitude => -6.355505,:address => "Dunsink Lane, Castleknock, Dublin 15")
 Course.create(:name => "Headfort Old",:crest => "courses/headfort.jpg",:latitude => 53.723872,:longitude => -6.861017,:address => "Dublin Road, Kells, Co. Meath")
 Course.create(:name => "Headfort New",:crest => "courses/headfort.jpg",:latitude => 53.723872,:longitude => -6.861017,:address => "Dublin Road, Kells, Co. Meath")
@@ -137,57 +253,58 @@ Course.create(:name => "Beaverstown",:crest => "courses/beaverstown.jpg",:latitu
 Course.create(:name => "Hollystown (Red/Yellow)",:crest => "courses/hollystown.jpg",:latitude => 53.430909,:longitude => -6.376111,:address => "Tyrellstown, Dublin 15")
 
 
+# ===================================================================================================================
 # ROUNDS
-# Delete all existing records
+# ===================================================================================================================
+
 Round.delete_all
 
-# Seed the new records
-Round.create(:user_id =>1,:course_id => 7,:tee => 'white',:date_played => '2011-07-20')
-Round.create(:user_id =>2,:course_id => 1,:tee => 'blue',:date_played => '2011-07-23')
-Round.create(:user_id =>6,:course_id => 8,:tee => 'white',:date_played => '2011-10-27')
-Round.create(:user_id =>3,:course_id => 5,:tee => 'white',:date_played => '2011-06-14')
-Round.create(:user_id =>5,:course_id => 10,:tee => 'white',:date_played => '2011-10-05')
-Round.create(:user_id =>6,:course_id => 11,:tee => 'blue',:date_played => '2011-08-18')
-Round.create(:user_id =>2,:course_id => 12,:tee => 'white',:date_played => '2011-11-01')
-Round.create(:user_id =>1,:course_id => 3,:tee => 'yellow',:date_played => '2011-11-05')
-Round.create(:user_id =>1,:course_id => 7,:tee => 'green',:date_played => '2011-11-11')
-Round.create(:user_id =>4,:course_id => 7,:tee => 'green',:date_played => '2011-11-23')
-Round.create(:user_id =>4,:course_id => 13,:tee => 'white',:date_played => '2011-10-08')
-Round.create(:user_id =>7,:course_id => 7,:tee => 'green',:date_played => '2011-12-22')
-Round.create(:user_id =>3,:course_id => 12,:tee => 'white',:date_played => '2012-01-24')
-Round.create(:user_id =>5,:course_id => 3,:tee => 'yellow',:date_played => '2012-02-08')
-Round.create(:user_id =>6,:course_id => 12,:tee => 'green',:date_played => '2012-02-16')
-Round.create(:user_id =>2,:course_id => 14,:tee => 'yellow',:date_played => '2012-02-25')
-Round.create(:user_id =>3,:course_id => 15,:tee => 'green',:date_played => '2012-03-01')
-Round.create(:user_id =>4,:course_id => 12,:tee => 'green',:date_played => '2012-03-06')
-Round.create(:user_id =>7,:course_id => 12,:tee => 'green',:date_played => '2012-03-14')
-Round.create(:user_id =>6,:course_id => 17,:tee => 'white',:date_played => '2012-03-28')
-Round.create(:user_id =>5,:course_id => 8,:tee => 'white',:date_played => '2012-04-04')
-Round.create(:user_id =>4,:course_id => 8,:tee => 'white',:date_played => '2012-04-12')
-Round.create(:user_id =>3,:course_id => 18,:tee => 'green',:date_played => '2012-04-18')
-Round.create(:user_id =>2,:course_id => 10,:tee => 'white',:date_played => '2012-04-27')
-Round.create(:user_id =>1,:course_id => 7,:tee => 'green',:date_played => '2012-05-02')
-Round.create(:user_id =>7,:course_id => 2,:tee => 'yellow',:date_played => '2012-05-30')
-Round.create(:user_id =>1,:course_id => 7,:tee => 'green',:date_played => '2012-06-06')
-Round.create(:user_id =>2,:course_id => 7,:tee => 'green',:date_played => '2012-06-27')
-Round.create(:user_id =>3,:course_id => 12,:tee => 'green',:date_played => '2012-06-20')
-Round.create(:user_id =>4,:course_id => 19,:tee => 'yellow',:date_played => '2012-07-05')
-Round.create(:user_id =>5,:course_id => 20,:tee => 'yellow',:date_played => '2012-07-14')
-Round.create(:user_id =>6,:course_id => 12,:tee => 'green',:date_played => '2012-07-30')
-Round.create(:user_id =>7,:course_id => 8,:tee => 'white',:date_played => '2012-08-15')
-Round.create(:user_id =>6,:course_id => 12,:tee => 'white',:date_played => '2012-08-21')
-Round.create(:user_id =>5,:course_id => 19,:tee => 'yellow',:date_played => '2012-08-31')
-Round.create(:user_id =>4,:course_id => 7,:tee => 'green',:date_played => '2012-09-04')
-Round.create(:user_id =>3,:course_id => 7,:tee => 'green',:date_played => '2012-09-14')
-Round.create(:user_id =>2,:course_id => 7,:tee => 'green',:date_played => '2012-10-03')
-Round.create(:user_id =>1,:course_id => 8,:tee => 'white',:date_played => '2012-09-28')
-Round.create(:user_id =>2,:course_id => 12,:tee => 'green',:date_played => '2012-10-09')
-Round.create(:user_id =>4,:course_id => 21,:tee => 'yellow',:date_played => '2012-09-18')
-Round.create(:user_id =>6,:course_id => 12,:tee => 'green',:date_played => '2012-10-16')
-Round.create(:user_id =>1,:course_id => 18,:tee => 'green',:date_played => '2012-10-22')
-Round.create(:user_id =>3,:course_id => 12,:tee => 'green',:date_played => '2012-10-30')
-Round.create(:user_id =>5,:course_id => 19,:tee => 'yellow',:date_played => '2012-11-14')
-Round.create(:user_id =>7,:course_id => 7,:tee => 'green',:date_played => '2012-11-28')
+Round.create(:user_id =>1,  :course_id => 7,  :tee => 'white',  :date_played => '2011-07-20')
+Round.create(:user_id =>2,  :course_id => 1,  :tee => 'blue',   :date_played => '2011-07-23')
+Round.create(:user_id =>6,  :course_id => 8,  :tee => 'white',  :date_played => '2011-10-27')
+Round.create(:user_id =>3,  :course_id => 5,  :tee => 'white',  :date_played => '2011-06-14')
+Round.create(:user_id =>5,  :course_id => 10, :tee => 'white',  :date_played => '2011-10-05')
+Round.create(:user_id =>6,  :course_id => 11, :tee => 'blue',   :date_played => '2011-08-18')
+Round.create(:user_id =>2,  :course_id => 12, :tee => 'white',  :date_played => '2011-11-01')
+Round.create(:user_id =>1,  :course_id => 3,  :tee => 'yellow', :date_played => '2011-11-05')
+Round.create(:user_id =>1,  :course_id => 7,  :tee => 'green',  :date_played => '2011-11-11')
+Round.create(:user_id =>4,  :course_id => 7,  :tee => 'green',  :date_played => '2011-11-23')
+Round.create(:user_id =>4,  :course_id => 13, :tee => 'white',  :date_played => '2011-10-08')
+Round.create(:user_id =>7,  :course_id => 7,  :tee => 'green',  :date_played => '2011-12-22')
+Round.create(:user_id =>3,  :course_id => 12, :tee => 'white',  :date_played => '2012-01-24')
+Round.create(:user_id =>5,  :course_id => 3,  :tee => 'yellow', :date_played => '2012-02-08')
+Round.create(:user_id =>6,  :course_id => 12, :tee => 'green',  :date_played => '2012-02-16')
+Round.create(:user_id =>2,  :course_id => 14, :tee => 'yellow', :date_played => '2012-02-25')
+Round.create(:user_id =>3,  :course_id => 15, :tee => 'green',  :date_played => '2012-03-01')
+Round.create(:user_id =>4,  :course_id => 12, :tee => 'green',  :date_played => '2012-03-06')
+Round.create(:user_id =>7,  :course_id => 12, :tee => 'green',  :date_played => '2012-03-14')
+Round.create(:user_id =>6,  :course_id => 17, :tee => 'white',  :date_played => '2012-03-28')
+Round.create(:user_id =>5,  :course_id => 8,  :tee => 'white',  :date_played => '2012-04-04')
+Round.create(:user_id =>4,  :course_id => 8,  :tee => 'white',  :date_played => '2012-04-12')
+Round.create(:user_id =>3,  :course_id => 18, :tee => 'green',  :date_played => '2012-04-18')
+Round.create(:user_id =>2,  :course_id => 10, :tee => 'white',  :date_played => '2012-04-27')
+Round.create(:user_id =>1,  :course_id => 7,  :tee => 'green',  :date_played => '2012-05-02')
+Round.create(:user_id =>7,  :course_id => 2,  :tee => 'yellow', :date_played => '2012-05-30')
+Round.create(:user_id =>1,  :course_id => 7,  :tee => 'green',  :date_played => '2012-06-06')
+Round.create(:user_id =>2,  :course_id => 7,  :tee => 'green',  :date_played => '2012-06-27')
+Round.create(:user_id =>3,  :course_id => 12, :tee => 'green',  :date_played => '2012-06-20')
+Round.create(:user_id =>4,  :course_id => 19, :tee => 'yellow', :date_played => '2012-07-05')
+Round.create(:user_id =>5,  :course_id => 20, :tee => 'yellow', :date_played => '2012-07-14')
+Round.create(:user_id =>6,  :course_id => 12, :tee => 'green',  :date_played => '2012-07-30')
+Round.create(:user_id =>7,  :course_id => 8,  :tee => 'white',  :date_played => '2012-08-15')
+Round.create(:user_id =>6,  :course_id => 12, :tee => 'white',  :date_played => '2012-08-21')
+Round.create(:user_id =>5,  :course_id => 19, :tee => 'yellow', :date_played => '2012-08-31')
+Round.create(:user_id =>4,  :course_id => 7,  :tee => 'green',  :date_played => '2012-09-04')
+Round.create(:user_id =>3,  :course_id => 7,  :tee => 'green',  :date_played => '2012-09-14')
+Round.create(:user_id =>2,  :course_id => 7,  :tee => 'green',  :date_played => '2012-10-03')
+Round.create(:user_id =>1,  :course_id => 8,  :tee => 'white',  :date_played => '2012-09-28')
+Round.create(:user_id =>2,  :course_id => 12, :tee => 'green',  :date_played => '2012-10-09')
+Round.create(:user_id =>4,  :course_id => 21, :tee => 'yellow', :date_played => '2012-09-18')
+Round.create(:user_id =>6,  :course_id => 12, :tee => 'green',  :date_played => '2012-10-16')
+Round.create(:user_id =>1,  :course_id => 18, :tee => 'green',  :date_played => '2012-10-22')
+Round.create(:user_id =>3,  :course_id => 12, :tee => 'green',  :date_played => '2012-10-30')
+Round.create(:user_id =>5,  :course_id => 19, :tee => 'yellow', :date_played => '2012-11-14')
+Round.create(:user_id =>7,  :course_id => 7,  :tee => 'green',  :date_played => '2012-11-28')
 
 # Competition rounds
 Round.create(:user_id =>1,:course_id => 7,:tee => 'green',:date_played => '2013-01-01', :competition_id => 1)
@@ -199,16 +316,20 @@ Round.create(:user_id =>6,:course_id => 7,:tee => 'green',:date_played => '2013-
 Round.create(:user_id =>7,:course_id => 7,:tee => 'green',:date_played => '2013-01-01', :competition_id => 1)
 
 
-#COMPETITIONS
+# ===================================================================================================================
+# COMPETITIONS
+# ===================================================================================================================
+
 Competition.delete_all
 
 Competition.create(:course_id => 7, :competition_date => '2013-01-01', :css => 72)
 
 
 
-
+# ===================================================================================================================
 # POSTS
-# Delete all existing records
+# ===================================================================================================================
+
 Post.delete_all
 
 Post.create(
@@ -218,7 +339,6 @@ Post.create(
                   society members to interact with each other through posts and comments.  You will be able to upload
                   photos, videos and messages, which your colleagues can comment on. Keep it civil!"
 )
-
 Post.create(
     :user_id => 4,
     :title => "Carton House",
@@ -230,10 +350,9 @@ Post.create(
 )
 
 
-
-
+# ===================================================================================================================
 # COMMENTS
-# ========
+# ===================================================================================================================
 
 Comment.delete_all
 
@@ -246,16 +365,17 @@ Comment.create(:post_id => 1, :comment => "We'll look at implementing a 'like' f
 Comment.create(:post_id => 1, :comment => "That'll do!", :user_id => 2)
 Comment.create(:post_id => 2, :comment => "That is just stunning!", :user_id => 2)
 Comment.create(:post_id => 2, :comment => "^ What he said!", :user_id => 7)
-Comment.create(:post_id => 2, :comment => "We're you out today and didn't call me?", :user_id => 6)
+Comment.create(:post_id => 2, :comment => "Were you out today and didn't call me for a round?", :user_id => 6)
 Comment.create(:post_id => 2, :comment => "Eh, yeah...", :user_id => 4)
 
 
 
+# ===================================================================================================================
 # SCORECARDS
-# Delete all existing records
+# ===================================================================================================================
+
 Scorecard.delete_all
 
-# Create new records
 Scorecard.create(:round_id => 1, :hole_id => 1, :strokes => 6, :putts => 2)
 Scorecard.create(:round_id => 1, :hole_id => 2, :strokes => 6, :putts => 2)
 Scorecard.create(:round_id => 1, :hole_id => 3, :strokes => 5, :putts => 3)
@@ -407,7 +527,11 @@ Scorecard.create(:round_id => 9, :hole_id => 202, :strokes => 4, :putts => 2)
 Scorecard.create(:round_id => 9, :hole_id => 203, :strokes => 10, :putts => 1)
 Scorecard.create(:round_id => 9, :hole_id => 204, :strokes => 4, :putts => 2)
 Scorecard.create(:round_id => 9, :hole_id => 205, :strokes => 8, :putts => 2)
-Scorecard.create(:round_id => 9, :hole_id => 206, :strokes => 8, :putts => 2)
+Scorecard.create(:round_id => 9, :hole_id => 206, :strokes => nil, :putts => nil)
+Scorecard.create(:round_id => 9, :hole_id => 207, :strokes => nil, :putts => nil)
+Scorecard.create(:round_id => 9, :hole_id => 208, :strokes => nil, :putts => nil)
+Scorecard.create(:round_id => 9, :hole_id => 209, :strokes => nil, :putts => nil)
+Scorecard.create(:round_id => 9, :hole_id => 210, :strokes => nil, :putts => nil)
 Scorecard.create(:round_id => 10, :hole_id => 193, :strokes => 7, :putts => 4)
 Scorecard.create(:round_id => 10, :hole_id => 194, :strokes => nil, :putts => nil)
 Scorecard.create(:round_id => 10, :hole_id => 195, :strokes => 4, :putts => 3)
@@ -1062,6 +1186,7 @@ Scorecard.create(:round_id => 46, :hole_id => 209, :strokes => 7, :putts => 1)
 Scorecard.create(:round_id => 46, :hole_id => 210, :strokes => 3, :putts => 1)
 
 # Competition rounds
+# ------------------
 # user_id = 1
 Scorecard.create(:round_id => 47, :hole_id => 193, :strokes => 5, :putts => 3)
 Scorecard.create(:round_id => 47, :hole_id => 194, :strokes => 6, :putts => 2)

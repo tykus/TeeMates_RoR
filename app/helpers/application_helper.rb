@@ -43,4 +43,12 @@ module ApplicationHelper
     return hcp.round
   end
 
+
+  # disabled(competition)
+  # =====================
+  # Renders button with disabled style is competition.hcp_adjusted is true
+  def disabled(competition)
+    return "disabled" if competition.hcp_adjusted
+  end
+
 end
