@@ -3,10 +3,15 @@ class UsersController < ApplicationController
   # Only an admin user should be able to view a full list of users
   before_filter :admin_only, :except => [:show, :edit, :update]
 
+
+
   # GET /users
   # GET /users.json
   def index
-    @users = User.order('role', 'surname') # orders the list of users by role first, then surname
+    #@users = User.order('role', 'surname') # orders the list of users by role first, then surname
+    @users = User.paginate(:page => params[:page])
+    @user = User.new # for form
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }
@@ -49,10 +54,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        # Send an email to the newly created user along with login information
-        UserMailer.welcome_email(@user).deliver
-
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to users_path, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -63,18 +65,6 @@ class UsersController < ApplicationController
 
   # PUT /users/1
   # PUT /users/1.json
-#  def update
-#    @user = User.find(params[:id])
-#
-#    respond_to do |format|
-#      if @user.update_attributes(params[:user])
-#        format.html { redirect_to wall_path, notice: 'User was successfully updated.' }
-#      else
-#        format.html { render action: "edit", notice: 'Failed to update user' }
-#      end
-#    end
-#  end
-
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])

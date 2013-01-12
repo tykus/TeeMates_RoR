@@ -15,10 +15,6 @@ class CoursesController < ApplicationController
   def show
     @course = Course.find(params[:id])
 
-    # Provide distinct tees to the view
-    @tees = @course.holes.select("DISTINCT tee")
-
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @course }

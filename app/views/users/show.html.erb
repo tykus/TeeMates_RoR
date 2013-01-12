@@ -13,7 +13,7 @@
     -------------------------------------------------------------------->
     <div class="span2 profile">
       <%= image_tag(@user.avatar.url, :class => "img-polaroid")%>
-      <h3><%= @user.firstname + " " + @user.surname %></h3>
+      <h3><%= @user.fullname %></h3>
       <p><%= @user.email %></p>
       <p>
         Current handicap:<br />

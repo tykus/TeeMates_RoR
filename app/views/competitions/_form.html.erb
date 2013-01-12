@@ -1,4 +1,31 @@
+
+
+
+
 <%= form_for @competition, :html => { :class => 'form-horizontal' } do |f| %>
+    <% if @competition.errors.any? %>
+      <div class="alert alert-error" xmlns="http://www.w3.org/1999/html">
+        <p><%= pluralize(@competition.errors.count, "error") %> prohibited this post from being saved:</p>
+        <ul>
+          <% @competition.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field', :placeholder => "Competition Title" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :message, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :message, :class => 'text_field wide', :placeholder => "Competition Message" %>
+    </div>
+  </div>
+
   <div class="control-group">
     <%= f.label :competition_date, :class => 'control-label' %>
     <div class="controls">

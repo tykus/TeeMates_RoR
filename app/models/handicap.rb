@@ -6,7 +6,9 @@ class Handicap < ActiveRecord::Base
   # ===================================================================================================================
 
   belongs_to :user
-  belongs_to :competition # NB this implies that the competition has resulted in the adjustment to the handicap
+  belongs_to :competition
+
+
 
 
   # ===================================================================================================================
@@ -27,5 +29,7 @@ class Handicap < ActiveRecord::Base
 
   # Handicap at a given date
   scope :on_this_date, lambda{ |date| where("date_adjusted <= ?", date) } # NEED THIS TO RETURN HANDICAP CORRESPONDING TO MAX(date_adjusted)
+
+
 
 end

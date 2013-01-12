@@ -3,7 +3,7 @@ ActionMailer::Base.smtp_settings = {
     :port                 => 587,
     :domain               => "TeeMates.com",
     :user_name            => "bosullivan.meath@gmail.com",
-    :password             => "p34rlj4m",
+    :password             => "secret",
     :authentication       => "plain",
     :enable_starttls_auto => true
 }

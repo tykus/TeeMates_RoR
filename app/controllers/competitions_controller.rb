@@ -2,11 +2,10 @@ class CompetitionsController < ApplicationController
   # GET /competitions
   # GET /competitions.json
   def index
-    @competitions = Competition.all
+    @competitions = Competition.order("competition_date DESC")
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @competitions }
     end
   end
 
@@ -17,7 +16,6 @@ class CompetitionsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @competition }
     end
   end
 
@@ -29,7 +27,6 @@ class CompetitionsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @competition }
     end
   end
 
@@ -44,14 +41,16 @@ class CompetitionsController < ApplicationController
   # POST /competitions.json
   def create
     @competition = Competition.new(params[:competition])
+    @courses = Course.all
 
     respond_to do |format|
       if @competition.save
-        format.html { redirect_to @competition, notice: 'Competition was successfully created.' }
-        format.json { render json: @competition, status: :created, location: @competition }
+        # Email all of the users to inform them about the competition
+        UserMailer.new_competition(@competition).deliver
+
+        format.html { redirect_to competitions_path, notice: 'Competition was successfully created.' }
       else
         format.html { render action: "new" }
-        format.json { render json: @competition.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -60,16 +59,13 @@ class CompetitionsController < ApplicationController
   # PUT /competitions/1.json
   def update
     @competition = Competition.find(params[:id])
-    @competition.change_course_id
-
+    @courses = Course.all
 
     respond_to do |format|
       if @competition.update_attributes(params[:competition])
         format.html { redirect_to @competition, notice: 'Competition was successfully updated.' }
-        format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @competition.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -82,20 +78,22 @@ class CompetitionsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to competitions_path }
-      format.json { head :no_content }
     end
   end
 
   def admin
     @competition = Competition.find(params[:id])
     @competition.adjust_handicap
-    @competition.hcp_adjusted=true
-    @competition.save
     respond_to do |format|
       format.html { redirect_to competitions_path,
-                                notice: "Handicaps adjusted for #{@competition.course.name} on #{@competition.competition_date}" }
+                    notice: "Handicaps adjusted for competitions at #{@competition.course.name}" }
       format.json { head :no_content }
     end
   end
+  
+  def last_result
+  	@competition = Competition.last
+  end
+  
 
 end

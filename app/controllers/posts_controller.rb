@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+
   # GET /posts
   # GET /posts.json
   def index
@@ -28,7 +29,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @post }
+      format.js   # new.js.erb
     end
   end
 
@@ -40,7 +41,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(params[:post])
+    @post = current_user.posts.new(params[:post])
 
     respond_to do |format|
       if @post.save

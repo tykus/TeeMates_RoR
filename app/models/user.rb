@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  attr_accessible :avatar, :email, :firstname, :password, :password_confirmation, :role, :surname, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at
-
+  attr_accessible :email, :firstname, :password, :password_confirmation, :role, :surname,
+                  :avatar, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at
 
   # ===================================================================================================================
   # ATTACHMENTS
@@ -15,25 +15,24 @@ class User < ActiveRecord::Base
                         :micro => "-gravity north -thumbnail 50x50^ -extent 50x50"
                     }
 
-
+  # ===================================================================================================================
+  # PAGINATION
+  # ===================================================================================================================
+  self.per_page = 6
 
   # ===================================================================================================================
   # ASSOCIATIONS
   # ===================================================================================================================
   has_many :posts
-  has_many :comments, :through => :posts
+  has_many :comments
   has_many :rounds
-  has_many :handicaps # the most important one is the last!
-
-
+  has_many :handicaps
 
 
   # ===================================================================================================================
   # AUTHENTICATION
   # ===================================================================================================================
   has_secure_password
-
-
 
 
   # ===================================================================================================================
@@ -48,7 +47,6 @@ class User < ActiveRecord::Base
             :confirmation => true,
             :length => {:within => 5..20},
             :presence => true
-
 
 
   # ===================================================================================================================
@@ -83,6 +81,22 @@ class User < ActiveRecord::Base
     HandicapCategory.for_hcp(handicap_on(date))
   end
 
+
+
+  # fullname
+  # --------
+  # Provides a virtual attribute to keep views clean where user's fullname is being rendered
+  def fullname
+    firstname + " " + surname
+  end
+
+
+
+  private
+
+  def generate_random_password
+    @rnd_passwd ||= (0...8).map{65.+(rand(52)).chr}.join
+  end
 
 
 end

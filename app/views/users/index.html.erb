@@ -1,51 +1,53 @@
 <%- model_class = User -%>
 <div class="row">
-  <div class="span12">
+  <div class="page-header">
+    <h1>Society Members</h1>
+  </div>
+  <div class="span6">
 
-        <div class="page-header">
-          <h1>Society Members</h1>
-        </div>
-        <table class="table table-striped">
-          <thead>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Avatar</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <% if user.role == 'admin' %>
+            <tr class="info">
+          <% else %>
             <tr>
-              <th>Avatar</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @users.each do |user| %>
-              <% if user.role == 'admin' %>
-                <tr class="info">
+          <% end %>
+            <td>
+              <% if user.avatar.exists? %>
+                <%= image_tag user.avatar.url(:micro), :class => "img-polaroid center" %>
               <% else %>
-                <tr>
+                <%= image_tag 'user.png', :class => 'img-polaroid center micro' %>  <!-- displaying the default user image -->
               <% end %>
-                <td>
-                  <% if user.avatar.exists? %>
-                    <%= image_tag user.avatar.url(:micro), :class => "img-polaroid center" %>
-                  <% else %>
-                    <%= image_tag 'user.png', :class => 'img-polaroid center micro' %>  <!-- displaying the default user image -->
-                  <% end %>
-                </td>
-                <td><%= user.firstname %> <%= user.surname %></td>
-                <td><%= user.email %></td>
-                <td>
-                  <%= link_to 'Profile', user_path(user), :class => 'btn' %>
-                  <% if is_admin %>
-                  <% end %>
-                </td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-
-
-        <% if is_admin %>
-            <%= link_to 'New User', new_user_path, :class => 'btn btn-primary' %>
+            </td>
+            <td><%= user.firstname %> <%= user.surname %></td>
+            <td><%= user.email %></td>
+            <td>
+              <%= link_to 'Profile', user_path(user), :class => 'btn' %>
+              <% if is_admin %>
+              <% end %>
+            </td>
+          </tr>
         <% end %>
-
-
-
+      </tbody>
+    </table>
+    <%= will_paginate %>
+  </div>  
+  <div class="span6">  
+    <% if is_admin %>
+      <!-- render the new user form -->
+      <div class="well">
+        <h3>New User</h3>
+        <%= render :partial => 'form' %>
+      </div>
+    <% end %>
   </div>
 </div>

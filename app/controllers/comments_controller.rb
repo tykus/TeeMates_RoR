@@ -3,10 +3,13 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.new(params[:comment])
-    @comment.save
+    @comment = current_user.comments.new(params[:comment])
 
-    redirect_to wall_path
+    if @comment.save
+        redirect_to wall_path, :notice => "Comment was added successfully"
+    else
+      redirect_to wall_path, :alert => "Failed to add comment"
+    end
   end
 
   def destroy
@@ -29,7 +32,7 @@ class CommentsController < ApplicationController
       if @comment.update_attributes(params[:comment])
         format.html { redirect_to wall_path, notice: 'Comment was successfully updated.' }
       else
-        format.html { render action: "edit", notice: 'Failed to update comment' }
+        format.html { render action: "edit", alert: 'Failed to update comment' }
       end
     end
   end

@@ -1,6 +1,7 @@
 TeeMates::Application.routes.draw do
 
 
+  resources :signups
   resources :competitions
   resources :handicaps
   resources :comments

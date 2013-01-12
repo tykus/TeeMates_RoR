@@ -4,9 +4,10 @@ class Course < ActiveRecord::Base
 # ===================================================================================================================
 # ASSOCIATIONS
 # ===================================================================================================================
-  has_many :holes, :foreign_key => :course_id, :dependent => :destroy
-  has_many :rounds, :foreign_key => :course_id, :dependent => :destroy
+  has_many :holes, :dependent => :destroy
+  has_many :rounds, :dependent => :destroy
   has_many :competitions, :dependent => :destroy
+
 
 
 # ===================================================================================================================
@@ -31,4 +32,25 @@ class Course < ActiveRecord::Base
     holes.where("tee=?", tee).each { |hole| par += hole.par unless hole.par.nil? }
     return par
   end
+
+
+  # tees
+  # ----
+  # Returns an array of the distinct tee colors for a course
+  def tees
+    tee_colors = []
+    tee = holes.select("DISTINCT tee")
+    tee.each { |t| tee_colors << "#{t.tee}" }
+    tee_colors
+  end
+
+
+  # tee(tee)
+  # ========
+  # Returns the holes associated with a particular tee color
+  def tee(color)
+    holes.where("tee = ?", color)
+  end
+
+
 end

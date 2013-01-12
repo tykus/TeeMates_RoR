@@ -37,7 +37,7 @@ module ApplicationHelper
 
   # hcp_to_i(Obj)
   # =============
-  # Takes a handicap object and returns the handicap number rounded to the nerest integer
+  # Takes a handicap object and returns the handicap number rounded to the nearest integer
   def hcp_to_i(handicap)
     hcp = handicap.handicap
     return hcp.round
@@ -49,6 +49,23 @@ module ApplicationHelper
   # Renders button with disabled style is competition.hcp_adjusted is true
   def disabled(competition)
     return "disabled" if competition.hcp_adjusted
+  end
+
+
+
+  # next_competition
+  # ================
+  # Returns the next competition
+  def next_competition
+    Competition.where("competition_date > ?", Time.now).order("competition_date").first
+  end
+
+
+  # prev_competition
+  # ================
+  # Returns the most recent competition
+  def prev_competition
+    Competition.where("competition_date < ?", Time.now).order("competition_date").last
   end
 
 end

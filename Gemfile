@@ -10,7 +10,6 @@ gem 'bootstrap-will_paginate'       # Pagination working with Twitter Bootstrap 
 #gem 'thin'                          # use thin webserver instead of webbrick
 gem "mail"
 
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

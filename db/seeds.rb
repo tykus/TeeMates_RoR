@@ -32,7 +32,7 @@ User.delete_all
 User.create(
     :firstname => "Bubba",
     :surname => "Watson",
-    :email => "bubba@golf.com",
+    :email => "bubba@tykus.ie",
     :password => "bubba",
     :role => "admin",
     :avatar_file_name => "bubba.jpg",
@@ -43,7 +43,7 @@ User.create(
 User.create(
     :firstname => "Tiger",
     :surname => "Woods",
-    :email => "tiger@golf.com",
+    :email => "tiger@tykus.ie",
     :password => "tiger",
     :avatar_file_name => "tiger.jpg",
     :avatar_content_type => "image/jpeg",
@@ -53,7 +53,7 @@ User.create(
 User.create(
     :firstname => "Rory",
     :surname => "McIlroy",
-    :email => "rory@golf.com",
+    :email => "rory@tykus.ie",
     :password => "rory1",
     :avatar_file_name => "rory.jpg",
     :avatar_content_type => "image/jpeg",
@@ -63,7 +63,7 @@ User.create(
 User.create(
     :firstname => "Darren",
     :surname => "Clarke",
-    :email => "darren@golf.com",
+    :email => "darren@tykus.ie",
     :password => "darren",
     :avatar_file_name => "darren.jpg",
     :avatar_content_type => "image/jpeg",
@@ -73,7 +73,7 @@ User.create(
 User.create(
     :firstname => "Luke",
     :surname => "Donald",
-    :email => "luke@golf.com",
+    :email => "luke@tykus.ie",
     :password => "luke1",
     :avatar_file_name => "luke.jpg",
     :avatar_content_type => "image/jpeg",
@@ -83,7 +83,7 @@ User.create(
 User.create(
     :firstname => "Padraig",
     :surname => "Harrington",
-    :email => "padraig@golf.com",
+    :email => "padraig@tykus.ie",
     :password => "padraig",
     :avatar_file_name => "padraig.jpg",
     :avatar_content_type => "image/jpeg",
@@ -93,7 +93,7 @@ User.create(
 User.create(
     :firstname => "Adam",
     :surname => "Scott",
-    :email => "adam@golf.com",
+    :email => "adam@tykus.ie",
     :password => "adam1",
     :avatar_file_name => "adam.jpg",
     :avatar_content_type => "image/jpeg",
@@ -108,118 +108,118 @@ User.create(
 
 Handicap.delete_all
 
-Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 10.2, :date_adjusted => '2011-04-26')
-Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 9.8,  :date_adjusted => '2011-05-28')
-Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 8.9,  :date_adjusted => '2011-06-29')
-Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 9.0,  :date_adjusted => '2011-07-31')
-Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 9.1,  :date_adjusted => '2011-09-01')
-Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 9.0,  :date_adjusted => '2011-10-03')
-Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 8.7,  :date_adjusted => '2012-03-11')
-Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 7.8,  :date_adjusted => '2012-04-12')
-Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 7.8,  :date_adjusted => '2012-05-14')
-Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 7.9,  :date_adjusted => '2012-06-15')
-Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 8.0,  :date_adjusted => '2012-07-17')
-Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 8.1,  :date_adjusted => '2012-08-18')
-Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 8.2,  :date_adjusted => '2012-09-19')
-Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 8.3,  :date_adjusted => '2012-10-21')
-Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 8.4,  :date_adjusted => '2012-11-22')
-Handicap.create(:user_id => 1,  :competition_id => 0,  :handicap => 8.5,  :date_adjusted => '2012-12-24')
-Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 15.0, :date_adjusted => '2011-04-26')
-Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 14.0, :date_adjusted => '2011-05-28')
-Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 14.1, :date_adjusted => '2011-06-29')
-Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 14.2, :date_adjusted => '2011-07-31')
-Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 13.8, :date_adjusted => '2011-09-01')
-Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 13.7, :date_adjusted => '2011-10-03')
-Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 12.9, :date_adjusted => '2012-03-11')
-Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 13.0, :date_adjusted => '2012-04-12')
-Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 13.1, :date_adjusted => '2012-05-14')
-Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 13.2, :date_adjusted => '2012-06-15')
-Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 12.9, :date_adjusted => '2012-07-17')
-Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 12.9, :date_adjusted => '2012-08-18')
-Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 12.5, :date_adjusted => '2012-09-19')
-Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 12.8, :date_adjusted => '2012-10-21')
-Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 12.6, :date_adjusted => '2012-11-22')
-Handicap.create(:user_id => 2,  :competition_id => 0,  :handicap => 12.7, :date_adjusted => '2012-12-24')
-Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 24.6, :date_adjusted => '2011-04-26')
-Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 24.7, :date_adjusted => '2011-05-28')
-Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 24.8, :date_adjusted => '2011-06-29')
-Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 24.9, :date_adjusted => '2011-07-31')
-Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 24.8, :date_adjusted => '2011-09-01')
-Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 24.9, :date_adjusted => '2011-10-03')
-Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 25.0, :date_adjusted => '2012-03-11')
-Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 25.1, :date_adjusted => '2012-04-12')
-Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 24.4, :date_adjusted => '2012-05-14')
-Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 23.1, :date_adjusted => '2012-06-15')
-Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 23.2, :date_adjusted => '2012-07-17')
-Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 23.3, :date_adjusted => '2012-08-18')
-Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 23.4, :date_adjusted => '2012-09-19')
-Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 23.5, :date_adjusted => '2012-10-21')
-Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 23.5, :date_adjusted => '2012-11-22')
-Handicap.create(:user_id => 3,  :competition_id => 0,  :handicap => 23.5, :date_adjusted => '2012-12-24')
-Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 16.2, :date_adjusted => '2011-04-26')
-Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.3, :date_adjusted => '2011-05-28')
-Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.4, :date_adjusted => '2011-06-29')
-Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.2, :date_adjusted => '2011-07-31')
-Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.0, :date_adjusted => '2011-09-01')
-Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.1, :date_adjusted => '2011-10-03')
-Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.2, :date_adjusted => '2012-03-11')
-Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.0, :date_adjusted => '2012-04-12')
-Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.0, :date_adjusted => '2012-05-14')
-Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.0, :date_adjusted => '2012-06-15')
-Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 14.8, :date_adjusted => '2012-07-17')
-Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 14.9, :date_adjusted => '2012-08-18')
-Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.0, :date_adjusted => '2012-09-19')
-Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.0, :date_adjusted => '2012-10-21')
-Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.1, :date_adjusted => '2012-11-22')
-Handicap.create(:user_id => 4,  :competition_id => 0,  :handicap => 15.2, :date_adjusted => '2012-12-24')
-Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 6.0,  :date_adjusted => '2011-04-26')
-Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 6.1,  :date_adjusted => '2011-05-28')
-Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.9,  :date_adjusted => '2011-06-29')
-Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.8,  :date_adjusted => '2011-07-31')
-Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.7,  :date_adjusted => '2011-09-01')
-Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.5,  :date_adjusted => '2011-10-03')
-Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.5,  :date_adjusted => '2012-03-11')
-Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.5,  :date_adjusted => '2012-04-12')
-Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.2,  :date_adjusted => '2012-05-14')
-Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.3,  :date_adjusted => '2012-06-15')
-Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.3,  :date_adjusted => '2012-07-17')
-Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.1,  :date_adjusted => '2012-08-18')
-Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.1,  :date_adjusted => '2012-09-19')
-Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.1,  :date_adjusted => '2012-10-21')
-Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 5.2,  :date_adjusted => '2012-11-22')
-Handicap.create(:user_id => 5,  :competition_id => 0,  :handicap => 4.9,  :date_adjusted => '2012-12-24')
-Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 4.9,  :date_adjusted => '2011-04-26')
-Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 4.8,  :date_adjusted => '2011-05-28')
-Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 4.6,  :date_adjusted => '2011-06-29')
-Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 4.2,  :date_adjusted => '2011-07-31')
-Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 4.3,  :date_adjusted => '2011-09-01')
-Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 3.5,  :date_adjusted => '2011-10-03')
-Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 3.5,  :date_adjusted => '2012-03-11')
-Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 3.2,  :date_adjusted => '2012-04-12')
-Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 3.1,  :date_adjusted => '2012-05-14')
-Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 3.0,  :date_adjusted => '2012-06-15')
-Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 2.5,  :date_adjusted => '2012-07-17')
-Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 2.0,  :date_adjusted => '2012-08-18')
-Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 2.1,  :date_adjusted => '2012-09-19')
-Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 1.5,  :date_adjusted => '2012-10-21')
-Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 1.1,  :date_adjusted => '2012-11-22')
-Handicap.create(:user_id => 6,  :competition_id => 0,  :handicap => 1.0,  :date_adjusted => '2012-12-24')
-Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 0.5,  :date_adjusted => '2011-04-26')
-Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 0.6,  :date_adjusted => '2011-05-28')
-Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 0.7,  :date_adjusted => '2011-06-29')
-Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 0.8,  :date_adjusted => '2011-07-31')
-Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 0.9,  :date_adjusted => '2011-09-01')
-Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 1.0,  :date_adjusted => '2011-10-03')
-Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 1.1,  :date_adjusted => '2012-03-11')
-Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 1.2,  :date_adjusted => '2012-04-12')
-Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 1.2,  :date_adjusted => '2012-05-14')
-Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 1.1,  :date_adjusted => '2012-06-15')
-Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 1.0,  :date_adjusted => '2012-07-17')
-Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 1.1,  :date_adjusted => '2012-08-18')
-Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 0.8,  :date_adjusted => '2012-09-19')
-Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 0.5,  :date_adjusted => '2012-10-21')
-Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 0.1,  :date_adjusted => '2012-11-22')
-Handicap.create(:user_id => 7,  :competition_id => 0,  :handicap => 0.2,  :date_adjusted => '2012-12-24')
+Handicap.create(:user_id => 1,  :competition_id => nil,  :handicap => 10.2, :date_adjusted => '2011-04-26')
+Handicap.create(:user_id => 1,  :competition_id => nil,  :handicap => 9.8,  :date_adjusted => '2011-05-28')
+Handicap.create(:user_id => 1,  :competition_id => nil,  :handicap => 8.9,  :date_adjusted => '2011-06-29')
+Handicap.create(:user_id => 1,  :competition_id => nil,  :handicap => 9.0,  :date_adjusted => '2011-07-31')
+Handicap.create(:user_id => 1,  :competition_id => nil,  :handicap => 9.1,  :date_adjusted => '2011-09-01')
+Handicap.create(:user_id => 1,  :competition_id => nil,  :handicap => 9.0,  :date_adjusted => '2011-10-03')
+Handicap.create(:user_id => 1,  :competition_id => nil,  :handicap => 8.7,  :date_adjusted => '2012-03-11')
+Handicap.create(:user_id => 1,  :competition_id => nil,  :handicap => 7.8,  :date_adjusted => '2012-04-12')
+Handicap.create(:user_id => 1,  :competition_id => nil,  :handicap => 7.8,  :date_adjusted => '2012-05-14')
+Handicap.create(:user_id => 1,  :competition_id => nil,  :handicap => 7.9,  :date_adjusted => '2012-06-15')
+Handicap.create(:user_id => 1,  :competition_id => nil,  :handicap => 8.0,  :date_adjusted => '2012-07-17')
+Handicap.create(:user_id => 1,  :competition_id => nil,  :handicap => 8.1,  :date_adjusted => '2012-08-18')
+Handicap.create(:user_id => 1,  :competition_id => nil,  :handicap => 8.2,  :date_adjusted => '2012-09-19')
+Handicap.create(:user_id => 1,  :competition_id => nil,  :handicap => 8.3,  :date_adjusted => '2012-10-21')
+Handicap.create(:user_id => 1,  :competition_id => nil,  :handicap => 8.4,  :date_adjusted => '2012-11-22')
+Handicap.create(:user_id => 1,  :competition_id => nil,  :handicap => 8.5,  :date_adjusted => '2012-12-24')
+Handicap.create(:user_id => 2,  :competition_id => nil,  :handicap => 15.0, :date_adjusted => '2011-04-26')
+Handicap.create(:user_id => 2,  :competition_id => nil,  :handicap => 14.0, :date_adjusted => '2011-05-28')
+Handicap.create(:user_id => 2,  :competition_id => nil,  :handicap => 14.1, :date_adjusted => '2011-06-29')
+Handicap.create(:user_id => 2,  :competition_id => nil,  :handicap => 14.2, :date_adjusted => '2011-07-31')
+Handicap.create(:user_id => 2,  :competition_id => nil,  :handicap => 13.8, :date_adjusted => '2011-09-01')
+Handicap.create(:user_id => 2,  :competition_id => nil,  :handicap => 13.7, :date_adjusted => '2011-10-03')
+Handicap.create(:user_id => 2,  :competition_id => nil,  :handicap => 12.9, :date_adjusted => '2012-03-11')
+Handicap.create(:user_id => 2,  :competition_id => nil,  :handicap => 13.0, :date_adjusted => '2012-04-12')
+Handicap.create(:user_id => 2,  :competition_id => nil,  :handicap => 13.1, :date_adjusted => '2012-05-14')
+Handicap.create(:user_id => 2,  :competition_id => nil,  :handicap => 13.2, :date_adjusted => '2012-06-15')
+Handicap.create(:user_id => 2,  :competition_id => nil,  :handicap => 12.9, :date_adjusted => '2012-07-17')
+Handicap.create(:user_id => 2,  :competition_id => nil,  :handicap => 12.9, :date_adjusted => '2012-08-18')
+Handicap.create(:user_id => 2,  :competition_id => nil,  :handicap => 12.5, :date_adjusted => '2012-09-19')
+Handicap.create(:user_id => 2,  :competition_id => nil,  :handicap => 12.8, :date_adjusted => '2012-10-21')
+Handicap.create(:user_id => 2,  :competition_id => nil,  :handicap => 12.6, :date_adjusted => '2012-11-22')
+Handicap.create(:user_id => 2,  :competition_id => nil,  :handicap => 12.7, :date_adjusted => '2012-12-24')
+Handicap.create(:user_id => 3,  :competition_id => nil,  :handicap => 24.6, :date_adjusted => '2011-04-26')
+Handicap.create(:user_id => 3,  :competition_id => nil,  :handicap => 24.7, :date_adjusted => '2011-05-28')
+Handicap.create(:user_id => 3,  :competition_id => nil,  :handicap => 24.8, :date_adjusted => '2011-06-29')
+Handicap.create(:user_id => 3,  :competition_id => nil,  :handicap => 24.9, :date_adjusted => '2011-07-31')
+Handicap.create(:user_id => 3,  :competition_id => nil,  :handicap => 24.8, :date_adjusted => '2011-09-01')
+Handicap.create(:user_id => 3,  :competition_id => nil,  :handicap => 24.9, :date_adjusted => '2011-10-03')
+Handicap.create(:user_id => 3,  :competition_id => nil,  :handicap => 25.0, :date_adjusted => '2012-03-11')
+Handicap.create(:user_id => 3,  :competition_id => nil,  :handicap => 25.1, :date_adjusted => '2012-04-12')
+Handicap.create(:user_id => 3,  :competition_id => nil,  :handicap => 24.4, :date_adjusted => '2012-05-14')
+Handicap.create(:user_id => 3,  :competition_id => nil,  :handicap => 23.1, :date_adjusted => '2012-06-15')
+Handicap.create(:user_id => 3,  :competition_id => nil,  :handicap => 23.2, :date_adjusted => '2012-07-17')
+Handicap.create(:user_id => 3,  :competition_id => nil,  :handicap => 23.3, :date_adjusted => '2012-08-18')
+Handicap.create(:user_id => 3,  :competition_id => nil,  :handicap => 23.4, :date_adjusted => '2012-09-19')
+Handicap.create(:user_id => 3,  :competition_id => nil,  :handicap => 23.5, :date_adjusted => '2012-10-21')
+Handicap.create(:user_id => 3,  :competition_id => nil,  :handicap => 23.5, :date_adjusted => '2012-11-22')
+Handicap.create(:user_id => 3,  :competition_id => nil,  :handicap => 23.5, :date_adjusted => '2012-12-24')
+Handicap.create(:user_id => 4,  :competition_id => nil,  :handicap => 16.2, :date_adjusted => '2011-04-26')
+Handicap.create(:user_id => 4,  :competition_id => nil,  :handicap => 15.3, :date_adjusted => '2011-05-28')
+Handicap.create(:user_id => 4,  :competition_id => nil,  :handicap => 15.4, :date_adjusted => '2011-06-29')
+Handicap.create(:user_id => 4,  :competition_id => nil,  :handicap => 15.2, :date_adjusted => '2011-07-31')
+Handicap.create(:user_id => 4,  :competition_id => nil,  :handicap => 15.0, :date_adjusted => '2011-09-01')
+Handicap.create(:user_id => 4,  :competition_id => nil,  :handicap => 15.1, :date_adjusted => '2011-10-03')
+Handicap.create(:user_id => 4,  :competition_id => nil,  :handicap => 15.2, :date_adjusted => '2012-03-11')
+Handicap.create(:user_id => 4,  :competition_id => nil,  :handicap => 15.0, :date_adjusted => '2012-04-12')
+Handicap.create(:user_id => 4,  :competition_id => nil,  :handicap => 15.0, :date_adjusted => '2012-05-14')
+Handicap.create(:user_id => 4,  :competition_id => nil,  :handicap => 15.0, :date_adjusted => '2012-06-15')
+Handicap.create(:user_id => 4,  :competition_id => nil,  :handicap => 14.8, :date_adjusted => '2012-07-17')
+Handicap.create(:user_id => 4,  :competition_id => nil,  :handicap => 14.9, :date_adjusted => '2012-08-18')
+Handicap.create(:user_id => 4,  :competition_id => nil,  :handicap => 15.0, :date_adjusted => '2012-09-19')
+Handicap.create(:user_id => 4,  :competition_id => nil,  :handicap => 15.0, :date_adjusted => '2012-10-21')
+Handicap.create(:user_id => 4,  :competition_id => nil,  :handicap => 15.1, :date_adjusted => '2012-11-22')
+Handicap.create(:user_id => 4,  :competition_id => nil,  :handicap => 15.2, :date_adjusted => '2012-12-24')
+Handicap.create(:user_id => 5,  :competition_id => nil,  :handicap => 6.0,  :date_adjusted => '2011-04-26')
+Handicap.create(:user_id => 5,  :competition_id => nil,  :handicap => 6.1,  :date_adjusted => '2011-05-28')
+Handicap.create(:user_id => 5,  :competition_id => nil,  :handicap => 5.9,  :date_adjusted => '2011-06-29')
+Handicap.create(:user_id => 5,  :competition_id => nil,  :handicap => 5.8,  :date_adjusted => '2011-07-31')
+Handicap.create(:user_id => 5,  :competition_id => nil,  :handicap => 5.7,  :date_adjusted => '2011-09-01')
+Handicap.create(:user_id => 5,  :competition_id => nil,  :handicap => 5.5,  :date_adjusted => '2011-10-03')
+Handicap.create(:user_id => 5,  :competition_id => nil,  :handicap => 5.5,  :date_adjusted => '2012-03-11')
+Handicap.create(:user_id => 5,  :competition_id => nil,  :handicap => 5.5,  :date_adjusted => '2012-04-12')
+Handicap.create(:user_id => 5,  :competition_id => nil,  :handicap => 5.2,  :date_adjusted => '2012-05-14')
+Handicap.create(:user_id => 5,  :competition_id => nil,  :handicap => 5.3,  :date_adjusted => '2012-06-15')
+Handicap.create(:user_id => 5,  :competition_id => nil,  :handicap => 5.3,  :date_adjusted => '2012-07-17')
+Handicap.create(:user_id => 5,  :competition_id => nil,  :handicap => 5.1,  :date_adjusted => '2012-08-18')
+Handicap.create(:user_id => 5,  :competition_id => nil,  :handicap => 5.1,  :date_adjusted => '2012-09-19')
+Handicap.create(:user_id => 5,  :competition_id => nil,  :handicap => 5.1,  :date_adjusted => '2012-10-21')
+Handicap.create(:user_id => 5,  :competition_id => nil,  :handicap => 5.2,  :date_adjusted => '2012-11-22')
+Handicap.create(:user_id => 5,  :competition_id => nil,  :handicap => 4.9,  :date_adjusted => '2012-12-24')
+Handicap.create(:user_id => 6,  :competition_id => nil,  :handicap => 4.9,  :date_adjusted => '2011-04-26')
+Handicap.create(:user_id => 6,  :competition_id => nil,  :handicap => 4.8,  :date_adjusted => '2011-05-28')
+Handicap.create(:user_id => 6,  :competition_id => nil,  :handicap => 4.6,  :date_adjusted => '2011-06-29')
+Handicap.create(:user_id => 6,  :competition_id => nil,  :handicap => 4.2,  :date_adjusted => '2011-07-31')
+Handicap.create(:user_id => 6,  :competition_id => nil,  :handicap => 4.3,  :date_adjusted => '2011-09-01')
+Handicap.create(:user_id => 6,  :competition_id => nil,  :handicap => 3.5,  :date_adjusted => '2011-10-03')
+Handicap.create(:user_id => 6,  :competition_id => nil,  :handicap => 3.5,  :date_adjusted => '2012-03-11')
+Handicap.create(:user_id => 6,  :competition_id => nil,  :handicap => 3.2,  :date_adjusted => '2012-04-12')
+Handicap.create(:user_id => 6,  :competition_id => nil,  :handicap => 3.1,  :date_adjusted => '2012-05-14')
+Handicap.create(:user_id => 6,  :competition_id => nil,  :handicap => 3.0,  :date_adjusted => '2012-06-15')
+Handicap.create(:user_id => 6,  :competition_id => nil,  :handicap => 2.5,  :date_adjusted => '2012-07-17')
+Handicap.create(:user_id => 6,  :competition_id => nil,  :handicap => 2.0,  :date_adjusted => '2012-08-18')
+Handicap.create(:user_id => 6,  :competition_id => nil,  :handicap => 2.1,  :date_adjusted => '2012-09-19')
+Handicap.create(:user_id => 6,  :competition_id => nil,  :handicap => 1.5,  :date_adjusted => '2012-10-21')
+Handicap.create(:user_id => 6,  :competition_id => nil,  :handicap => 1.1,  :date_adjusted => '2012-11-22')
+Handicap.create(:user_id => 6,  :competition_id => nil,  :handicap => 1.0,  :date_adjusted => '2012-12-24')
+Handicap.create(:user_id => 7,  :competition_id => nil,  :handicap => 0.5,  :date_adjusted => '2011-04-26')
+Handicap.create(:user_id => 7,  :competition_id => nil,  :handicap => 0.6,  :date_adjusted => '2011-05-28')
+Handicap.create(:user_id => 7,  :competition_id => nil,  :handicap => 0.7,  :date_adjusted => '2011-06-29')
+Handicap.create(:user_id => 7,  :competition_id => nil,  :handicap => 0.8,  :date_adjusted => '2011-07-31')
+Handicap.create(:user_id => 7,  :competition_id => nil,  :handicap => 0.9,  :date_adjusted => '2011-09-01')
+Handicap.create(:user_id => 7,  :competition_id => nil,  :handicap => 1.0,  :date_adjusted => '2011-10-03')
+Handicap.create(:user_id => 7,  :competition_id => nil,  :handicap => 1.1,  :date_adjusted => '2012-03-11')
+Handicap.create(:user_id => 7,  :competition_id => nil,  :handicap => 1.2,  :date_adjusted => '2012-04-12')
+Handicap.create(:user_id => 7,  :competition_id => nil,  :handicap => 1.2,  :date_adjusted => '2012-05-14')
+Handicap.create(:user_id => 7,  :competition_id => nil,  :handicap => 1.1,  :date_adjusted => '2012-06-15')
+Handicap.create(:user_id => 7,  :competition_id => nil,  :handicap => 1.0,  :date_adjusted => '2012-07-17')
+Handicap.create(:user_id => 7,  :competition_id => nil,  :handicap => 1.1,  :date_adjusted => '2012-08-18')
+Handicap.create(:user_id => 7,  :competition_id => nil,  :handicap => 0.8,  :date_adjusted => '2012-09-19')
+Handicap.create(:user_id => 7,  :competition_id => nil,  :handicap => 0.5,  :date_adjusted => '2012-10-21')
+Handicap.create(:user_id => 7,  :competition_id => nil,  :handicap => 0.1,  :date_adjusted => '2012-11-22')
+Handicap.create(:user_id => 7,  :competition_id => nil,  :handicap => 0.2,  :date_adjusted => '2012-12-24')
 
 
 
@@ -252,6 +252,3654 @@ Course.create(:name => "Rathcore",:crest => "courses/rathcore.jpg",:latitude => 
 Course.create(:name => "Beaverstown",:crest => "courses/beaverstown.jpg",:latitude => 53.497163,:longitude => -6.144518,:address => "Beaverstown, Donabate, Co. Dublin")
 Course.create(:name => "Hollystown (Red/Yellow)",:crest => "courses/hollystown.jpg",:latitude => 53.430909,:longitude => -6.376111,:address => "Tyrellstown, Dublin 15")
 
+
+# ===================================================================================================================
+# HOLES
+# ===================================================================================================================
+
+
+Hole.create(
+    :number => 1,
+    :course_id => 7,
+    :tee => "white",
+    :par => 4,
+    :handicap => 4,
+    :distance => 420,
+    :image => "Knightsbrook-1.png",
+)
+Hole.create(
+    :number => 2,
+    :course_id => 7,
+    :tee => "white",
+    :par => 4,
+    :handicap => 2,
+    :distance => 415,
+    :image => "Knightsbrook-2.jpg",
+)
+Hole.create(
+    :number => 3,
+    :course_id => 7,
+    :tee => "white",
+    :par => 3,
+    :handicap => 18,
+    :distance => 142,
+    :image => "Knightsbrook-3.jpg",
+)
+Hole.create(
+    :number => 4,
+    :course_id => 7,
+    :tee => "white",
+    :par => 5,
+    :handicap => 14,
+    :distance => 515,
+    :image => "Knightsbrook-4.jpg",
+)
+Hole.create(
+    :number => 5,
+    :course_id => 7,
+    :tee => "white",
+    :par => 3,
+    :handicap => 10,
+    :distance => 168,
+    :image => "Knightsbrook-5.jpg",
+)
+Hole.create(
+    :number => 6,
+    :course_id => 7,
+    :tee => "white",
+    :par => 5,
+    :handicap => 16,
+    :distance => 530,
+    :image => "Knightsbrook-6.jpg",
+)
+Hole.create(
+    :number => 7,
+    :course_id => 7,
+    :tee => "white",
+    :par => 4,
+    :handicap => 12,
+    :distance => 389,
+    :image => "Knightsbrook-7.jpg",
+)
+Hole.create(
+    :number => 8,
+    :course_id => 7,
+    :tee => "white",
+    :par => 4,
+    :handicap => 6,
+    :distance => 448,
+    :image => "Knightsbrook-8.jpg",
+)
+Hole.create(
+    :number => 9,
+    :course_id => 7,
+    :tee => "white",
+    :par => 4,
+    :handicap => 8,
+    :distance => 396,
+    :image => "Knightsbrook-9.jpg",
+)
+Hole.create(
+    :number => 10,
+    :course_id => 7,
+    :tee => "white",
+    :par => 4,
+    :handicap => 13,
+    :distance => 384,
+    :image => "Knightsbrook-10.jpg",
+)
+Hole.create(
+    :number => 11,
+    :course_id => 7,
+    :tee => "white",
+    :par => 4,
+    :handicap => 7,
+    :distance => 430,
+    :image => "Knightsbrook-11.jpg",
+)
+Hole.create(
+    :number => 12,
+    :course_id => 7,
+    :tee => "white",
+    :par => 4,
+    :handicap => 3,
+    :distance => 437,
+    :image => "Knightsbrook-12.jpg",
+)
+Hole.create(
+    :number => 13,
+    :course_id => 7,
+    :tee => "white",
+    :par => 5,
+    :handicap => 17,
+    :distance => 495,
+    :image => "Knightsbrook-13.jpg",
+)
+Hole.create(
+    :number => 14,
+    :course_id => 7,
+    :tee => "white",
+    :par => 4,
+    :handicap => 1,
+    :distance => 444,
+    :image => "Knightsbrook-14.jpg",
+)
+Hole.create(
+    :number => 15,
+    :course_id => 7,
+    :tee => "white",
+    :par => 4,
+    :handicap => 5,
+    :distance => 393,
+    :image => "Knightsbrook-15.jpg",
+)
+Hole.create(
+    :number => 16,
+    :course_id => 7,
+    :tee => "white",
+    :par => 3,
+    :handicap => 15,
+    :distance => 170,
+    :image => "Knightsbrook-16.jpg",
+)
+Hole.create(
+    :number => 17,
+    :course_id => 7,
+    :tee => "white",
+    :par => 5,
+    :handicap => 9,
+    :distance => 540,
+    :image => "Knightsbrook-17.jpg",
+)
+Hole.create(
+    :number => 18,
+    :course_id => 7,
+    :tee => "white",
+    :par => 3,
+    :handicap => 11,
+    :distance => 175,
+    :image => "Knightsbrook-18.jpg",
+)
+Hole.create(
+    :number => 1,
+    :course_id => 1,
+    :tee => "blue",
+    :par => 4,
+    :handicap => 15,
+    :distance => 269,
+    :strokesaver => "A short opening hole may tempt the big hitters to go for the green. However, a bunker covers the entire front of the green meaning an iron off the tee is the safest option. Trees line the fairway on both sides and with out of bounds right an accurate tee shot is essential. A good approach shot is important. Anything short will end up in the bunker and going long leaves a tricky up and down."
+)
+Hole.create(
+    :number => 2,
+    :course_id => 1,
+    :tee => "blue",
+    :par => 5,
+    :handicap => 9,
+    :distance => 478,
+    :strokesaver => "An open looking hole from the tee box, this par 5 is deceptive. A narrow fairway makes this a tougher hole than it seems with out of bounds on the right. A good tee shot will give a player the chance to go for the green in two. However, three large greenside bunkers mean it may be best to lay up."
+)
+Hole.create(
+    :number => 3,
+    :course_id => 1,
+    :tee => "blue",
+    :par => 4,
+    :handicap => 17,
+    :distance => 308,
+    :strokesaver => "Important not to go right on this hole with trees running the length of the fairway, it appears to be a short par 4 but the fairway inclines steeply to a flat, elevated green. Although this hole is index 17 a player could find themselves in all sorts of trouble."
+)
+Hole.create(
+    :number => 4,
+    :course_id => 1,
+    :tee => "blue",
+    :par => 4,
+    :handicap => 3,
+    :distance => 397,
+    :strokesaver => "This is a tough par 4. Any wayward tee shots will be punished with trees lining both sides of the fairway.  With bunkers guarding the green an accurate second shot is important."
+)
+Hole.create(
+    :number => 5,
+    :course_id => 1,
+    :tee => "blue",
+    :par => 3,
+    :handicap => 11,
+    :distance => 153,
+    :strokesaver => "The first par 3 on the course, a stream divides the hole halfway between the tee and green but shouldn't come in to play. Greenside bunkers are the main obstacles on an otherwise friendly hole."
+)
+Hole.create(
+    :number => 6,
+    :course_id => 1,
+    :tee => "blue",
+    :par => 4,
+    :handicap => 13,
+    :distance => 289,
+    :strokesaver => "Another short par 4 that requires accuracy off the tee,  the fairway gradually ascends to a receptive green."
+)
+Hole.create(
+    :number => 7,
+    :course_id => 1,
+    :tee => "blue",
+    :par => 3,
+    :handicap => 7,
+    :distance => 196,
+    :strokesaver => "The hole is slightly downhill from tee to green which means it plays a little shorter than its yardage. Any shot pulled left will be out of bounds. Anything right will end up in thick rough."
+)
+Hole.create(
+    :number => 8,
+    :course_id => 1,
+    :tee => "blue",
+    :par => 4,
+    :handicap => 5,
+    :distance => 369,
+    :strokesaver => "A tough tee shot on this hole. If you don't hit your drive straight make sure you go right as there is trouble all the way up the left. A good approach shot is required as anything long or left will mean having to hit again."
+)
+Hole.create(
+    :number => 9,
+    :course_id => 1,
+    :tee => "blue",
+    :par => 4,
+    :handicap => 1,
+    :distance => 423,
+    :strokesaver => "The toughest hole on the course, an accurate tee shot is vital. Hitting your tee shot to the right hand side of the fairway gives the best angle of approach. The hole doglegs from right to left. Bigger hitters can cut the corner but a poor shot could mean out of bounds or at best the second shot will be blocked. The hole continues uphill to a sloping green."
+)
+Hole.create(
+    :number => 10,
+    :course_id => 1,
+    :tee => "blue",
+    :par => 4,
+    :handicap => 10,
+    :distance => 300,
+    :strokesaver => "A classic risk/reward hole, big hitters will feel they have a chance of reaching with a good drive. However, trouble lurks everywhere. Trees both sides of the fairway make the green a very narrow target while there is a hazard short of the green. An iron off the tee is the sensible shot."
+)
+Hole.create(
+    :number => 11,
+    :course_id => 1,
+    :tee => "blue",
+    :par => 3,
+    :handicap => 18,
+    :distance => 121,
+    :strokesaver => "This is ranked the easiest hole on the course. A short par 3 with little danger, a generous green makes this a potentially low scoring hole."
+)
+Hole.create(
+    :number => 12,
+    :course_id => 1,
+    :tee => "blue",
+    :par => 4,
+    :handicap => 8,
+    :distance => 350,
+    :strokesaver => "Accuracy is once again the key factor from the tee box. Anything wayward will leave you in all sorts of trouble with plenty of trees to be avoided. A good drive will leave an approach shot with a short iron or a wedge."
+)
+Hole.create(
+    :number => 13,
+    :course_id => 1,
+    :tee => "blue",
+    :par => 4,
+    :handicap => 2,
+    :distance => 401,
+    :strokesaver => "A relatively long par 4, if the ball is kept straight off the tee you will have a nice attempt at an approach shot. Anything wild though will be severely punished."
+)
+Hole.create(
+    :number => 14,
+    :course_id => 1,
+    :tee => "blue",
+    :par => 4,
+    :handicap => 14,
+    :distance => 332,
+    :strokesaver => "A tight tee shot requires accuracy off the tee. The surprise on this hole is the bunker in the middle of the fairway 100 yards from the green which cannot be seen from the tee box. This makes club selection important for your tee shot."
+)
+Hole.create(
+    :number => 15,
+    :course_id => 1,
+    :tee => "blue",
+    :par => 4,
+    :handicap => 16,
+    :distance => 337,
+    :strokesaver => "A slightly more open hole, however, anything too erratic will be costly as there are trees both sides of the fairway. The fairway slopes from left to right so be wary of that if you want to stay in the short stuff. A front pin placement will make it tough to get close with your approach shot."
+)
+Hole.create(
+    :number => 16,
+    :course_id => 1,
+    :tee => "blue",
+    :par => 5,
+    :handicap => 6,
+    :distance => 509,
+    :strokesaver => "This may look like a kind hole from the tee box but it is anything but. Out of bounds and dense trees on the right mean that if you miss the fairway being left is the only get out clause. The narrow fairway gradually goes uphill meaning this hole plays longer than its yardage. Two good shots will leave a short iron for your approach."
+)
+Hole.create(
+    :number => 17,
+    :course_id => 1,
+    :tee => "blue",
+    :par => 3,
+    :handicap => 12,
+    :distance => 177,
+    :strokesaver => "This is a medium length par 3 that requires good club selection and an accurate tee shot. Any shot hit short and either side of the green will end up in one of the two bunkers. The view of Dublin city from the tee box is worth stopping for."
+)
+Hole.create(
+    :number => 18,
+    :course_id => 1,
+    :tee => "blue",
+    :par => 4,
+    :handicap => 4,
+    :distance => 398,
+    :strokesaver => "A nice closing hole with room to manoeuvre, the important shot on this hole is your approach. Club selection will be vital as if you go long you will find yourself in difficulty. There are also bunkers guarding the side of the green for any wayward shots."
+)
+Hole.create(
+    :number => 1,
+    :course_id => 2,
+    :tee => "society",
+    :par => 5,
+    :handicap => 17,
+    :distance => 426,
+)
+Hole.create(
+    :number => 2,
+    :course_id => 2,
+    :tee => "society",
+    :par => 3,
+    :handicap => 12,
+    :distance => 164,
+)
+Hole.create(
+    :number => 3,
+    :course_id => 2,
+    :tee => "society",
+    :par => 4,
+    :handicap => 5,
+    :distance => 362,
+)
+Hole.create(
+    :number => 4,
+    :course_id => 2,
+    :tee => "society",
+    :par => 5,
+    :handicap => 8,
+    :distance => 433,
+)
+Hole.create(
+    :number => 5,
+    :course_id => 2,
+    :tee => "society",
+    :par => 4,
+    :handicap => 1,
+    :distance => 377,
+)
+Hole.create(
+    :number => 6,
+    :course_id => 2,
+    :tee => "society",
+    :par => 4,
+    :handicap => 3,
+    :distance => 363,
+)
+Hole.create(
+    :number => 7,
+    :course_id => 2,
+    :tee => "society",
+    :par => 5,
+    :handicap => 18,
+    :distance => 427,
+)
+Hole.create(
+    :number => 8,
+    :course_id => 2,
+    :tee => "society",
+    :par => 3,
+    :handicap => 14,
+    :distance => 139,
+)
+Hole.create(
+    :number => 9,
+    :course_id => 2,
+    :tee => "society",
+    :par => 4,
+    :handicap => 10,
+    :distance => 308,
+)
+Hole.create(
+    :number => 10,
+    :course_id => 2,
+    :tee => "society",
+    :par => 3,
+    :handicap => 16,
+    :distance => 160,
+)
+Hole.create(
+    :number => 11,
+    :course_id => 2,
+    :tee => "society",
+    :par => 5,
+    :handicap => 13,
+    :distance => 383,
+)
+Hole.create(
+    :number => 12,
+    :course_id => 2,
+    :tee => "society",
+    :par => 4,
+    :handicap => 4,
+    :distance => 332,
+)
+Hole.create(
+    :number => 13,
+    :course_id => 2,
+    :tee => "society",
+    :par => 4,
+    :handicap => 6,
+    :distance => 341,
+)
+Hole.create(
+    :number => 14,
+    :course_id => 2,
+    :tee => "society",
+    :par => 3,
+    :handicap => 11,
+    :distance => 165,
+)
+Hole.create(
+    :number => 15,
+    :course_id => 2,
+    :tee => "society",
+    :par => 4,
+    :handicap => 15,
+    :distance => 298,
+)
+Hole.create(
+    :number => 16,
+    :course_id => 2,
+    :tee => "society",
+    :par => 4,
+    :handicap => 2,
+    :distance => 352,
+)
+Hole.create(
+    :number => 17,
+    :course_id => 2,
+    :tee => "society",
+    :par => 4,
+    :handicap => 7,
+    :distance => 320,
+)
+Hole.create(
+    :number => 18,
+    :course_id => 2,
+    :tee => "society",
+    :par => 4,
+    :handicap => 9,
+    :distance => 330,
+)
+Hole.create(
+    :number => 1,
+    :course_id => 2,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => 17,
+    :distance => 426,
+)
+Hole.create(
+    :number => 2,
+    :course_id => 2,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => 12,
+    :distance => 164,
+)
+Hole.create(
+    :number => 3,
+    :course_id => 2,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 5,
+    :distance => 362,
+)
+Hole.create(
+    :number => 4,
+    :course_id => 2,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => 8,
+    :distance => 433,
+)
+Hole.create(
+    :number => 5,
+    :course_id => 2,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 1,
+    :distance => 377,
+)
+Hole.create(
+    :number => 6,
+    :course_id => 2,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 3,
+    :distance => 363,
+)
+Hole.create(
+    :number => 7,
+    :course_id => 2,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => 18,
+    :distance => 427,
+)
+Hole.create(
+    :number => 8,
+    :course_id => 2,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => 14,
+    :distance => 139,
+)
+Hole.create(
+    :number => 9,
+    :course_id => 2,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 10,
+    :distance => 308,
+)
+Hole.create(
+    :number => 10,
+    :course_id => 2,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => 16,
+    :distance => 160,
+)
+Hole.create(
+    :number => 11,
+    :course_id => 2,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => 13,
+    :distance => 483,
+)
+Hole.create(
+    :number => 12,
+    :course_id => 2,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 4,
+    :distance => 332,
+)
+Hole.create(
+    :number => 13,
+    :course_id => 2,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 6,
+    :distance => 341,
+)
+Hole.create(
+    :number => 14,
+    :course_id => 2,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => 11,
+    :distance => 165,
+)
+Hole.create(
+    :number => 15,
+    :course_id => 2,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 15,
+    :distance => 298,
+)
+Hole.create(
+    :number => 16,
+    :course_id => 2,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 2,
+    :distance => 352,
+)
+Hole.create(
+    :number => 17,
+    :course_id => 2,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 7,
+    :distance => 320,
+)
+Hole.create(
+    :number => 18,
+    :course_id => 2,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 9,
+    :distance => 330,
+)
+Hole.create(
+    :number => 1,
+    :course_id => 8,
+    :tee => "white",
+    :par => 5,
+    :handicap => 12,
+    :distance => 473,
+    :strokesaver => "Aim tee shot at the tallest trees in the right centre of the fairway as you look down from the tee. From this point the green is more approachable and you have full view of any hazards in front of you. If you are taking the green on, aim for the left side as it's the widest part."
+)
+Hole.create(
+    :number => 2,
+    :course_id => 8,
+    :tee => "white",
+    :par => 4,
+    :handicap => 4,
+    :distance => 409,
+    :strokesaver => "Tight driving hole demands accuracy off the tee. Favour the right of fairway for a clear second to the green. The mature oak 80 metres out leaves a tough approach."
+)
+Hole.create(
+    :number => 3,
+    :course_id => 8,
+    :tee => "white",
+    :par => 5,
+    :handicap => 6,
+    :distance => 489,
+    :strokesaver => "From the tee aim down the right hand side of the fairway. This opens up the gap for your approach to the green. For the longer hitters it gets very tight down the left the further you go. You will also eventually be blocked off by the trees making hitting the green far more difficult."
+)
+Hole.create(
+    :number => 4,
+    :course_id => 8,
+    :tee => "white",
+    :par => 4,
+    :handicap => 16,
+    :distance => 300,
+    :strokesaver => "A short par four. The biggest problem golfers have here is alignment. The tee box is aiming directly into the river so be aware of this and make the necessary adjustments."
+)
+Hole.create(
+    :number => 5,
+    :course_id => 8,
+    :tee => "white",
+    :par => 3,
+    :handicap => 18,
+    :distance => 139,
+    :strokesaver => "There is a lot more green to the left hand side than you can see from the tee. There are also two bunkers, one each side of the centre of the green. You do not have full view of the bunkers from the tee. Over the back of the green is a no go area."
+)
+Hole.create(
+    :number => 6,
+    :course_id => 8,
+    :tee => "white",
+    :par => 4,
+    :handicap => 14,
+    :distance => 338,
+    :strokesaver => "Tee shot is self-explanatory. The bigger hitters among you can blast your drive over the trees on the right and on this line can get very close to the green."
+)
+Hole.create(
+    :number => 7,
+    :course_id => 8,
+    :tee => "white",
+    :par => 4,
+    :handicap => 2,
+    :distance => 444,
+    :strokesaver => "The drive is through or between the gap. The bigger hitters may get through the gap and gain another twenty yards. Approach shots should be at the left hand side of the green due to the green's slope but be aware of the bunkers on the right."
+)
+Hole.create(
+    :number => 8,
+    :course_id => 8,
+    :tee => "white",
+    :par => 3,
+    :handicap => 10,
+    :distance => 182,
+    :strokesaver => "Appears as a straightforward par three but beware of a difficult sloping green."
+)
+Hole.create(
+    :number => 9,
+    :course_id => 8,
+    :tee => "white",
+    :par => 5,
+    :handicap => 8,
+    :distance => 502,
+    :strokesaver => "The tee shot is as you see it straight through the gap. The bigger hitters from the front tee can carry the ferns on the right hand side of the gap. This makes getting home in two very possible. If you come up short of the gap the best line is to the right of the big tree in the centre of the fairway."
+)
+Hole.create(
+    :number => 1,
+    :course_id => 10,
+    :tee => "white",
+    :par => 4,
+    :handicap => 2,
+    :distance => 432,
+)
+Hole.create(
+    :number => 2,
+    :course_id => 10,
+    :tee => "white",
+    :par => 3,
+    :handicap => 18,
+    :distance => 174,
+)
+Hole.create(
+    :number => 3,
+    :course_id => 10,
+    :tee => "white",
+    :par => 4,
+    :handicap => 6,
+    :distance => 400,
+)
+Hole.create(
+    :number => 4,
+    :course_id => 10,
+    :tee => "white",
+    :par => 3,
+    :handicap => 16,
+    :distance => 175,
+)
+Hole.create(
+    :number => 5,
+    :course_id => 10,
+    :tee => "white",
+    :par => 5,
+    :handicap => 12,
+    :distance => 512,
+)
+Hole.create(
+    :number => 6,
+    :course_id => 10,
+    :tee => "white",
+    :par => 3,
+    :handicap => 14,
+    :distance => 192,
+)
+Hole.create(
+    :number => 7,
+    :course_id => 10,
+    :tee => "white",
+    :par => 4,
+    :handicap => 4,
+    :distance => 424,
+)
+Hole.create(
+    :number => 8,
+    :course_id => 10,
+    :tee => "white",
+    :par => 4,
+    :handicap => 8,
+    :distance => 408,
+)
+Hole.create(
+    :number => 9,
+    :course_id => 10,
+    :tee => "white",
+    :par => 5,
+    :handicap => 10,
+    :distance => 547,
+)
+Hole.create(
+    :number => 1,
+    :course_id => 5,
+    :tee => "white",
+    :par => 4,
+    :handicap => 1,
+    :distance => 371,
+)
+Hole.create(
+    :number => 2,
+    :course_id => 5,
+    :tee => "white",
+    :par => 4,
+    :handicap => 7,
+    :distance => 355,
+)
+Hole.create(
+    :number => 3,
+    :course_id => 5,
+    :tee => "white",
+    :par => 3,
+    :handicap => 11,
+    :distance => 160,
+)
+Hole.create(
+    :number => 4,
+    :course_id => 5,
+    :tee => "white",
+    :par => 4,
+    :handicap => 5,
+    :distance => 346,
+)
+Hole.create(
+    :number => 5,
+    :course_id => 5,
+    :tee => "white",
+    :par => 4,
+    :handicap => 3,
+    :distance => 375,
+)
+Hole.create(
+    :number => 6,
+    :course_id => 5,
+    :tee => "white",
+    :par => 3,
+    :handicap => 15,
+    :distance => 183,
+)
+Hole.create(
+    :number => 7,
+    :course_id => 5,
+    :tee => "white",
+    :par => 4,
+    :handicap => 9,
+    :distance => 366,
+)
+Hole.create(
+    :number => 8,
+    :course_id => 5,
+    :tee => "white",
+    :par => 3,
+    :handicap => 13,
+    :distance => 177,
+)
+Hole.create(
+    :number => 9,
+    :course_id => 5,
+    :tee => "white",
+    :par => 4,
+    :handicap => 17,
+    :distance => 246,
+)
+Hole.create(
+    :number => 10,
+    :course_id => 5,
+    :tee => "white",
+    :par => 3,
+    :handicap => 10,
+    :distance => 157,
+)
+Hole.create(
+    :number => 11,
+    :course_id => 5,
+    :tee => "white",
+    :par => 4,
+    :handicap => 12,
+    :distance => 339,
+)
+Hole.create(
+    :number => 12,
+    :course_id => 5,
+    :tee => "white",
+    :par => 4,
+    :handicap => 8,
+    :distance => 380,
+)
+Hole.create(
+    :number => 13,
+    :course_id => 5,
+    :tee => "white",
+    :par => 5,
+    :handicap => 4,
+    :distance => 540,
+)
+Hole.create(
+    :number => 14,
+    :course_id => 5,
+    :tee => "white",
+    :par => 3,
+    :handicap => 18,
+    :distance => 154,
+)
+Hole.create(
+    :number => 15,
+    :course_id => 5,
+    :tee => "white",
+    :par => 5,
+    :handicap => 14,
+    :distance => 487,
+)
+Hole.create(
+    :number => 16,
+    :course_id => 5,
+    :tee => "white",
+    :par => 4,
+    :handicap => 6,
+    :distance => 385,
+)
+Hole.create(
+    :number => 17,
+    :course_id => 5,
+    :tee => "white",
+    :par => 3,
+    :handicap => 16,
+    :distance => 137,
+)
+Hole.create(
+    :number => 18,
+    :course_id => 5,
+    :tee => "white",
+    :par => 4,
+    :handicap => 2,
+    :distance => 416,
+)
+Hole.create(
+    :number => 10,
+    :course_id => 8,
+    :tee => "white",
+    :par => 4,
+    :handicap => 1,
+    :distance => 432,
+    :strokesaver => "Index one. Out of bounds all down the left hand side. The ideal drive is left centre as it opens up the green."
+)
+Hole.create(
+    :number => 11,
+    :course_id => 8,
+    :tee => "white",
+    :par => 3,
+    :handicap => 17,
+    :distance => 174,
+    :strokesaver => "On this par three distance is key. If you come up short you may end up in the front bunker. This bunker feeds around a lot more of the green than you can see from the tee. Be up, as the green is very long."
+)
+Hole.create(
+    :number => 12,
+    :course_id => 8,
+    :tee => "white",
+    :par => 4,
+    :handicap => 5,
+    :distance => 400,
+    :strokesaver => "Drive up the left hand side of the fairway. This opens up the green for the approach. You also have a better view of the greenside bunkers. There is a bunker hidden short right."
+)
+Hole.create(
+    :number => 13,
+    :course_id => 8,
+    :tee => "white",
+    :par => 3,
+    :handicap => 15,
+    :distance => 175,
+    :strokesaver => "Par three with a two tier green. If the flag is on the left hand side you can see all problems in front of you. If it's on the right and lower tier it's going to be tucked in behind a bunker. The sloping green can assist you in the sense any ball landing on this slope will roll down to the right."
+)
+Hole.create(
+    :number => 14,
+    :course_id => 8,
+    :tee => "white",
+    :par => 5,
+    :handicap => 11,
+    :distance => 512,
+    :strokesaver => "Hit it down the right. Avoid the out of bounds down the left. If you can get your second shot short left of the green you will have a simple pitch into the perceptive part of the green."
+)
+Hole.create(
+    :number => 15,
+    :course_id => 8,
+    :tee => "white",
+    :par => 3,
+    :handicap => 13,
+    :distance => 192,
+    :strokesaver => "Be up. All the trouble is at the front of the green. If the flag is back right take an extra club."
+)
+Hole.create(
+    :number => 16,
+    :course_id => 8,
+    :tee => "white",
+    :par => 4,
+    :handicap => 3,
+    :distance => 424,
+    :strokesaver => "A good drive through a narrow avenue of trees leaves a difficult 2nd shot to a tricky green to hold."
+)
+Hole.create(
+    :number => 17,
+    :course_id => 8,
+    :tee => "white",
+    :par => 4,
+    :handicap => 7,
+    :distance => 408,
+    :strokesaver => "A good drive sets you up for a straightforward 2nd shot. Pin position on a difficult two tier green makes for interesting putting."
+)
+Hole.create(
+    :number => 18,
+    :course_id => 8,
+    :tee => "white",
+    :par => 5,
+    :handicap => 9,
+    :distance => 547,
+    :strokesaver => "From the back tee you simply try and get as far through the gap as possible. With your approach shot hit it up the right hand side. Going up the left brings the huge ferns into play."
+)
+Hole.create(
+    :number => 10,
+    :course_id => 10,
+    :tee => "white",
+    :par => 4,
+    :handicap => 15,
+    :distance => 365,
+)
+Hole.create(
+    :number => 11,
+    :course_id => 10,
+    :tee => "white",
+    :par => 3,
+    :handicap => 5,
+    :distance => 200,
+)
+Hole.create(
+    :number => 12,
+    :course_id => 10,
+    :tee => "white",
+    :par => 5,
+    :handicap => 13,
+    :distance => 516,
+)
+Hole.create(
+    :number => 13,
+    :course_id => 10,
+    :tee => "white",
+    :par => 4,
+    :handicap => 7,
+    :distance => 376,
+)
+Hole.create(
+    :number => 14,
+    :course_id => 10,
+    :tee => "white",
+    :par => 4,
+    :handicap => 3,
+    :distance => 407,
+)
+Hole.create(
+    :number => 15,
+    :course_id => 10,
+    :tee => "white",
+    :par => 4,
+    :handicap => 17,
+    :distance => 306,
+)
+Hole.create(
+    :number => 16,
+    :course_id => 10,
+    :tee => "white",
+    :par => 3,
+    :handicap => 9,
+    :distance => 164,
+)
+Hole.create(
+    :number => 17,
+    :course_id => 10,
+    :tee => "white",
+    :par => 4,
+    :handicap => 1,
+    :distance => 435,
+)
+Hole.create(
+    :number => 18,
+    :course_id => 10,
+    :tee => "white",
+    :par => 4,
+    :handicap => 11,
+    :distance => 382,
+)
+Hole.create(
+    :number => 1,
+    :course_id => 11,
+    :tee => "blue",
+    :par => 4,
+    :handicap => 12,
+    :distance => 331,
+)
+Hole.create(
+    :number => 2,
+    :course_id => 11,
+    :tee => "blue",
+    :par => 3,
+    :handicap => 17,
+    :distance => 131,
+)
+Hole.create(
+    :number => 3,
+    :course_id => 11,
+    :tee => "blue",
+    :par => 5,
+    :handicap => 14,
+    :distance => 486,
+)
+Hole.create(
+    :number => 4,
+    :course_id => 11,
+    :tee => "blue",
+    :par => 3,
+    :handicap => 9,
+    :distance => 170,
+)
+Hole.create(
+    :number => 5,
+    :course_id => 11,
+    :tee => "blue",
+    :par => 4,
+    :handicap => 16,
+    :distance => 313,
+)
+Hole.create(
+    :number => 6,
+    :course_id => 11,
+    :tee => "blue",
+    :par => 3,
+    :handicap => 11,
+    :distance => 164,
+)
+Hole.create(
+    :number => 7,
+    :course_id => 11,
+    :tee => "blue",
+    :par => 4,
+    :handicap => 4,
+    :distance => 365,
+)
+Hole.create(
+    :number => 8,
+    :course_id => 11,
+    :tee => "blue",
+    :par => 4,
+    :handicap => 3,
+    :distance => 378,
+)
+Hole.create(
+    :number => 9,
+    :course_id => 11,
+    :tee => "blue",
+    :par => 3,
+    :handicap => 10,
+    :distance => 184,
+)
+Hole.create(
+    :number => 10,
+    :course_id => 11,
+    :tee => "blue",
+    :par => 4,
+    :handicap => 5,
+    :distance => 378,
+)
+Hole.create(
+    :number => 11,
+    :course_id => 11,
+    :tee => "blue",
+    :par => 4,
+    :handicap => 1,
+    :distance => 422,
+)
+Hole.create(
+    :number => 12,
+    :course_id => 11,
+    :tee => "blue",
+    :par => 4,
+    :handicap => 7,
+    :distance => 354,
+)
+Hole.create(
+    :number => 1,
+    :course_id => 12,
+    :tee => "white",
+    :par => 4,
+    :handicap => 6,
+    :distance => 398,
+    :strokesaver => "A challenging start, this tight par four narrows at the fairway bunkers, which are set at the relevant yardages to swallow up any errand tee shots. The undulating green complex and front right bunker have a foreshortening effect, so club selection for the approach is vital."
+)
+Hole.create(
+    :number => 2,
+    :course_id => 12,
+    :tee => "white",
+    :par => 5,
+    :handicap => 12,
+    :distance => 528,
+    :strokesaver => "This is a long par five meandering through sets of fairway bunkers designed to punish both stray tee and lay-up shots. It moves steadily uphill to its challenging green, have a little peep at putting surface before playing your pitch, the pin position will be pivotal."
+)
+Hole.create(
+    :number => 3,
+    :course_id => 12,
+    :tee => "white",
+    :par => 4,
+    :handicap => 8,
+    :distance => 405,
+    :strokesaver => "A risk/reward driving hole, the brave player might take on the fairway trap on the left and get the big shoot forward, leaving a much shorter approach. The cautious play is short of the bunker, taking a gamble on a longer club for the second shot to a mellow green surrounded by water, take a deep breath."
+)
+Hole.create(
+    :number => 4,
+    :course_id => 12,
+    :tee => "white",
+    :par => 3,
+    :handicap => 18,
+    :distance => 186,
+    :strokesaver => "This beautiful par three is guarded by water on the right side, but don't think you can chase one in, everything short will feed left to right. The clever play is the left of the green avoiding the deep traps on the right, your reward is a gentle putting surface."
+)
+Hole.create(
+    :number => 5,
+    :course_id => 12,
+    :tee => "white",
+    :par => 4,
+    :handicap => 2,
+    :distance => 410,
+    :strokesaver => "Keep it just inside the bunker on the right off the tee and hope for the kick down to the flat, anything left will likely result in a lost ball. The approach is complicated by the winding stream and gorse, making this a target you cannot afford to miss. The tactical player will see this as a lay-up hole."
+)
+Hole.create(
+    :number => 6,
+    :course_id => 12,
+    :tee => "white",
+    :par => 3,
+    :handicap => 10,
+    :distance => 194,
+    :strokesaver => "From the tee it looks like there is no green to land the ball on, and with a steep drop and gorse all along the left, this is a daunting hole. The green itself sits up with a severe fall away to the right, and is backed by stunning beech trees. Take one club extra, par is a very good score here."
+)
+Hole.create(
+    :number => 7,
+    :course_id => 12,
+    :tee => "white",
+    :par => 4,
+    :handicap => 4,
+    :distance => 410,
+    :strokesaver => "This may be the most attractive hole on the front nine with a downhill tee shot inviting you to open the shoulders. Trees left and deep traps right wait for any crooked drives, while the second shot sees water front and left of the green. This approach requires a high accurate shot to be successful."
+)
+Hole.create(
+    :number => 8,
+    :course_id => 12,
+    :tee => "white",
+    :par => 5,
+    :handicap => 16,
+    :distance => 500,
+    :strokesaver => "A superbly set up tee shot sees deep traps plotted all over the landing area. Take on the left-hand bunker to get the best result and put the green in range of two shots. The target sits high in the distance, and is guarded well by bunkers and trees, so once again, only a towering approach shot will get the job done."
+)
+Hole.create(
+    :number => 9,
+    :course_id => 12,
+    :tee => "white",
+    :par => 4,
+    :handicap => 14,
+    :distance => 378,
+    :strokesaver => "A faders delight, this fitting end to the front nine is a demanding par four. Once you have negotiated the bunkers from the downhill tee shot, enjoy one of the courses simpler approach shots before stopping off at the clubhouse for a well earned snack."
+)
+Hole.create(
+    :number => 10,
+    :course_id => 12,
+    :tee => "white",
+    :par => 4,
+    :handicap => 7,
+    :distance => 398,
+    :strokesaver => "The back nine winds through the historic park of the demesne and the 10th immediately sets the scene. Once the water is cleared from the tee, the glorious lime avenue borders the right of the hole perfectly. The bunkering left of the green will trick the less astute into taking too little club, as your attention is grabbed by the elegant background."
+)
+Hole.create(
+    :number => 11,
+    :course_id => 12,
+    :tee => "white",
+    :par => 4,
+    :handicap => 13,
+    :distance => 345,
+    :strokesaver => "One of the courses tightest tee shots is found on number eleven, with water all along the left, and two deep traps on the right, a short and conservative drive is best. The tiny green offers no comfort for the long second shot and water waits for you left and over the back. Take the opportunity to view the stunning 13th Century Castle to your left."
+)
+Hole.create(
+    :number => 12,
+    :course_id => 12,
+    :tee => "white",
+    :par => 5,
+    :handicap => 15,
+    :distance => 514,
+    :strokesaver => "There is no margin for error on this thought-provoking par five. A long, accurate drive down the right leaves the green in range, but with the carry all water and the shallow green backed by gorse, this approach requires perfection. Played conservatively in three shorter shots, the traps and water are easier avoided, so don't be fooled by the short yardage of this hole."
+)
+Hole.create(
+    :number => 13,
+    :course_id => 12,
+    :tee => "white",
+    :par => 3,
+    :handicap => 9,
+    :distance => 200,
+    :strokesaver => "This hole plays back over the lake which dominated the 12th. Bunkers are strategically placed to catch any trying to bail out left. The green is disected by a long diagonal ridge making back right pin positions even more difficult. Thirteen is the perfect matchplay hole where bravery is rewarded and possibly punished in equal measure."
+)
+Hole.create(
+    :number => 14,
+    :course_id => 12,
+    :tee => "white",
+    :par => 4,
+    :handicap => 3,
+    :distance => 458,
+    :strokesaver => "An intimidating teeshot skirts the lake and plays uphill between a large horse chestnut and a pine. Huge purple beeches hug the left and three ancient oaks in the fairway make the approach one for the shot-shapers. This long, natural hole seems like it has been there forever and will require two of your very best shots to reach the shallow diagonal green. Par here feels like a birdie."
+)
+Hole.create(
+    :number => 15,
+    :course_id => 12,
+    :tee => "white",
+    :par => 3,
+    :handicap => 17,
+    :distance => 155,
+    :strokesaver => "The setting for this last par three give it an instant feeling of maturity, but don't let the ancient surroundings distract you from the task ahead. The ever undulating and rolling green lends itself to an easy three putt, whilst its tabletop layout and deep bunkers make recovery shots so difficult. Make sure you have enough club."
+)
+Hole.create(
+    :number => 16,
+    :course_id => 12,
+    :tee => "white",
+    :par => 4,
+    :handicap => 11,
+    :distance => 396,
+    :strokesaver => "As we enter Kelly's Field number sixteen has a classic old American Parkland style, with a tight tee shot down the tree hugged fairway and large green, which is split by shelves into four quarters. Keep in the left half off the tee to open up the green for your second."
+)
+Hole.create(
+    :number => 17,
+    :course_id => 12,
+    :tee => "white",
+    :par => 4,
+    :handicap => 1,
+    :distance => 449,
+    :strokesaver => "With no bunkers this hole appears straightforward, but the stately trees on the right to left dogleg overhang the fairway, making it very tight indeed. Similarly at the green the landing area is halved by interference from the old timbers. Only two perfectly struck shots will find the green on this menacing penultimate hole."
+)
+Hole.create(
+    :number => 18,
+    :course_id => 12,
+    :tee => "white",
+    :par => 5,
+    :handicap => 5,
+    :distance => 488,
+    :strokesaver => "Another great matchplay hole awaits you on the eighteenth tee. Make your mind up here and stick to your strategy, indecision will end in tears. A big drive over the trees on the right sees a second shot between guarding trees, over the pond, to a shallow green. That's the all or nothing play, but a shorter tee shot down the left leaves a mid-iron second to lay up, followed by a pitch over the pond. The decision is yours!"
+)
+Hole.create(
+    :number => 1,
+    :course_id => 3,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 6,
+    :distance => 379,
+)
+Hole.create(
+    :number => 1,
+    :course_id => 3,
+    :tee => "white",
+    :par => 4,
+    :handicap => 0,
+    :distance => 405,
+)
+Hole.create(
+    :number => 2,
+    :course_id => 3,
+    :tee => "white",
+    :par => 5,
+    :handicap => 0,
+    :distance => 509,
+)
+Hole.create(
+    :number => 3,
+    :course_id => 3,
+    :tee => "white",
+    :par => 4,
+    :handicap => 0,
+    :distance => 361,
+)
+Hole.create(
+    :number => 4,
+    :course_id => 3,
+    :tee => "white",
+    :par => 3,
+    :handicap => 0,
+    :distance => 159,
+)
+Hole.create(
+    :number => 5,
+    :course_id => 3,
+    :tee => "white",
+    :par => 4,
+    :handicap => 0,
+    :distance => 419,
+)
+Hole.create(
+    :number => 6,
+    :course_id => 3,
+    :tee => "white",
+    :par => 5,
+    :handicap => 0,
+    :distance => 553,
+)
+Hole.create(
+    :number => 7,
+    :course_id => 3,
+    :tee => "white",
+    :par => 3,
+    :handicap => 0,
+    :distance => 170,
+)
+Hole.create(
+    :number => 8,
+    :course_id => 3,
+    :tee => "white",
+    :par => 4,
+    :handicap => 0,
+    :distance => 407,
+)
+Hole.create(
+    :number => 9,
+    :course_id => 3,
+    :tee => "white",
+    :par => 4,
+    :handicap => 0,
+    :distance => 365,
+)
+Hole.create(
+    :number => 10,
+    :course_id => 3,
+    :tee => "white",
+    :par => 4,
+    :handicap => 0,
+    :distance => 374,
+)
+Hole.create(
+    :number => 11,
+    :course_id => 3,
+    :tee => "white",
+    :par => 3,
+    :handicap => 0,
+    :distance => 170,
+)
+Hole.create(
+    :number => 12,
+    :course_id => 3,
+    :tee => "white",
+    :par => 4,
+    :handicap => 0,
+    :distance => 378,
+)
+Hole.create(
+    :number => 13,
+    :course_id => 3,
+    :tee => "white",
+    :par => 4,
+    :handicap => 0,
+    :distance => 405,
+)
+Hole.create(
+    :number => 14,
+    :course_id => 3,
+    :tee => "white",
+    :par => 5,
+    :handicap => 0,
+    :distance => 536,
+)
+Hole.create(
+    :number => 15,
+    :course_id => 3,
+    :tee => "white",
+    :par => 4,
+    :handicap => 0,
+    :distance => 419,
+)
+Hole.create(
+    :number => 16,
+    :course_id => 3,
+    :tee => "white",
+    :par => 5,
+    :handicap => 0,
+    :distance => 547,
+)
+Hole.create(
+    :number => 17,
+    :course_id => 3,
+    :tee => "white",
+    :par => 3,
+    :handicap => 0,
+    :distance => 166,
+)
+Hole.create(
+    :number => 18,
+    :course_id => 3,
+    :tee => "white",
+    :par => 4,
+    :handicap => 0,
+    :distance => 400,
+)
+Hole.create(
+    :number => 2,
+    :course_id => 3,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => 18,
+    :distance => 496,
+)
+Hole.create(
+    :number => 3,
+    :course_id => 3,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 10,
+    :distance => 335,
+)
+Hole.create(
+    :number => 4,
+    :course_id => 3,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => 14,
+    :distance => 144,
+)
+Hole.create(
+    :number => 5,
+    :course_id => 3,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 2,
+    :distance => 399,
+)
+Hole.create(
+    :number => 6,
+    :course_id => 3,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => 8,
+    :distance => 541,
+)
+Hole.create(
+    :number => 7,
+    :course_id => 3,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => 16,
+    :distance => 146,
+)
+Hole.create(
+    :number => 8,
+    :course_id => 3,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 4,
+    :distance => 384,
+)
+Hole.create(
+    :number => 9,
+    :course_id => 3,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 12,
+    :distance => 354,
+)
+Hole.create(
+    :number => 10,
+    :course_id => 3,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 9,
+    :distance => 348,
+)
+Hole.create(
+    :number => 11,
+    :course_id => 3,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => 11,
+    :distance => 155,
+)
+Hole.create(
+    :number => 12,
+    :course_id => 3,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 5,
+    :distance => 347,
+)
+Hole.create(
+    :number => 13,
+    :course_id => 3,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 1,
+    :distance => 382,
+)
+Hole.create(
+    :number => 14,
+    :course_id => 3,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => 15,
+    :distance => 512,
+)
+Hole.create(
+    :number => 15,
+    :course_id => 3,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 3,
+    :distance => 401,
+)
+Hole.create(
+    :number => 16,
+    :course_id => 3,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => 17,
+    :distance => 528,
+)
+Hole.create(
+    :number => 17,
+    :course_id => 3,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => 13,
+    :distance => 136,
+)
+Hole.create(
+    :number => 18,
+    :course_id => 3,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 7,
+    :distance => 382,
+)
+Hole.create(
+    :number => 1,
+    :course_id => 7,
+    :tee => "green",
+    :par => 4,
+    :handicap => 4,
+    :distance => 409,
+    :image => "Knightsbrook-1.jpg",
+)
+Hole.create(
+    :number => 2,
+    :course_id => 7,
+    :tee => "green",
+    :par => 4,
+    :handicap => 2,
+    :distance => 403,
+    :image => "Knightsbrook-2.jpg",
+)
+Hole.create(
+    :number => 3,
+    :course_id => 7,
+    :tee => "green",
+    :par => 3,
+    :handicap => 18,
+    :distance => 127,
+    :image => "Knightsbrook-3.jpg",
+)
+Hole.create(
+    :number => 4,
+    :course_id => 7,
+    :tee => "green",
+    :par => 5,
+    :handicap => 14,
+    :distance => 494,
+    :image => "Knightsbrook-4.jpg",
+)
+Hole.create(
+    :number => 5,
+    :course_id => 7,
+    :tee => "green",
+    :par => 3,
+    :handicap => 10,
+    :distance => 158,
+    :image => "Knightsbrook-5.jpg",
+)
+Hole.create(
+    :number => 6,
+    :course_id => 7,
+    :tee => "green",
+    :par => 5,
+    :handicap => 16,
+    :distance => 501,
+    :image => "Knightsbrook-6.jpg",
+)
+Hole.create(
+    :number => 7,
+    :course_id => 7,
+    :tee => "green",
+    :par => 4,
+    :handicap => 12,
+    :distance => 378,
+    :image => "Knightsbrook-7.jpg",
+)
+Hole.create(
+    :number => 8,
+    :course_id => 7,
+    :tee => "green",
+    :par => 4,
+    :handicap => 6,
+    :distance => 439,
+    :image => "Knightsbrook-8.jpg",
+)
+Hole.create(
+    :number => 9,
+    :course_id => 7,
+    :tee => "green",
+    :par => 4,
+    :handicap => 8,
+    :distance => 383,
+    :image => "Knightsbrook-9.jpg",
+)
+Hole.create(
+    :number => 10,
+    :course_id => 7,
+    :tee => "green",
+    :par => 4,
+    :handicap => 13,
+    :distance => 357,
+    :image => "Knightsbrook-10.jpg",
+)
+Hole.create(
+    :number => 11,
+    :course_id => 7,
+    :tee => "green",
+    :par => 4,
+    :handicap => 7,
+    :distance => 412,
+    :image => "Knightsbrook-11.jpg",
+)
+Hole.create(
+    :number => 12,
+    :course_id => 7,
+    :tee => "green",
+    :par => 4,
+    :handicap => 3,
+    :distance => 409,
+    :image => "Knightsbrook-12.jpg",
+)
+Hole.create(
+    :number => 13,
+    :course_id => 7,
+    :tee => "green",
+    :par => 5,
+    :handicap => 17,
+    :distance => 481,
+    :image => "Knightsbrook-13.jpg",
+)
+Hole.create(
+    :number => 14,
+    :course_id => 7,
+    :tee => "green",
+    :par => 4,
+    :handicap => 1,
+    :distance => 434,
+    :image => "Knightsbrook-14.jpg",
+)
+Hole.create(
+    :number => 15,
+    :course_id => 7,
+    :tee => "green",
+    :par => 4,
+    :handicap => 5,
+    :distance => 377,
+    :image => "Knightsbrook-15.jpg",
+)
+Hole.create(
+    :number => 16,
+    :course_id => 7,
+    :tee => "green",
+    :par => 3,
+    :handicap => 15,
+    :distance => 160,
+    :image => "Knightsbrook-16.jpg",
+)
+Hole.create(
+    :number => 17,
+    :course_id => 7,
+    :tee => "green",
+    :par => 5,
+    :handicap => 9,
+    :distance => 523,
+    :image => "Knightsbrook-17.jpg",
+)
+Hole.create(
+    :number => 18,
+    :course_id => 7,
+    :tee => "green",
+    :par => 3,
+    :handicap => 11,
+    :distance => 160,
+    :image => "Knightsbrook-18.jpg",
+)
+Hole.create(
+    :number => 1,
+    :course_id => 13,
+    :tee => "white",
+    :par => 3,
+    :handicap => 8,
+    :distance => 180,
+)
+Hole.create(
+    :number => 2,
+    :course_id => 13,
+    :tee => "white",
+    :par => 3,
+    :handicap => 12,
+    :distance => 138,
+)
+Hole.create(
+    :number => 3,
+    :course_id => 13,
+    :tee => "white",
+    :par => 4,
+    :handicap => 3,
+    :distance => 373,
+)
+Hole.create(
+    :number => 4,
+    :course_id => 13,
+    :tee => "white",
+    :par => 4,
+    :handicap => 6,
+    :distance => 356,
+)
+Hole.create(
+    :number => 5,
+    :course_id => 13,
+    :tee => "white",
+    :par => 4,
+    :handicap => 14,
+    :distance => 340,
+)
+Hole.create(
+    :number => 6,
+    :course_id => 13,
+    :tee => "white",
+    :par => 4,
+    :handicap => 1,
+    :distance => 354,
+)
+Hole.create(
+    :number => 7,
+    :course_id => 13,
+    :tee => "white",
+    :par => 4,
+    :handicap => 15,
+    :distance => 320,
+)
+Hole.create(
+    :number => 8,
+    :course_id => 13,
+    :tee => "white",
+    :par => 5,
+    :handicap => 11,
+    :distance => 419,
+)
+Hole.create(
+    :number => 9,
+    :course_id => 13,
+    :tee => "white",
+    :par => 3,
+    :handicap => 16,
+    :distance => 135,
+)
+Hole.create(
+    :number => 10,
+    :course_id => 13,
+    :tee => "white",
+    :par => 5,
+    :handicap => 13,
+    :distance => 439,
+)
+Hole.create(
+    :number => 11,
+    :course_id => 13,
+    :tee => "white",
+    :par => 4,
+    :handicap => 9,
+    :distance => 283,
+)
+Hole.create(
+    :number => 12,
+    :course_id => 13,
+    :tee => "white",
+    :par => 3,
+    :handicap => 4,
+    :distance => 151,
+)
+Hole.create(
+    :number => 13,
+    :course_id => 13,
+    :tee => "white",
+    :par => 4,
+    :handicap => 5,
+    :distance => 343,
+)
+Hole.create(
+    :number => 14,
+    :course_id => 13,
+    :tee => "white",
+    :par => 3,
+    :handicap => 7,
+    :distance => 167,
+)
+Hole.create(
+    :number => 15,
+    :course_id => 13,
+    :tee => "white",
+    :par => 4,
+    :handicap => 2,
+    :distance => 299,
+)
+Hole.create(
+    :number => 16,
+    :course_id => 13,
+    :tee => "white",
+    :par => 3,
+    :handicap => 10,
+    :distance => 156,
+)
+Hole.create(
+    :number => 17,
+    :course_id => 13,
+    :tee => "white",
+    :par => 4,
+    :handicap => 18,
+    :distance => 240,
+)
+Hole.create(
+    :number => 18,
+    :course_id => 13,
+    :tee => "white",
+    :par => 3,
+    :handicap => 17,
+    :distance => 107,
+)
+Hole.create(
+    :number => 1,
+    :course_id => 12,
+    :tee => "green",
+    :par => 4,
+    :handicap => 6,
+    :distance => 374,
+    :strokesaver => "A challenging start, this tight par four narrows at the fairway bunkers, which are set at the relevant yardages to swallow up any errand tee shots. The undulating green complex and front right bunker have a foreshortening effect, so club selection for the approach is vital."
+)
+Hole.create(
+    :number => 2,
+    :course_id => 12,
+    :tee => "green",
+    :par => 5,
+    :handicap => 12,
+    :distance => 517,
+    :strokesaver => "This is a long par five meandering through sets of fairway bunkers designed to punish both stray tee and lay-up shots. It moves steadily uphill to its challenging green, have a little peep at putting surface before playing your pitch, the pin position will be pivotal."
+)
+Hole.create(
+    :number => 3,
+    :course_id => 12,
+    :tee => "green",
+    :par => 4,
+    :handicap => 8,
+    :distance => 391,
+    :strokesaver => "A risk/reward driving hole, the brave player might take on the fairway trap on the left and get the big shoot forward, leaving a much shorter approach. The cautious play is short of the bunker, taking a gamble on a longer club for the second shot to a mellow green surrounded by water, take a deep breath."
+)
+Hole.create(
+    :number => 4,
+    :course_id => 12,
+    :tee => "green",
+    :par => 3,
+    :handicap => 18,
+    :distance => 163,
+    :strokesaver => "This beautiful par three is guarded by water on the right side, but don't think you can chase one in, everything short will feed left to right. The clever play is the left of the green avoiding the deep traps on the right, your reward is a gentle putting surface."
+)
+Hole.create(
+    :number => 5,
+    :course_id => 12,
+    :tee => "green",
+    :par => 4,
+    :handicap => 2,
+    :distance => 391,
+    :strokesaver => "Keep it just inside the bunker on the right off the tee and hope for the kick down to the flat, anything left will likely result in a lost ball. The approach is complicated by the winding stream and gorse, making this a target you cannot afford to miss. The tactical player will see this as a lay-up hole."
+)
+Hole.create(
+    :number => 6,
+    :course_id => 12,
+    :tee => "green",
+    :par => 3,
+    :handicap => 10,
+    :distance => 176,
+    :strokesaver => "From the tee it looks like there is no green to land the ball on, and with a steep drop and gorse all along the left, this is a daunting hole. The green itself sits up with a severe fall away to the right, and is backed by stunning beech trees. Take one club extra, par is a very good score here."
+)
+Hole.create(
+    :number => 7,
+    :course_id => 12,
+    :tee => "green",
+    :par => 4,
+    :handicap => 4,
+    :distance => 394,
+    :strokesaver => "This may be the most attractive hole on the front nine with a downhill tee shot inviting you to open the shoulders. Trees left and deep traps right wait for any crooked drives, while the second shot sees water front and left of the green. This approach requires a high accurate shot to be successful."
+)
+Hole.create(
+    :number => 8,
+    :course_id => 12,
+    :tee => "green",
+    :par => 5,
+    :handicap => 16,
+    :distance => 486,
+    :strokesaver => "A superbly set up tee shot sees deep traps plotted all over the landing area. Take on the left-hand bunker to get the best result and put the green in range of two shots. The target sits high in the distance, and is guarded well by bunkers and trees, so once again, only a towering approach shot will get the job done."
+)
+Hole.create(
+    :number => 9,
+    :course_id => 12,
+    :tee => "green",
+    :par => 4,
+    :handicap => 14,
+    :distance => 362,
+    :strokesaver => "A faders delight, this fitting end to the front nine is a demanding par four. Once you have negotiated the bunkers from the downhill tee shot, enjoy one of the courses simpler approach shots before stopping off at the clubhouse for a well earned snack."
+)
+Hole.create(
+    :number => 10,
+    :course_id => 12,
+    :tee => "green",
+    :par => 4,
+    :handicap => 7,
+    :distance => 382,
+    :strokesaver => "The back nine winds through the historic park of the demesne and the 10th immediately sets the scene. Once the water is cleared from the tee, the glorious lime avenue borders the right of the hole perfectly. The bunkering left of the green will trick the less astute into taking too little club, as your attention is grabbed by the elegant background."
+)
+Hole.create(
+    :number => 11,
+    :course_id => 12,
+    :tee => "green",
+    :par => 4,
+    :handicap => 13,
+    :distance => 330,
+    :strokesaver => "One of the courses tightest tee shots is found on number eleven, with water all along the left, and two deep traps on the right, a short and conservative drive is best. The tiny green offers no comfort for the long second shot and water waits for you left and over the back. Take the opportunity to view the stunning 13th Century Castle to your left."
+)
+Hole.create(
+    :number => 12,
+    :course_id => 12,
+    :tee => "green",
+    :par => 5,
+    :handicap => 15,
+    :distance => 498,
+    :strokesaver => "There is no margin for error on this thought-provoking par five. A long, accurate drive down the right leaves the green in range, but with the carry all water and the shallow green backed by gorse, this approach requires perfection. Played conservatively in three shorter shots, the traps and water are easier avoided, so don't be fooled by the short yardage of this hole."
+)
+Hole.create(
+    :number => 13,
+    :course_id => 12,
+    :tee => "green",
+    :par => 3,
+    :handicap => 9,
+    :distance => 154,
+    :strokesaver => "This hole plays back over the lake which dominated the 12th. Bunkers are strategically placed to catch any trying to bail out left. The green is disected by a long diagonal ridge making back right pin positions even more difficult. Thirteen is the perfect matchplay hole where bravery is rewarded and possibly punished in equal measure."
+)
+Hole.create(
+    :number => 14,
+    :course_id => 12,
+    :tee => "green",
+    :par => 4,
+    :handicap => 3,
+    :distance => 438,
+    :strokesaver => "An intimidating teeshot skirts the lake and plays uphill between a large horse chestnut and a pine. Huge purple beeches hug the left and three ancient oaks in the fairway make the approach one for the shot-shapers. This long, natural hole seems like it has been there forever and will require two of your very best shots to reach the shallow diagonal green. Par here feels like a birdie."
+)
+Hole.create(
+    :number => 15,
+    :course_id => 12,
+    :tee => "green",
+    :par => 3,
+    :handicap => 17,
+    :distance => 123,
+    :strokesaver => "The setting for this last par three give it an instant feeling of maturity, but don't let the ancient surroundings distract you from the task ahead. The ever undulating and rolling green lends itself to an easy three putt, whilst its tabletop layout and deep bunkers make recovery shots so difficult. Make sure you have enough club."
+)
+Hole.create(
+    :number => 16,
+    :course_id => 12,
+    :tee => "green",
+    :par => 4,
+    :handicap => 11,
+    :distance => 379,
+    :strokesaver => "As we enter Kelly's Field number sixteen has a classic old American Parkland style, with a tight tee shot down the tree hugged fairway and large green, which is split by shelves into four quarters. Keep in the left half off the tee to open up the green for your second."
+)
+Hole.create(
+    :number => 17,
+    :course_id => 12,
+    :tee => "green",
+    :par => 4,
+    :handicap => 1,
+    :distance => 406,
+    :strokesaver => "With no bunkers this hole appears straightforward, but the stately trees on the right to left dogleg overhang the fairway, making it very tight indeed. Similarly at the green the landing area is halved by interference from the old timbers. Only two perfectly struck shots will find the green on this menacing penultimate hole."
+)
+Hole.create(
+    :number => 18,
+    :course_id => 12,
+    :tee => "green",
+    :par => 5,
+    :handicap => 5,
+    :distance => 472,
+    :strokesaver => "Another great matchplay hole awaits you on the eighteenth tee. Make your mind up here and stick to your strategy, indecision will end in tears. A big drive over the trees on the right sees a second shot between guarding trees, over the pond, to a shallow green. That's the all or nothing play, but a shorter tee shot down the left leaves a mid-iron second to lay up, followed by a pitch over the pond. The decision is yours!"
+)
+Hole.create(
+    :number => 1,
+    :course_id => 14,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 13,
+    :distance => 363,
+    :strokesaver => "Play it as you see it"
+)
+Hole.create(
+    :number => 2,
+    :course_id => 14,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 3,
+    :distance => 369,
+    :strokesaver => "Aim at the ditch on the right side of the green, don't miss tee shot to the right."
+)
+Hole.create(
+    :number => 3,
+    :course_id => 14,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 7,
+    :distance => 357,
+    :strokesaver => "Gap in tree line, room left & right, slight fade is the shot."
+)
+Hole.create(
+    :number => 4,
+    :course_id => 14,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 1,
+    :distance => 413,
+    :strokesaver => "Left or right of the trees, left is tight, but best angle."
+)
+Hole.create(
+    :number => 5,
+    :course_id => 14,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => 15,
+    :distance => 162,
+    :strokesaver => "Play it as you see it"
+)
+Hole.create(
+    :number => 6,
+    :course_id => 14,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => 5,
+    :distance => 525,
+    :strokesaver => "Aim at the bunker complex in the distance on the right side."
+)
+Hole.create(
+    :number => 7,
+    :course_id => 14,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 9,
+    :distance => 370,
+    :strokesaver => "Lots of room to the right of the bunkers"
+)
+Hole.create(
+    :number => 8,
+    :course_id => 14,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => 11,
+    :distance => 189,
+    :strokesaver => "Play it as you see it."
+)
+Hole.create(
+    :number => 9,
+    :course_id => 14,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => 17,
+    :distance => 478,
+    :strokesaver => "Aim at the small bridge, or at the right-hand side of the bunkers, or straight over the bunkers."
+)
+Hole.create(
+    :number => 10,
+    :course_id => 14,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 18,
+    :distance => 305,
+    :strokesaver => "Aim slightly left of the tallest tree in the distance."
+)
+Hole.create(
+    :number => 11,
+    :course_id => 14,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 2,
+    :distance => 423,
+    :strokesaver => "Aim at the bunkers at 12 O'Clock - don't miss on the right side."
+)
+Hole.create(
+    :number => 12,
+    :course_id => 14,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => 12,
+    :distance => 173,
+    :strokesaver => "As you see it."
+)
+Hole.create(
+    :number => 13,
+    :course_id => 14,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 4,
+    :distance => 381,
+    :strokesaver => "Don't miss it left or right - 5 wood or 3 wood a good play"
+)
+Hole.create(
+    :number => 14,
+    :course_id => 14,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 16,
+    :distance => 263,
+    :strokesaver => "Short par 4, play it as you see it"
+)
+Hole.create(
+    :number => 15,
+    :course_id => 14,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => 6,
+    :distance => 540,
+    :strokesaver => "Aim at 'V' in tree line - do not miss second shot to the left - stay up the right side."
+)
+Hole.create(
+    :number => 16,
+    :course_id => 14,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => 14,
+    :distance => 146,
+    :strokesaver => "Play it as you see it."
+)
+Hole.create(
+    :number => 17,
+    :course_id => 14,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 8,
+    :distance => 376,
+    :strokesaver => "Stay left of bunkers off the tee."
+)
+Hole.create(
+    :number => 18,
+    :course_id => 14,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => 10,
+    :distance => 477,
+    :strokesaver => "Aim at the last bunker on the left or the second oak tree behind it."
+)
+Hole.create(
+    :number => 1,
+    :course_id => 15,
+    :tee => "green",
+    :par => 5,
+    :handicap => 12,
+    :distance => 426,
+)
+Hole.create(
+    :number => 2,
+    :course_id => 15,
+    :tee => "green",
+    :par => 4,
+    :handicap => 4,
+    :distance => 369,
+)
+Hole.create(
+    :number => 3,
+    :course_id => 15,
+    :tee => "green",
+    :par => 5,
+    :handicap => 6,
+    :distance => 429,
+)
+Hole.create(
+    :number => 4,
+    :course_id => 15,
+    :tee => "green",
+    :par => 4,
+    :handicap => 16,
+    :distance => 257,
+)
+Hole.create(
+    :number => 5,
+    :course_id => 15,
+    :tee => "green",
+    :par => 3,
+    :handicap => 18,
+    :distance => 117,
+)
+Hole.create(
+    :number => 6,
+    :course_id => 15,
+    :tee => "green",
+    :par => 4,
+    :handicap => 14,
+    :distance => 291,
+)
+Hole.create(
+    :number => 7,
+    :course_id => 15,
+    :tee => "green",
+    :par => 4,
+    :handicap => 2,
+    :distance => 387,
+)
+Hole.create(
+    :number => 8,
+    :course_id => 15,
+    :tee => "green",
+    :par => 3,
+    :handicap => 10,
+    :distance => 157,
+)
+Hole.create(
+    :number => 9,
+    :course_id => 15,
+    :tee => "green",
+    :par => 5,
+    :handicap => 8,
+    :distance => 434,
+)
+Hole.create(
+    :number => 10,
+    :course_id => 15,
+    :tee => "green",
+    :par => 4,
+    :handicap => 3,
+    :distance => 368,
+)
+Hole.create(
+    :number => 11,
+    :course_id => 15,
+    :tee => "green",
+    :par => 3,
+    :handicap => 7,
+    :distance => 145,
+)
+Hole.create(
+    :number => 12,
+    :course_id => 15,
+    :tee => "green",
+    :par => 4,
+    :handicap => 15,
+    :distance => 324,
+)
+Hole.create(
+    :number => 13,
+    :course_id => 15,
+    :tee => "green",
+    :par => 3,
+    :handicap => 5,
+    :distance => 176,
+)
+Hole.create(
+    :number => 14,
+    :course_id => 15,
+    :tee => "green",
+    :par => 5,
+    :handicap => 13,
+    :distance => 467,
+)
+Hole.create(
+    :number => 15,
+    :course_id => 15,
+    :tee => "green",
+    :par => 4,
+    :handicap => 17,
+    :distance => 272,
+)
+Hole.create(
+    :number => 16,
+    :course_id => 15,
+    :tee => "green",
+    :par => 3,
+    :handicap => 9,
+    :distance => 144,
+)
+Hole.create(
+    :number => 17,
+    :course_id => 15,
+    :tee => "green",
+    :par => 4,
+    :handicap => 1,
+    :distance => 393,
+)
+Hole.create(
+    :number => 18,
+    :course_id => 15,
+    :tee => "green",
+    :par => 4,
+    :handicap => 11,
+    :distance => 344,
+)
+Hole.create(
+    :number => 8,
+    :course_id => 16,
+    :tee => "white",
+    :par => 5,
+    :handicap => nil,
+    :distance => 495,
+    :strokesaver => "Stream crossing the fairway near the green may catch you out if you go for it in two. Beware!!"
+)
+Hole.create(
+    :number => 7,
+    :course_id => 16,
+    :tee => "white",
+    :par => 4,
+    :handicap => nil,
+    :distance => 399,
+    :strokesaver => "Middle of the fairway with the first, middle of the green with the second, one putt.... birdie!!!!"
+)
+Hole.create(
+    :number => 6,
+    :course_id => 16,
+    :tee => "white",
+    :par => 3,
+    :handicap => nil,
+    :distance => 179,
+    :strokesaver => "Difficult green to hit. Well placed bunkers gather any inaccurate tee shots."
+)
+Hole.create(
+    :number => 5,
+    :course_id => 16,
+    :tee => "white",
+    :par => 4,
+    :handicap => nil,
+    :distance => 365,
+    :strokesaver => "Tight driving hole. Important to find the fairway."
+)
+Hole.create(
+    :number => 4,
+    :course_id => 16,
+    :tee => "white",
+    :par => 4,
+    :handicap => nil,
+    :distance => 413,
+    :strokesaver => "Unless you are a big hitter, this difficult hole would be best played as a par 5."
+)
+Hole.create(
+    :number => 3,
+    :course_id => 16,
+    :tee => "white",
+    :par => 4,
+    :handicap => nil,
+    :distance => 339,
+    :strokesaver => "Short par 4 but important to be below the hole with your second shot."
+)
+Hole.create(
+    :number => 2,
+    :course_id => 16,
+    :tee => "white",
+    :par => 3,
+    :handicap => nil,
+    :distance => 132,
+    :strokesaver => "Anywhere on the putting surface is good here."
+)
+Hole.create(
+    :number => 1,
+    :course_id => 16,
+    :tee => "white",
+    :par => 5,
+    :handicap => nil,
+    :distance => 489,
+    :strokesaver => "Testing Par 5 with water waiting for that errant golf shot."
+)
+Hole.create(
+    :number => 9,
+    :course_id => 16,
+    :tee => "white",
+    :par => 4,
+    :handicap => nil,
+    :distance => 389,
+    :strokesaver => "Favours a draw off the tee, good birdie hole."
+)
+Hole.create(
+    :number => 10,
+    :course_id => 16,
+    :tee => "white",
+    :par => 4,
+    :handicap => nil,
+    :distance => 353,
+    :strokesaver => "An accurate tee shot is essential if you are to get on in two, otherwise the water can be costly."
+)
+Hole.create(
+    :number => 11,
+    :course_id => 16,
+    :tee => "white",
+    :par => 3,
+    :handicap => nil,
+    :distance => 160,
+    :strokesaver => "The easiest of the four par 3s. Make the most of it."
+)
+Hole.create(
+    :number => 12,
+    :course_id => 16,
+    :tee => "white",
+    :par => 4,
+    :handicap => nil,
+    :distance => 337,
+    :strokesaver => "Good birdie chance here with some tough holes to follow."
+)
+Hole.create(
+    :number => 13,
+    :course_id => 16,
+    :tee => "white",
+    :par => 4,
+    :handicap => nil,
+    :distance => 332,
+    :strokesaver => "A lot of people leave this hole thinking balls are an aquatic species!!"
+)
+Hole.create(
+    :number => 14,
+    :course_id => 16,
+    :tee => "white",
+    :par => 5,
+    :handicap => nil,
+    :distance => 499,
+    :strokesaver => "With streams crossing the fairway in three places, this hole needs good course management."
+)
+Hole.create(
+    :number => 15,
+    :course_id => 16,
+    :tee => "white",
+    :par => 3,
+    :handicap => nil,
+    :distance => 177,
+    :strokesaver => "Avoid the bunkers here and be content to walk off with a par."
+)
+Hole.create(
+    :number => 16,
+    :course_id => 16,
+    :tee => "white",
+    :par => 4,
+    :handicap => nil,
+    :distance => 329,
+    :strokesaver => "At last an easy one!! ....but three putts a possibility on this green."
+)
+Hole.create(
+    :number => 17,
+    :course_id => 16,
+    :tee => "white",
+    :par => 4,
+    :handicap => nil,
+    :distance => 383,
+    :strokesaver => "Hard to find the green in two if the wind is against."
+)
+Hole.create(
+    :number => 18,
+    :course_id => 16,
+    :tee => "white",
+    :par => 5,
+    :handicap => nil,
+    :distance => 514,
+    :strokesaver => "Great finishing hole. This hole has decided many a match. A par will win most times here."
+)
+Hole.create(
+    :number => 8,
+    :course_id => 16,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => nil,
+    :distance => 486,
+    :strokesaver => "Stream crossing the fairway near the green may catch you out if you go for it in two. Beware!!"
+)
+Hole.create(
+    :number => 7,
+    :course_id => 16,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => nil,
+    :distance => 394,
+    :strokesaver => "Middle of the fairway with the first, middle of the green with the second, one putt.... birdie!!!!"
+)
+Hole.create(
+    :number => 6,
+    :course_id => 16,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => nil,
+    :distance => 167,
+    :strokesaver => "Difficult green to hit. Well placed bunkers gather any inaccurate tee shots."
+)
+Hole.create(
+    :number => 5,
+    :course_id => 16,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => nil,
+    :distance => 339,
+    :strokesaver => "Tight driving hole. Important to find the fairway."
+)
+Hole.create(
+    :number => 4,
+    :course_id => 16,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => nil,
+    :distance => 378,
+    :strokesaver => "Unless you are a big hitter, this difficult hole would be best played as a par 5."
+)
+Hole.create(
+    :number => 3,
+    :course_id => 16,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => nil,
+    :distance => 330,
+    :strokesaver => "Short par 4 but important to be below the hole with your second shot."
+)
+Hole.create(
+    :number => 2,
+    :course_id => 16,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => nil,
+    :distance => 119,
+    :strokesaver => "Anywhere on the putting surface is good here."
+)
+Hole.create(
+    :number => 1,
+    :course_id => 16,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => nil,
+    :distance => 471,
+    :strokesaver => "Testing Par 5 with water waiting for that errant golf shot."
+)
+Hole.create(
+    :number => 9,
+    :course_id => 16,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => nil,
+    :distance => 381,
+    :strokesaver => "Favours a draw off the tee, good birdie hole."
+)
+Hole.create(
+    :number => 10,
+    :course_id => 16,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => nil,
+    :distance => 315,
+    :strokesaver => "An accurate tee shot is essential if you are to get on in two, otherwise the water can be costly."
+)
+Hole.create(
+    :number => 11,
+    :course_id => 16,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => nil,
+    :distance => 151,
+    :strokesaver => "The easiest of the four par 3s. Make the most of it."
+)
+Hole.create(
+    :number => 12,
+    :course_id => 16,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => nil,
+    :distance => 324,
+    :strokesaver => "Good birdie chance here with some tough holes to follow."
+)
+Hole.create(
+    :number => 13,
+    :course_id => 16,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => nil,
+    :distance => 316,
+    :strokesaver => "A lot of people leave this hole thinking balls are an aquatic species!!"
+)
+Hole.create(
+    :number => 14,
+    :course_id => 16,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => nil,
+    :distance => 479,
+    :strokesaver => "With streams crossing the fairway in three places, this hole needs good course management."
+)
+Hole.create(
+    :number => 15,
+    :course_id => 16,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => nil,
+    :distance => 160,
+    :strokesaver => "Avoid the bunkers here and be content to walk off with a par."
+)
+Hole.create(
+    :number => 16,
+    :course_id => 16,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => nil,
+    :distance => 319,
+    :strokesaver => "At last an easy one!! ....but three putts a possibility on this green."
+)
+Hole.create(
+    :number => 17,
+    :course_id => 16,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => nil,
+    :distance => 372,
+    :strokesaver => "Hard to find the green in two if the wind is against."
+)
+Hole.create(
+    :number => 18,
+    :course_id => 16,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => nil,
+    :distance => 505,
+    :strokesaver => "Great finishing hole. This hole has decided many a match. A par will win most times here."
+)
+Hole.create(
+    :number => 1,
+    :course_id => 17,
+    :tee => "white",
+    :par => 4,
+    :handicap => 8,
+    :distance => 379,
+)
+Hole.create(
+    :number => 2,
+    :course_id => 17,
+    :tee => "white",
+    :par => 4,
+    :handicap => 10,
+    :distance => 366,
+)
+Hole.create(
+    :number => 3,
+    :course_id => 17,
+    :tee => "white",
+    :par => 5,
+    :handicap => 14,
+    :distance => 516,
+)
+Hole.create(
+    :number => 4,
+    :course_id => 17,
+    :tee => "white",
+    :par => 3,
+    :handicap => 4,
+    :distance => 188,
+)
+Hole.create(
+    :number => 5,
+    :course_id => 17,
+    :tee => "white",
+    :par => 4,
+    :handicap => 6,
+    :distance => 366,
+)
+Hole.create(
+    :number => 6,
+    :course_id => 17,
+    :tee => "white",
+    :par => 5,
+    :handicap => 12,
+    :distance => 536,
+)
+Hole.create(
+    :number => 7,
+    :course_id => 17,
+    :tee => "white",
+    :par => 3,
+    :handicap => 18,
+    :distance => 149,
+)
+Hole.create(
+    :number => 8,
+    :course_id => 17,
+    :tee => "white",
+    :par => 4,
+    :handicap => 2,
+    :distance => 431,
+)
+Hole.create(
+    :number => 9,
+    :course_id => 17,
+    :tee => "white",
+    :par => 4,
+    :handicap => 16,
+    :distance => 354,
+)
+Hole.create(
+    :number => 10,
+    :course_id => 17,
+    :tee => "white",
+    :par => 4,
+    :handicap => 11,
+    :distance => 420,
+)
+Hole.create(
+    :number => 11,
+    :course_id => 17,
+    :tee => "white",
+    :par => 4,
+    :handicap => 1,
+    :distance => 409,
+)
+Hole.create(
+    :number => 12,
+    :course_id => 17,
+    :tee => "white",
+    :par => 4,
+    :handicap => 13,
+    :distance => 370,
+)
+Hole.create(
+    :number => 13,
+    :course_id => 17,
+    :tee => "white",
+    :par => 4,
+    :handicap => 15,
+    :distance => 359,
+)
+Hole.create(
+    :number => 14,
+    :course_id => 17,
+    :tee => "white",
+    :par => 3,
+    :handicap => 7,
+    :distance => 176,
+)
+Hole.create(
+    :number => 15,
+    :course_id => 17,
+    :tee => "white",
+    :par => 5,
+    :handicap => 5,
+    :distance => 528,
+)
+Hole.create(
+    :number => 16,
+    :course_id => 17,
+    :tee => "white",
+    :par => 3,
+    :handicap => 9,
+    :distance => 157,
+)
+Hole.create(
+    :number => 17,
+    :course_id => 17,
+    :tee => "white",
+    :par => 5,
+    :handicap => 17,
+    :distance => 543,
+)
+Hole.create(
+    :number => 18,
+    :course_id => 17,
+    :tee => "white",
+    :par => 4,
+    :handicap => 3,
+    :distance => 361,
+)
+Hole.create(
+    :number => 1,
+    :course_id => 18,
+    :tee => "green",
+    :par => 4,
+    :handicap => 5,
+    :distance => 389,
+    :image => "Monty-1.jpg",
+)
+Hole.create(
+    :number => 2,
+    :course_id => 18,
+    :tee => "green",
+    :par => 4,
+    :handicap => 9,
+    :distance => 356,
+    :image => "Monty-2.jpg",
+)
+Hole.create(
+    :number => 3,
+    :course_id => 18,
+    :tee => "green",
+    :par => 3,
+    :handicap => 3,
+    :distance => 184,
+    :image => "Monty-3.jpg",
+)
+Hole.create(
+    :number => 4,
+    :course_id => 18,
+    :tee => "green",
+    :par => 5,
+    :handicap => 13,
+    :distance => 529,
+    :image => "Monty-4.jpg",
+)
+Hole.create(
+    :number => 5,
+    :course_id => 18,
+    :tee => "green",
+    :par => 4,
+    :handicap => 1,
+    :distance => 407,
+    :image => "Monty-5.jpg",
+)
+Hole.create(
+    :number => 6,
+    :course_id => 18,
+    :tee => "green",
+    :par => 4,
+    :handicap => 11,
+    :distance => 336,
+    :image => "Monty-6.jpg",
+)
+Hole.create(
+    :number => 7,
+    :course_id => 18,
+    :tee => "green",
+    :par => 3,
+    :handicap => 7,
+    :distance => 168,
+    :image => "Monty-7.jpg",
+)
+Hole.create(
+    :number => 8,
+    :course_id => 18,
+    :tee => "green",
+    :par => 5,
+    :handicap => 17,
+    :distance => 484,
+    :image => "Monty-8.jpg",
+)
+Hole.create(
+    :number => 9,
+    :course_id => 18,
+    :tee => "green",
+    :par => 4,
+    :handicap => 15,
+    :distance => 333,
+    :image => "Monty-9.jpg",
+)
+Hole.create(
+    :number => 10,
+    :course_id => 18,
+    :tee => "green",
+    :par => 4,
+    :handicap => 6,
+    :distance => 407,
+    :image => "Monty-10.jpg",
+)
+Hole.create(
+    :number => 11,
+    :course_id => 18,
+    :tee => "green",
+    :par => 4,
+    :handicap => 2,
+    :distance => 413,
+    :image => "Monty-11.jpg",
+)
+Hole.create(
+    :number => 12,
+    :course_id => 18,
+    :tee => "green",
+    :par => 3,
+    :handicap => 10,
+    :distance => 173,
+    :image => "Monty-12.jpg",
+)
+Hole.create(
+    :number => 13,
+    :course_id => 18,
+    :tee => "green",
+    :par => 4,
+    :handicap => 14,
+    :distance => 303,
+    :image => "Monty-13.jpg",
+)
+Hole.create(
+    :number => 14,
+    :course_id => 18,
+    :tee => "green",
+    :par => 4,
+    :handicap => 8,
+    :distance => 353,
+    :image => "Monty-14.jpg",
+)
+Hole.create(
+    :number => 15,
+    :course_id => 18,
+    :tee => "green",
+    :par => 5,
+    :handicap => 16,
+    :distance => 500,
+    :image => "Monty-15.jpg",
+)
+Hole.create(
+    :number => 16,
+    :course_id => 18,
+    :tee => "green",
+    :par => 4,
+    :handicap => 4,
+    :distance => 400,
+    :image => "Monty-16.jpg",
+)
+Hole.create(
+    :number => 17,
+    :course_id => 18,
+    :tee => "green",
+    :par => 3,
+    :handicap => 12,
+    :distance => 145,
+    :image => "Monty-17.jpg",
+)
+Hole.create(
+    :number => 18,
+    :course_id => 18,
+    :tee => "green",
+    :par => 5,
+    :handicap => 18,
+    :distance => 485,
+    :image => "Monty-18.jpg",
+)
+Hole.create(
+    :number => 1,
+    :course_id => 19,
+    :tee => "white",
+    :par => 5,
+    :handicap => 7,
+    :distance => 543,
+    :image => "Rathcore-hole-1.jpg",
+    :strokesaver => "Winding par 5, suits a fade off the tee, not too much though as OOB is all along the right. 2nd shot watch out for water on the left. Water a string feature on this course."
+)
+Hole.create(
+    :number => 2,
+    :course_id => 19,
+    :tee => "white",
+    :par => 4,
+    :handicap => 11,
+    :distance => 390,
+    :image => "Rathcore-hole-2.jpg",
+    :strokesaver => "Tidy par 4 with water and OOB on your right so stay left of the tee !!"
+)
+Hole.create(
+    :number => 3,
+    :course_id => 19,
+    :tee => "white",
+    :par => 4,
+    :handicap => 5,
+    :distance => 311,
+    :image => "Rathcore-hole-3.jpg",
+    :strokesaver => "Really tricky dogleg left par 4, short hole so 9 iron from tee is loads to land before bunker. Another 9 iron should reach the water fronted green. Really tricky."
+)
+Hole.create(
+    :number => 4,
+    :course_id => 19,
+    :tee => "white",
+    :par => 3,
+    :handicap => 9,
+    :distance => 188,
+    :image => "Rathcore-hole-4.jpg",
+    :strokesaver => "Slightly uphill par 3, only real difficulty here is getting the distance correct."
+)
+Hole.create(
+    :number => 5,
+    :course_id => 19,
+    :tee => "white",
+    :par => 4,
+    :handicap => 3,
+    :distance => 425,
+    :image => "Rathcore-hole-5.jpg",
+    :strokesaver => "Aim to land your ball on the left of the fairway from the tee, if you want to avoid the tress on the right for your approach. Beware the steep hill to left of green..."
+)
+Hole.create(
+    :number => 6,
+    :course_id => 19,
+    :tee => "white",
+    :par => 4,
+    :handicap => 17,
+    :distance => 317,
+    :image => "Rathcore-hole-6.jpg",
+    :strokesaver => "Short par 4, only real trouble is clearing the water to the green. 2nd hole with water in front of green."
+)
+Hole.create(
+    :number => 7,
+    :course_id => 19,
+    :tee => "white",
+    :par => 4,
+    :handicap => 13,
+    :distance => 311,
+    :image => "Rathcore-hole-7.jpg",
+    :strokesaver => "Third hole with water in front of green... seeing a trend yet ?, Take a mid iron from the tee here as the water is easily reachable from tee."
+)
+Hole.create(
+    :number => 8,
+    :course_id => 19,
+    :tee => "white",
+    :par => 4,
+    :handicap => 1,
+    :distance => 465,
+    :image => "Rathcore-hole-8.jpg",
+    :strokesaver => "Good long par 4 with bends to the right. Aim just left of bunker from the tee and fade it slightly is the ideal shot. Only issue with 2nd shot is distance."
+)
+Hole.create(
+    :number => 9,
+    :course_id => 19,
+    :tee => "white",
+    :par => 3,
+    :handicap => 10,
+    :distance => 138,
+    :image => "Rathcore-hole-9.jpg",
+    :strokesaver => "You've guessed it water surrounding to the front of the green. The 4th hole on this front nine. It's a short hole so just ensure you clear the water."
+)
+Hole.create(
+    :number => 10,
+    :course_id => 19,
+    :tee => "white",
+    :par => 5,
+    :handicap => 18,
+    :distance => 515,
+    :image => "Rathcore-hole-10.jpg",
+    :strokesaver => "Grip it and rip it from the tee this time, which should leave about 200 to the green which is reachable in 2. Just watch out for the water to the right of the green this time."
+)
+Hole.create(
+    :number => 11,
+    :course_id => 19,
+    :tee => "white",
+    :par => 3,
+    :handicap => 15,
+    :distance => 165,
+    :image => "Rathcore-hole-11.jpg",
+    :strokesaver => "Teeing off from a height so take a club or so less than usual for this distance, and that's it."
+)
+Hole.create(
+    :number => 12,
+    :course_id => 19,
+    :tee => "white",
+    :par => 4,
+    :handicap => 2,
+    :distance => 442,
+    :image => "Rathcore-hole-12.jpg",
+    :strokesaver => "The scrub that you can just about see from the tee is a water hazard, It's just about clearable from the tee but needs a good smack. Otherwise keep left for safety."
+)
+Hole.create(
+    :number => 13,
+    :course_id => 19,
+    :tee => "white",
+    :par => 5,
+    :handicap => 14,
+    :distance => 557,
+    :image => "Rathcore-hole-13.jpg",
+    :strokesaver => "Winding slightly right, suits a fade from the tee to roll down the fairway. for 2nd there is loads of room on left and right of hole, so you can have a go for it."
+)
+Hole.create(
+    :number => 14,
+    :course_id => 19,
+    :tee => "white",
+    :par => 4,
+    :handicap => 12,
+    :distance => 367,
+    :image => "Rathcore-hole-14.jpg",
+    :strokesaver => "Winding left par 4, aim for the bunkers down the bottom of the hill and fade it. Gorse bushes on the right are definitely something to steer clear of. 2nd will be a short pitch steeply uphill to green"
+)
+Hole.create(
+    :number => 15,
+    :course_id => 19,
+    :tee => "white",
+    :par => 4,
+    :handicap => 6,
+    :distance => 406,
+    :image => "Rathcore-hole-15.jpg",
+    :strokesaver => "Dogleg right par 4, don't attempt to clear the water from the tee, just keep to the left."
+)
+Hole.create(
+    :number => 16,
+    :course_id => 19,
+    :tee => "white",
+    :par => 3,
+    :handicap => 4,
+    :distance => 197,
+    :image => "Rathcore-hole-16.jpg",
+    :strokesaver => "Shortish par 3, with lots of trouble at the back, and a portion of scrub land to clear to the front. Yardage and accuracy from the tee both important here."
+)
+Hole.create(
+    :number => 17,
+    :course_id => 19,
+    :tee => "white",
+    :par => 4,
+    :handicap => 16,
+    :distance => 337,
+    :image => "Rathcore-hole-17.jpg",
+    :strokesaver => "Short par 4, aiming into the hill you might even clear it on a good day. Green is only about 100 yards down the hill on the far side."
+)
+Hole.create(
+    :number => 18,
+    :course_id => 19,
+    :tee => "white",
+    :par => 5,
+    :handicap => 8,
+    :distance => 481,
+    :image => "Rathcore-hole-18.jpg",
+    :strokesaver => "Keep to the left on this tee shot, aiming over the trees, and give it a mighty lash !, will leave the green reachable. But clearing the water in front of green might not be worth it. your call !!"
+)
+Hole.create(
+    :number => 1,
+    :course_id => 19,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => 7,
+    :distance => 510,
+    :image => "Rathcore-hole-1.jpg",
+)
+Hole.create(
+    :number => 2,
+    :course_id => 19,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 11,
+    :distance => 367,
+    :image => "Rathcore-hole-2.jpg",
+)
+Hole.create(
+    :number => 3,
+    :course_id => 19,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 5,
+    :distance => 270,
+    :image => "Rathcore-hole-3.jpg",
+)
+Hole.create(
+    :number => 4,
+    :course_id => 19,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => 9,
+    :distance => 168,
+    :image => "Rathcore-hole-4.jpg",
+)
+Hole.create(
+    :number => 5,
+    :course_id => 19,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 3,
+    :distance => 390,
+    :image => "Rathcore-hole-5.jpg",
+)
+Hole.create(
+    :number => 6,
+    :course_id => 19,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 17,
+    :distance => 301,
+    :image => "Rathcore-hole-6.jpg",
+)
+Hole.create(
+    :number => 7,
+    :course_id => 19,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 13,
+    :distance => 292,
+    :image => "Rathcore-hole-7.jpg",
+)
+Hole.create(
+    :number => 8,
+    :course_id => 19,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 1,
+    :distance => 435,
+    :image => "Rathcore-hole-8.jpg",
+)
+Hole.create(
+    :number => 9,
+    :course_id => 19,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => 10,
+    :distance => 121,
+    :image => "Rathcore-hole-9.jpg",
+)
+Hole.create(
+    :number => 10,
+    :course_id => 19,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => 18,
+    :distance => 481,
+    :image => "Rathcore-hole-10.jpg",
+)
+Hole.create(
+    :number => 11,
+    :course_id => 19,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => 15,
+    :distance => 154,
+    :image => "Rathcore-hole-11.jpg",
+)
+Hole.create(
+    :number => 12,
+    :course_id => 19,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 2,
+    :distance => 403,
+    :image => "Rathcore-hole-12.jpg",
+)
+Hole.create(
+    :number => 13,
+    :course_id => 19,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => 14,
+    :distance => 513,
+    :image => "Rathcore-hole-13.jpg",
+)
+Hole.create(
+    :number => 14,
+    :course_id => 19,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 12,
+    :distance => 328,
+    :image => "Rathcore-hole-14.jpg",
+)
+Hole.create(
+    :number => 15,
+    :course_id => 19,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 6,
+    :distance => 369,
+    :image => "Rathcore-hole-15.jpg",
+)
+Hole.create(
+    :number => 16,
+    :course_id => 19,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => 4,
+    :distance => 139,
+    :image => "Rathcore-hole-16.jpg",
+)
+Hole.create(
+    :number => 17,
+    :course_id => 19,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 16,
+    :distance => 308,
+    :image => "Rathcore-hole-17.jpg",
+)
+Hole.create(
+    :number => 18,
+    :course_id => 19,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => 8,
+    :distance => 459,
+    :image => "Rathcore-hole-18.jpg",
+)
+Hole.create(
+    :number => 1,
+    :course_id => 20,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 10,
+    :distance => 341,
+)
+Hole.create(
+    :number => 2,
+    :course_id => 20,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 16,
+    :distance => 300,
+)
+Hole.create(
+    :number => 3,
+    :course_id => 20,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => 8,
+    :distance => 162,
+)
+Hole.create(
+    :number => 4,
+    :course_id => 20,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 2,
+    :distance => 367,
+)
+Hole.create(
+    :number => 5,
+    :course_id => 20,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => 14,
+    :distance => 468,
+)
+Hole.create(
+    :number => 6,
+    :course_id => 20,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 6,
+    :distance => 405,
+)
+Hole.create(
+    :number => 7,
+    :course_id => 20,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => 18,
+    :distance => 147,
+)
+Hole.create(
+    :number => 8,
+    :course_id => 20,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 4,
+    :distance => 373,
+)
+Hole.create(
+    :number => 9,
+    :course_id => 20,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => 12,
+    :distance => 476,
+)
+Hole.create(
+    :number => 10,
+    :course_id => 20,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 7,
+    :distance => 394,
+)
+Hole.create(
+    :number => 11,
+    :course_id => 20,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => 15,
+    :distance => 170,
+)
+Hole.create(
+    :number => 12,
+    :course_id => 20,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 11,
+    :distance => 326,
+)
+Hole.create(
+    :number => 13,
+    :course_id => 20,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => 17,
+    :distance => 454,
+)
+Hole.create(
+    :number => 14,
+    :course_id => 20,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 1,
+    :distance => 387,
+)
+Hole.create(
+    :number => 15,
+    :course_id => 20,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => 13,
+    :distance => 482,
+)
+Hole.create(
+    :number => 16,
+    :course_id => 20,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 5,
+    :distance => 372,
+)
+Hole.create(
+    :number => 17,
+    :course_id => 20,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => 9,
+    :distance => 153,
+)
+Hole.create(
+    :number => 18,
+    :course_id => 20,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 3,
+    :distance => 425,
+)
+Hole.create(
+    :number => 1,
+    :course_id => 21,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 1,
+    :distance => 370,
+)
+Hole.create(
+    :number => 2,
+    :course_id => 21,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 8,
+    :distance => 320,
+)
+Hole.create(
+    :number => 3,
+    :course_id => 21,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => 14,
+    :distance => 137,
+)
+Hole.create(
+    :number => 4,
+    :course_id => 21,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 16,
+    :distance => 312,
+)
+Hole.create(
+    :number => 5,
+    :course_id => 21,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => 12,
+    :distance => 461,
+)
+Hole.create(
+    :number => 6,
+    :course_id => 21,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 15,
+    :distance => 300,
+)
+Hole.create(
+    :number => 7,
+    :course_id => 21,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => 3,
+    :distance => 200,
+)
+Hole.create(
+    :number => 8,
+    :course_id => 21,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 4,
+    :distance => 371,
+)
+Hole.create(
+    :number => 9,
+    :course_id => 21,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 9,
+    :distance => 273,
+)
+Hole.create(
+    :number => 10,
+    :course_id => 21,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 17,
+    :distance => 299,
+)
+Hole.create(
+    :number => 11,
+    :course_id => 21,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 18,
+    :distance => 284,
+)
+Hole.create(
+    :number => 12,
+    :course_id => 21,
+    :tee => "yellow",
+    :par => 5,
+    :handicap => 11,
+    :distance => 450,
+)
+Hole.create(
+    :number => 13,
+    :course_id => 21,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 6,
+    :distance => 350,
+)
+Hole.create(
+    :number => 14,
+    :course_id => 21,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 13,
+    :distance => 341,
+)
+Hole.create(
+    :number => 15,
+    :course_id => 21,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => 7,
+    :distance => 164,
+)
+Hole.create(
+    :number => 16,
+    :course_id => 21,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 2,
+    :distance => 329,
+)
+Hole.create(
+    :number => 17,
+    :course_id => 21,
+    :tee => "yellow",
+    :par => 3,
+    :handicap => 10,
+    :distance => 130,
+)
+Hole.create(
+    :number => 18,
+    :course_id => 21,
+    :tee => "yellow",
+    :par => 4,
+    :handicap => 5,
+    :distance => 354,
+)
 
 # ===================================================================================================================
 # ROUNDS
@@ -307,13 +3955,14 @@ Round.create(:user_id =>5,  :course_id => 19, :tee => 'yellow', :date_played => 
 Round.create(:user_id =>7,  :course_id => 7,  :tee => 'green',  :date_played => '2012-11-28')
 
 # Competition rounds
-Round.create(:user_id =>1,:course_id => 7,:tee => 'green',:date_played => '2013-01-01', :competition_id => 1)
-Round.create(:user_id =>2,:course_id => 7,:tee => 'green',:date_played => '2013-01-01', :competition_id => 1)
-Round.create(:user_id =>3,:course_id => 7,:tee => 'green',:date_played => '2013-01-01', :competition_id => 1)
-Round.create(:user_id =>4,:course_id => 7,:tee => 'green',:date_played => '2013-01-01', :competition_id => 1)
-Round.create(:user_id =>5,:course_id => 7,:tee => 'green',:date_played => '2013-01-01', :competition_id => 1)
-Round.create(:user_id =>6,:course_id => 7,:tee => 'green',:date_played => '2013-01-01', :competition_id => 1)
-Round.create(:user_id =>7,:course_id => 7,:tee => 'green',:date_played => '2013-01-01', :competition_id => 1)
+Round.create(:user_id =>1,:course_id => 7,:tee => 'green',:date_played => '2012-11-13', :competition_id => 1)
+Round.create(:user_id =>2,:course_id => 7,:tee => 'green',:date_played => '2012-11-13', :competition_id => 1)
+Round.create(:user_id =>3,:course_id => 7,:tee => 'green',:date_played => '2012-11-13', :competition_id => 1)
+Round.create(:user_id =>4,:course_id => 7,:tee => 'green',:date_played => '2012-11-13', :competition_id => 1)
+Round.create(:user_id =>5,:course_id => 7,:tee => 'green',:date_played => '2012-11-13', :competition_id => 1)
+Round.create(:user_id =>6,:course_id => 7,:tee => 'green',:date_played => '2012-11-13', :competition_id => 1)
+Round.create(:user_id =>7,:course_id => 7,:tee => 'green',:date_played => '2012-11-13', :competition_id => 1)
+
 
 
 # ===================================================================================================================
@@ -322,7 +3971,9 @@ Round.create(:user_id =>7,:course_id => 7,:tee => 'green',:date_played => '2013-
 
 Competition.delete_all
 
-Competition.create(:course_id => 7, :competition_date => '2013-01-01', :css => 72)
+Competition.create(:name => "Knightsbrook Turkey Shoot", :message => "Turkey shoot-out is set for 13 November at Knightsbrook - playing scramble, teams will be allocated on the day.  Please sign up early as places are limited due to limited tee times.", :course_id => 7,   :competition_date => '2012-11-13', :css => 72)
+Competition.create(:name => "Captain's Day 2013", :message => "We're getting Captain's Day out of the way early this year.  Tee times from 12pm at Luttrellstown.  Please sign up early.",:course_id => 12,  :competition_date => '2013-02-28', :css => 72)
+Competition.create(:name => "CityWest Golf Club", :message => "We're back to Citywest for the NAMA challenge (if they're still in business!)",:course_id => 5,   :competition_date => '2013-02-22', :css => 70)
 
 
 

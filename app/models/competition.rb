@@ -1,5 +1,5 @@
 class Competition < ActiveRecord::Base
-  attr_accessible :competition_date, :course_id, :css
+  attr_accessible :competition_date, :course_id, :css, :name, :message
 
   # ===================================================================================================================
   # ASSOCIATIONS
@@ -13,8 +13,10 @@ class Competition < ActiveRecord::Base
   # ===================================================================================================================
   # VALIDATION
   # ===================================================================================================================
-  validates_presence_of :course_id, :competition_date
-
+  validates_presence_of   :course_id,
+                          :competition_date,
+                          :message
+  validates_uniqueness_of :competition_date
 
 
 
@@ -22,27 +24,18 @@ class Competition < ActiveRecord::Base
   # METHODS
   # ===================================================================================================================
 
-  # next
-  # ----
-  # Returns the next competition
-  def self.next
-    Competition.where("competition_date > ?", Time.now).first
-  end
-
-
-  # previous
-  # --------
-  # Returns the last competition prior to now
-  def self.previous
-    Competition.where("competition_date < ?", Time.now).last
-  end
-
-
   # results
   # -------
   # Sorts the results of the rounds associated with the competition in order of total_score
   def results
-    rounds.sort! { |a,b| b.total_score <=> a.total_score}
+    #rounds.sort! { |a,b| b.total_score <=> a.total_score}
+    # Sorts the results by total stableford score and then by back_nine score
+    rounds.sort do |a,b|
+	  comp = (b.total_score <=> a.total_score)
+	  comp.zero? ? (b.back_nine <=> a.back_nine) : comp
+	end
+    
+    
   end
 
 
@@ -59,7 +52,7 @@ class Competition < ActiveRecord::Base
       if round.net_score > user.category_on(date).buffer
         adjustment =  user.category_on(date).increase                    # hcp increases by 0.1
       elsif round.net_score < 0
-        adjustment = user.category_on(date).reduction * round.net_score  # hcp decreases by net_score x reduction
+        adjustment = user.category_on(date).reduction * round.net_score  # hcp decreases by net_score * reduction
       else
         adjustment = 0                                                   # no change to hcp when within buffer
       end
@@ -74,8 +67,14 @@ class Competition < ActiveRecord::Base
 
     end
 
-    self.hcp_adjusted=true
+    self.hcp_adjusted = true
 
+  end
+  
+    
+  
+  def signed_up?(user)
+  	 Signup.where("user_id = ? AND competition_id = ?", user.id, id).exists?
   end
 
 

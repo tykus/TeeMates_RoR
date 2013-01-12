@@ -1,5 +1,5 @@
 <%- model_class = Course -%>
-  <div class="hero-unit">
+  <div class="hero-unit" style="background-image: url(heros/knightsbrook.jpg)">
     <%= image_tag(@course.crest, :alt => @course.name, :class => "pull-left img-polaroid") %>
     <h1><%= @course.name %></h1>
   </div>
@@ -8,46 +8,48 @@
 
     <div class="span7">
 
-      <h3>Scorecard</h3>
-      <div class="tabbable tabs-left">
+      <h3>Course Details</h3>
+      <div class="tabbable">
         <ul class="nav nav-tabs">
-
+          <% @course.tees.each_with_index do |tee, index| %>
+              <li class="<%= 'active' if index == 0 %>"><a href="#<%= tee %>" data-toggle="tab"><%= tee.capitalize %> Tees</a></li>
+          <% end %>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane active" id="rA">
+          <% @course.tees.each_with_index do |color, index| %>
+            <div id="<%= color %>" class="tab-pane <%= 'active' if index == 0 %>">
               <table class="table table-striped">
-            <thead>
-              <th>Tee</th>
-              <th>Number</th>
-              <th>Par</th>
-              <th>Index</th>
-              <th>Length</th>
-              <th></th>
-              </thead>
-              <tbody>
-              <!-- Display holes for the current course -->
-              <% @course.holes.each do |hole| %>
-                <tr>
-                  <td>
-                    <%= image_tag hole.tee + ".jpg", :alt => hole.tee.capitalize + " tees", :title => hole.tee.capitalize + " tees", :size => "20x20" %>
-                  </td>
-                  <td><%= hole.number %></td>
-                  <td><%= hole.par %></td>
-                  <td><%= hole.handicap %></td>
-                  <td><%= hole.distance %></td>
-                  <td><%= link_to 'Details', hole_path(hole), :class => 'btn btn-mini' %></td>
-                </tr>
-              <% end %>
-              </tbody>
-            </table>
-          </div>
-          <div class="tab-pane" id="rB"> </div>
-          <div class="tab-pane" id="rC"> </div>
-      </div>
-      </div>
+                <thead>
+                  <th>Tee</th>
+                  <th>Number</th>
+                  <th>Par</th>
+                  <th>Index</th>
+                  <th>Length</th>
+                  <th></th>
+                </thead>
+                <tbody>
+                  <!-- Display holes for the current course -->
+                  <% @course.tee(color).each do |hole| %>
+                    <tr>
+                      <td>
+                        <%= image_tag hole.tee + ".jpg", :alt => hole.tee.capitalize + " tees", :title => hole.tee.capitalize + " tees", :size => "20x20" %>
+                      </td>
+                      <td><%= hole.number %></td>
+                      <td><%= hole.par %></td>
+                      <td><%= hole.handicap %></td>
+                      <td><%= hole.distance %></td>
+                      <td><%= link_to 'Details', hole_path(hole), :class => 'btn btn-mini' %></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          <% end %>
+        </div><!-- /.tab-content -->
+      </div><!-- /.tabbable -->
     </div> <!-- close span7 -->
 
-    <div class="span4 offset1">
+    <div class="span4 offset1" id="map">
       <h3>Map to the Course</h3>
       <%= link_to (image_tag("https://maps.googleapis.com/maps/api/staticmap?center=#{@course.latitude},#{@course.longitude}&zoom=12&size=400x400&markers=icon:http://aux.iconpedia.net/uploads/194516261179468230.png|#{@course.latitude},#{@course.longitude}&sensor=true", :class => 'img-polaroid')), "http://maps.google.ie/?q=#{@course.latitude},#{@course.longitude}&ll=#{@course.latitude},#{@course.longitude}&spn=0.019836,0.066047&t=m&z=15" %>
 
