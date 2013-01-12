@@ -1,6 +1,7 @@
-$('#new_post_form').html(
+$('#new_post_form').fadeIn(1000).html(
+
         '<div class="well">' +
         '<h3>New Post</h3>' +
         '<%= j render("posts/form") %>' +
         '</div>'
-).fadeIn();
+);

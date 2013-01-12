@@ -12,7 +12,7 @@
       <td><%= f.collection_select :course_id, @courses, :id, :name, :input_html => {:rel => "/rounds/tees_by_course"} %></td>
       <td><%= f.collection_select :competition_id, Competition.order("competition_date DESC"), :id, :name %></td><!-- change to collection_select for competition model -->
       <td><%= f.date_select :date_played, :class => 'text_field' %></td>
-      <td><%= f.collection_select :tee, @tees, :name, :name %></td>
+      <td><%= f.collection_select :tee, %w[red green yellow white blue], :name, :name %></td>
       <td><%= f.submit nil, :class => 'btn btn-primary' %></td>
     </tr>
   </table>

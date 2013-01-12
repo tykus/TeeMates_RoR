@@ -25,9 +25,9 @@
         <% @rounds.each do |round| %>
 
             <% if round.competition_id.nil? %>
-                <tr>
+                <tr id="round_<%= round.id %>">
             <% else %>
-                <tr class="info">
+                <tr class="info" id="round_<%= round.id %>">
             <% end %>
               <td><%= image_tag round.course.crest,
                                 :title => round.course.name,
@@ -48,7 +48,11 @@
                 <div class="btn-group btn-group-vertical">
                   <%= link_to "Details", round_path(round), :class => "btn" %>
                   <%= link_to "Edit", rounds_path, :class => "btn" %>
-                  <%= link_to "Delete", rounds_path, :class => "btn btn-danger" %>
+                  <%= link_to "Delete", round_path(round),
+                              remote: true,
+                              :method => :delete,
+                              :data => { :confirm => 'Are you sure?' },
+                              :class => 'btn btn-danger' %>
                 </div>
               </td>
             </tr>

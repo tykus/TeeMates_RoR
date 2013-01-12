@@ -15,10 +15,10 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
+    @comment = Comment.new
 
     respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @post }
+      format.js
     end
   end
 
@@ -45,11 +45,9 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to wall_path, notice: 'Post was successfully created.' }
-        format.json { render json: @post, status: :created, location: @post }
+        format.html { redirect_to wall_path, :notice => "Thank you for posting!" }
       else
-        format.html { render action: "new" }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+        format.html { redirect_to wall_path, :alert => "There was a problem with your post, please try again!" }
       end
     end
   end
@@ -78,7 +76,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to wall_path }
-      format.json { head :no_content }
+      format.js
     end
   end
 end

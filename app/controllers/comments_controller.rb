@@ -1,7 +1,4 @@
 class CommentsController < ApplicationController
-  def new
-  end
-
   def create
     @comment = current_user.comments.new(params[:comment])
 

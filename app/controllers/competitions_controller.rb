@@ -1,4 +1,8 @@
 class CompetitionsController < ApplicationController
+
+  # Only an admin user should be able to create, update or delete a competition
+  before_filter :admin_only, :except => [:index, :show]
+
   # GET /competitions
   # GET /competitions.json
   def index
