@@ -80,4 +80,14 @@ class CoursesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  def tees
+    @tees = Course.find(params[:course_id]).tees
+
+    respond_to do |format|
+      format.json { @tees.to_json }
+    end
+
+  end
 end

@@ -1,4 +1,4 @@
-<%= form_for @round, :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for @round, remote: true, :html => { :class => 'form-horizontal' } do |f| %>
 
   <table class="table">
     <tr>
@@ -9,10 +9,10 @@
       <th><%= f.hidden_field :user_id, {:value => current_user.id} %></th>
     </tr>
     <tr>
-      <td><%= f.collection_select :course_id, @courses, :id, :name, :input_html => {:rel => "/rounds/tees_by_course"} %></td>
-      <td><%= f.collection_select :competition_id, Competition.order("competition_date DESC"), :id, :name %></td><!-- change to collection_select for competition model -->
+      <td><%= f.collection_select :course_id, @courses, :id, :name, {:include_blank => 'Select Course'}, remote: true %></td>
+      <td><%= f.collection_select :competition_id, Competition.order("competition_date DESC"), :id, :name, {:include_blank => 'Please Select'} %></td>
       <td><%= f.date_select :date_played, :class => 'text_field' %></td>
-      <td><%= f.collection_select :tee, %w[red green yellow white blue], :name, :name %></td>
+      <td><%= f.select :tee, [] %></td>
       <td><%= f.submit nil, :class => 'btn btn-primary' %></td>
     </tr>
   </table>

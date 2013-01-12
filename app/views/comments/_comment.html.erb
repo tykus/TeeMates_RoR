@@ -1,0 +1,19 @@
+
+    <div class="row">
+      <hr>
+      <div class="span1">
+        <%= link_to (image_tag comment.user.avatar.url(:micro), :class => "img-polaroid pull-left"), user_path(comment.user) %>
+      </div>
+      <div class="span6">
+        <span class="user"><%= comment.user.fullname %></span>
+        <% if is_admin or comment.user == current_user %>
+            <!-- the admin or comment author can delete a comment -->
+            <%= link_to '<i class="icon-remove"></i>'.html_safe, comment, method: :delete, data: { confirm: 'Are you sure you want to delete this comment?' }, :class => "pull-right", :title => "Delete Comment" %>
+            <%= link_to '<i class="icon-pencil"></i> '.html_safe, edit_comment_path(comment), :class => "pull-right", :title => "Edit Comment" %>
+        <% end %>
+        <p>
+          <%= comment.comment %>
+          <span class="comment-date"><%= time_ago_in_words(comment.created_at) %> ago</span>
+        </p>
+      </div>
+    </div>

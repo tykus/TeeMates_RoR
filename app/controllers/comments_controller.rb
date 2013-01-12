@@ -15,7 +15,6 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to wall_path }
-      format.json { head :no_content }
     end
   end
 
@@ -23,14 +22,4 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
   end
 
-  def update
-    @comment = Comment.find(params[:id])
-    respond_to do |format|
-      if @comment.update_attributes(params[:comment])
-        format.html { redirect_to wall_path, notice: 'Comment was successfully updated.' }
-      else
-        format.html { render action: "edit", alert: 'Failed to update comment' }
-      end
-    end
-  end
 end

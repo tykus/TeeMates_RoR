@@ -49,18 +49,4 @@ class RoundsController < ApplicationController
     end
   end
 
-
-  def tees_by_course
-    if params[:id].present?
-      @tees = Course.find(params[:id]).tees
-    else
-      @subcategories = []
-    end
-
-    respond_to do |format|
-      format.js
-    end
-  end
-
-
 end

@@ -25,10 +25,7 @@ TeeMates::Application.routes.draw do
 
   match 'admin/:id', :to => 'competitions#admin', :as => "admin"
 
-  # Temporary Static Pages routes
   get 'wall' => 'pages#wall', :as => 'wall'
-
-
 
 
 

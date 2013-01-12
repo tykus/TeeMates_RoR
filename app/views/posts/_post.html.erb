@@ -1,0 +1,51 @@
+<div class="row" id="post_<%= post.id %>">
+  <div class="span2 post-img">
+    <%= link_to (image_tag post.user.avatar.url(:thumb), :class => "img-polaroid"), user_path(post.user) %>
+    <h4><%= h(post.user.fullname) %></h4>
+    <p><%= time_ago_in_words(post.created_at) %> ago</p>
+  </div>
+
+  <div class="span7">
+    <!-- the post and post title -->
+    <p>
+            <span class="post-title">
+              <%= h(post.title) %>
+            </span>
+      <% if is_admin or post.user == current_user %>
+          <%= link_to '<i class="icon-remove"></i>'.html_safe, post, method: :delete, data: { confirm: 'Are you sure, all comments will also be deleted?' }, :class => "pull-right", :title => "Delete Post", remote: true %>
+          <%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_post_path(post), :class => "pull-right", :title => "Edit Post" %>
+      <% end %>
+    </p>
+
+    <!-- display an image if it exists -->
+    <% if post.photo.exists? %>
+        <%= image_tag post.photo.url(:wall), :class => 'img img-polaroid center' %>
+    <% end %>
+
+
+    <!-- the posted message -->
+    <p><%= simple_format(post.message) %></p>
+
+
+    <!-- Associated comments -->
+    <%= render post.comments %>
+
+
+    <!-- Add a new comment -->
+    <div class="row">
+      <hr>
+      <div class="span1">
+        <%=  image_tag current_user.avatar(:micro), :class => "img-polaroid" %>
+      </div>
+      <div class="span6">
+        <%= form_for @comment do |f| %>
+            <%=  f.hidden_field :post_id, :value => post.id %>
+            <%=  f.text_field :comment, :placeholder => "Write a comment...", :class => "text_area pull-left" %>
+            <%=  f.submit "Add Comment", :class=>'btn btn-primary pull-right' %>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</div>
+<hr>
