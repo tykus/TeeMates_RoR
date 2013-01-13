@@ -31,14 +31,14 @@ class Competition < ActiveRecord::Base
     #rounds.sort! { |a,b| b.total_score <=> a.total_score}
     # Sorts the results by total stableford score and then by back_nine score
     rounds.sort do |a,b|
-	  comp = (b.total_score <=> a.total_score)
-	  comp.zero? ? (b.back_nine <=> a.back_nine) : comp
-	end
-    
-    
+      comp = (b.total_score <=> a.total_score)
+      comp.zero? ? (b.back_nine <=> a.back_nine) : comp
+    end
   end
 
-
+  def top5
+    results[0..4]
+  end
   # adjust_handicaps
   # ----------------
   # Adjusts the handicaps for the rounds played in the competition

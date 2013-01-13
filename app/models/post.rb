@@ -37,7 +37,7 @@ class Post < ActiveRecord::Base
 # display all posts ordered by post creation date or most recent comment creation date
   scope :desc_by_comment,
               :joins => "LEFT JOIN comments ON comments.post_id = posts.id",
-              :group => "id",
+              :group => "posts.id",
               :select => "posts.*, CASE WHEN ISNULL(max(comments.created_at)) THEN posts.created_at ELSE max(comments.created_at) END AS last_activity",
               :order => "last_activity DESC"
 

@@ -20,7 +20,7 @@ class RoundsController < ApplicationController
 
   def new
     @round = Round.new
-
+    @holes = Course.find(12).holes
     # Provide a list of all courses to the form collection_select control
     @courses = Course.all
   end

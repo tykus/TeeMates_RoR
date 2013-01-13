@@ -7,15 +7,15 @@ gem 'paperclip',  '~> 3.3.1'        # file uploading
 gem 'jquery-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'       # use ActiveModel with has_secure_password
 gem 'bootstrap-will_paginate'       # Pagination working with Twitter Bootstrap styles
-#gem 'thin'                          # use thin webserver instead of webbrick
 gem "mail"
+gem 'bootstrap-datepicker-rails'    # date picker for forms
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
+  gem 'jquery-ui-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 

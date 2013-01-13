@@ -230,27 +230,30 @@ Handicap.create(:user_id => 7,  :competition_id => nil,  :handicap => 0.2,  :dat
 
 Course.delete_all
 
-Course.create(:name => "Elmgreen",:crest => "courses/elmgreen.jpg",:photo => "courses/elmgreen.jpg",:latitude => 53.387398,:longitude => -6.355505,:address => "Dunsink Lane, Castleknock, Dublin 15")
-Course.create(:name => "Headfort Old",:crest => "courses/headfort.jpg",:latitude => 53.723872,:longitude => -6.861017,:address => "Dublin Road, Kells, Co. Meath")
-Course.create(:name => "Headfort New",:crest => "courses/headfort.jpg",:latitude => 53.723872,:longitude => -6.861017,:address => "Dublin Road, Kells, Co. Meath")
+Course.create(:name => "Elmgreen",:crest => "courses/elmgreen.jpg",:photo => "assets/heros/elmgreen.jpg",:latitude => 53.387398,:longitude => -6.355505,:address => "Dunsink Lane, Castleknock, Dublin 15")
+Course.create(:name => "Headfort Old",:crest => "courses/headfort.jpg",:photo => "assets/heros/headfort_old.jpg",:latitude => 53.723872,:longitude => -6.861017,:address => "Dublin Road, Kells, Co. Meath")
+Course.create(:name => "Headfort New",:crest => "courses/headfort.jpg",:photo => "assets/heros/headfort_new.jpg",:latitude => 53.723872,:longitude => -6.861017,:address => "Dublin Road, Kells, Co. Meath")
 Course.create(:name => "St. Margarets",:crest => "courses/st_margarets.jpg",:latitude => 53.449216,:longitude => -6.307334,:address => "St. Margarets, Co. Dublin")
-Course.create(:name => "Citywest",:crest => "courses/citywest.jpg",:latitude => 53.283222,:longitude => -6.44108,:address => "Saggart, Co. Dublin")
-Course.create(:name => "New Forest",:crest => "courses/new_forest.jpg",:latitude => 53.381634,:longitude => -7.420683,:address => "Tyrellspass, Co. Westmeath")
-Course.create(:name => "Knightsbrook",:crest => "courses/knightsbrook.jpg",:latitude => 53.549035,:longitude => -6.765509,:address => "Dublin Road, Trim, Co. Meath")
-Course.create(:name => "Royal Tara (Blue/Red)",:crest => "courses/royaltara.jpg",:latitude => 53.591607,:longitude => -6.635137,:address => "Bellinter, Navan, Co. Meath")
-Course.create(:name => "Royal Tara (Blue/Yellow)",:crest => "courses/royaltara.jpg",:latitude => 53.591607,:longitude => -6.635137,:address => "Bellinter, Navan, Co. Meath")
-Course.create(:name => "Royal Tara (Red/Yellow)",:crest => "courses/royaltara.jpg",:latitude => 53.591607,:longitude => -6.635137,:address => "Bellinter, Navan, Co. Meath")
-Course.create(:name => "Parknasilla",:crest => "courses/parknasilla.jpg",:latitude => 51.819519,:longitude => -9.865579,:address => "Sneem, Co. Kerry")
-Course.create(:name => "Luttrellstown",:crest => "courses/luttrellstown.jpg",:latitude => 53.374648,:longitude => -6.412937,:address => "Castleknock, Dublin 15")
-Course.create(:name => "Port Laoise",:crest => "courses/portlaoise.jpg",:latitude => 53.023615,:longitude => -7.298426,:address => "Cork Road, Port Laoise, Co. Laois")
-Course.create(:name => "Farnham Estate",:crest => "courses/farnham_estate.jpg",:latitude => 53.997175,:longitude => -7.384236,:address => "Cavan, Co. Cavan")
+Course.create(:name => "Citywest",:crest => "courses/citywest.jpg",:photo => "assets/heros/citywest.jpg",:latitude => 53.283222,:longitude => -6.44108,:address => "Saggart, Co. Dublin")
+Course.create(:name => "New Forest",:crest => "courses/new_forest.jpg",:photo => "assets/heros/new_forest.jpg",:latitude => 53.381634,:longitude => -7.420683,:address => "Tyrellspass, Co. Westmeath")
+Course.create(:name => "Knightsbrook",:crest => "courses/knightsbrook.jpg",:photo => "assets/heros/knightsbrook.jpg",:latitude => 53.549035,:longitude => -6.765509,:address => "Dublin Road, Trim, Co. Meath")
+Course.create(:name => "Royal Tara (Blue/Red)",:crest => "courses/royaltara.jpg",:photo => "assets/heros/royal_tara_1.jpg",:latitude => 53.591607,:longitude => -6.635137,:address => "Bellinter, Navan, Co. Meath")
+Course.create(:name => "Royal Tara (Blue/Yellow)",:crest => "courses/royaltara.jpg",:photo => "assets/heros/royal_tara_2.jpg",:latitude => 53.591607,:longitude => -6.635137,:address => "Bellinter, Navan, Co. Meath")
+Course.create(:name => "Royal Tara (Red/Yellow)",:crest => "courses/royaltara.jpg",:photo => "assets/heros/royal_tara_3.jpg",:latitude => 53.591607,:longitude => -6.635137,:address => "Bellinter, Navan, Co. Meath")
+Course.create(:name => "Parknasilla",:crest => "courses/parknasilla.jpg",:photo => "assets/heros/parknasilla.jpg",:latitude => 51.819519,:longitude => -9.865579,:address => "Sneem, Co. Kerry")
+Course.create(:name => "Luttrellstown",:crest => "courses/luttrellstown.jpg",:photo => "assets/heros/luttrellstown.png",:latitude => 53.374648,:longitude => -6.412937,:address => "Castleknock, Dublin 15")
+Course.create(:name => "Port Laoise",:crest => "courses/portlaoise.jpg",:photo => "assets/heros/portlaoise.jpg",:latitude => 53.023615,:longitude => -7.298426,:address => "Cork Road, Port Laoise, Co. Laois")
+Course.create(:name => "Farnham Estate",:crest => "courses/farnham_estate.jpg",:photo => "assets/heros/farnham_estate.jpg",:latitude => 53.997175,:longitude => -7.384236,:address => "Cavan, Co. Cavan")
 Course.create(:name => "Tara (special)",:crest => "courses/royaltara.jpg",:latitude => 53.591607,:longitude => -6.635137,:address => "Bellinter, Navan, Co. Meath")
-Course.create(:name => "Craddockstown",:crest => "courses/craddockstown.jpg",:latitude => 53.208911,:longitude => -6.639655,:address => "Blessington Road, Naas, Co. Kildare")
-Course.create(:name => "Carton House - O'Meara",:crest => "courses/carton.jpg",:latitude => 53.378132,:longitude => -6.554811,:address => "Carton Demesne, Maynooth, Co. Kildare")
-Course.create(:name => "Carton House - Montgomerie",:crest => "courses/carton.jpg",:latitude => 53.378132,:longitude => -6.554811,:address => "Carton Demesne, Maynooth, Co. Kildare")
-Course.create(:name => "Rathcore",:crest => "courses/rathcore.jpg",:latitude => 53.449574,:longitude => -6.843284,:address => "Rathcore, Enfield, Co. Meath")
-Course.create(:name => "Beaverstown",:crest => "courses/beaverstown.jpg",:latitude => 53.497163,:longitude => -6.144518,:address => "Beaverstown, Donabate, Co. Dublin")
-Course.create(:name => "Hollystown (Red/Yellow)",:crest => "courses/hollystown.jpg",:latitude => 53.430909,:longitude => -6.376111,:address => "Tyrellstown, Dublin 15")
+Course.create(:name => "Craddockstown",:crest => "courses/craddockstown.jpg",:photo => "assets/heros/craddockstown.jpg",:latitude => 53.208911,:longitude => -6.639655,:address => "Blessington Road, Naas, Co. Kildare")
+Course.create(:name => "Carton House - O'Meara",:crest => "courses/carton.jpg",:photo => "assets/heros/carton-hero.jpg",:latitude => 53.378132,:longitude => -6.554811,:address => "Carton Demesne, Maynooth, Co. Kildare")
+Course.create(:name => "Carton House - Montgomerie",:crest => "courses/carton.jpg",:photo => "assets/heros/Carton House - Montgomerie.jpg",:latitude => 53.378132,:longitude => -6.554811,:address => "Carton Demesne, Maynooth, Co. Kildare")
+Course.create(:name => "Rathcore",:crest => "courses/rathcore.jpg",:photo => "assets/heros/rathcore.jpg",:latitude => 53.449574,:longitude => -6.843284,:address => "Rathcore, Enfield, Co. Meath")
+Course.create(:name => "Beaverstown",:crest => "courses/beaverstown.jpg",:photo => "assets/heros/beaverstown.jpg",:latitude => 53.497163,:longitude => -6.144518,:address => "Beaverstown, Donabate, Co. Dublin")
+Course.create(:name => "Hollystown (Red/Yellow)",:crest => "courses/hollystown.jpg",:photo => "assets/heros/hollystown1.jpg",:latitude => 53.430909,:longitude => -6.376111,:address => "Tyrellstown, Dublin 15")
+
+
+
 
 
 # ===================================================================================================================
@@ -585,7 +588,7 @@ Hole.create(
 Hole.create(
     :number => 1,
     :course_id => 2,
-    :tee => "society",
+    :tee => "white",
     :par => 5,
     :handicap => 17,
     :distance => 426,
@@ -593,7 +596,7 @@ Hole.create(
 Hole.create(
     :number => 2,
     :course_id => 2,
-    :tee => "society",
+    :tee => "white",
     :par => 3,
     :handicap => 12,
     :distance => 164,
@@ -601,7 +604,7 @@ Hole.create(
 Hole.create(
     :number => 3,
     :course_id => 2,
-    :tee => "society",
+    :tee => "white",
     :par => 4,
     :handicap => 5,
     :distance => 362,
@@ -609,7 +612,7 @@ Hole.create(
 Hole.create(
     :number => 4,
     :course_id => 2,
-    :tee => "society",
+    :tee => "white",
     :par => 5,
     :handicap => 8,
     :distance => 433,
@@ -617,7 +620,7 @@ Hole.create(
 Hole.create(
     :number => 5,
     :course_id => 2,
-    :tee => "society",
+    :tee => "white",
     :par => 4,
     :handicap => 1,
     :distance => 377,
@@ -625,7 +628,7 @@ Hole.create(
 Hole.create(
     :number => 6,
     :course_id => 2,
-    :tee => "society",
+    :tee => "white",
     :par => 4,
     :handicap => 3,
     :distance => 363,
@@ -633,7 +636,7 @@ Hole.create(
 Hole.create(
     :number => 7,
     :course_id => 2,
-    :tee => "society",
+    :tee => "white",
     :par => 5,
     :handicap => 18,
     :distance => 427,
@@ -641,7 +644,7 @@ Hole.create(
 Hole.create(
     :number => 8,
     :course_id => 2,
-    :tee => "society",
+    :tee => "white",
     :par => 3,
     :handicap => 14,
     :distance => 139,
@@ -649,7 +652,7 @@ Hole.create(
 Hole.create(
     :number => 9,
     :course_id => 2,
-    :tee => "society",
+    :tee => "white",
     :par => 4,
     :handicap => 10,
     :distance => 308,
@@ -657,7 +660,7 @@ Hole.create(
 Hole.create(
     :number => 10,
     :course_id => 2,
-    :tee => "society",
+    :tee => "white",
     :par => 3,
     :handicap => 16,
     :distance => 160,
@@ -665,7 +668,7 @@ Hole.create(
 Hole.create(
     :number => 11,
     :course_id => 2,
-    :tee => "society",
+    :tee => "white",
     :par => 5,
     :handicap => 13,
     :distance => 383,
@@ -673,7 +676,7 @@ Hole.create(
 Hole.create(
     :number => 12,
     :course_id => 2,
-    :tee => "society",
+    :tee => "white",
     :par => 4,
     :handicap => 4,
     :distance => 332,
@@ -681,7 +684,7 @@ Hole.create(
 Hole.create(
     :number => 13,
     :course_id => 2,
-    :tee => "society",
+    :tee => "white",
     :par => 4,
     :handicap => 6,
     :distance => 341,
@@ -689,7 +692,7 @@ Hole.create(
 Hole.create(
     :number => 14,
     :course_id => 2,
-    :tee => "society",
+    :tee => "white",
     :par => 3,
     :handicap => 11,
     :distance => 165,
@@ -697,7 +700,7 @@ Hole.create(
 Hole.create(
     :number => 15,
     :course_id => 2,
-    :tee => "society",
+    :tee => "white",
     :par => 4,
     :handicap => 15,
     :distance => 298,
@@ -705,7 +708,7 @@ Hole.create(
 Hole.create(
     :number => 16,
     :course_id => 2,
-    :tee => "society",
+    :tee => "white",
     :par => 4,
     :handicap => 2,
     :distance => 352,
@@ -713,7 +716,7 @@ Hole.create(
 Hole.create(
     :number => 17,
     :course_id => 2,
-    :tee => "society",
+    :tee => "white",
     :par => 4,
     :handicap => 7,
     :distance => 320,
@@ -721,7 +724,7 @@ Hole.create(
 Hole.create(
     :number => 18,
     :course_id => 2,
-    :tee => "society",
+    :tee => "white",
     :par => 4,
     :handicap => 9,
     :distance => 330,

@@ -1,5 +1,5 @@
 <%- model_class = Course -%>
-  <div class="hero-unit" style="background-image: url(heros/knightsbrook.jpg)">
+  <div class="hero-unit" style="background-image: url('/<%= @course.photo %>')">
     <%= image_tag(@course.crest, :alt => @course.name, :class => "pull-left img-polaroid") %>
     <h1><%= @course.name %></h1>
   </div>
@@ -28,9 +28,9 @@
                   <th></th>
                 </thead>
                 <tbody>
-                  <!-- Display holes for the current course -->
-                  <% @course.tee(color).each do |hole| %>
-                    <tr>
+                <% @course.tee(color).each do |hole| %>
+                    <!-- Display holes for the current course -->
+                    <tr id="hole_<%= hole.number %>_<%= hole.tee %>">
                       <td>
                         <%= image_tag hole.tee + ".jpg", :alt => hole.tee.capitalize + " tees", :title => hole.tee.capitalize + " tees", :size => "20x20" %>
                       </td>
@@ -38,9 +38,21 @@
                       <td><%= hole.par %></td>
                       <td><%= hole.handicap %></td>
                       <td><%= hole.distance %></td>
-                      <td><%= link_to 'Details', hole_path(hole), :class => 'btn btn-mini' %></td>
+                      <td>
+                        <% if hole.strokesaver or hole.image %>
+                            <%= link_to 'Details', hole_path(hole), :class => 'btn btn-mini', remote: true %>
+                        <% end %>
+                      </td>
                     </tr>
-                  <% end %>
+                    <tr>
+                      <td colspan="2">
+                        <% if hole.image %>
+                            <%=  image_tag "holes/" << hole.image, :alt => hole.course.name + " - " + hole.number.to_s, :class => 'img-polaroid' %>
+                        <% end %>
+                      </td>
+                      <td colspan="4"><%= hole.strokesaver %></td>
+                    </tr>
+                <% end %>
                 </tbody>
               </table>
             </div>

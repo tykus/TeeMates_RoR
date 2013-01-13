@@ -1,5 +1,5 @@
 <%- model_class = Competition -%>
-<div class="page-header">
+<div class="hero-unit" style="background-image: url('/<%= @competition.course.photo %>')">
   <h1>
     <%= image_tag @competition.course.crest, :class => "img img-polaroid" %>
     <%= @competition.name unless nil? %>

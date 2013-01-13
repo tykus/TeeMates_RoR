@@ -1,0 +1,23 @@
+<!-- Display holes for the current course -->
+<tr id="hole_<%= hole.number %>">
+  <td>
+    <%= image_tag hole.tee + ".jpg", :alt => hole.tee.capitalize + " tees", :title => hole.tee.capitalize + " tees", :size => "20x20" %>
+  </td>
+  <td><%= hole.number %></td>
+  <td><%= hole.par %></td>
+  <td><%= hole.handicap %></td>
+  <td><%= hole.distance %></td>
+  <td>
+    <% if hole.strokesaver or hole.image %>
+        <%= link_to 'Details', hole_path(hole), :class => 'btn btn-mini', remote: true %>
+    <% end %>
+  </td>
+</tr>
+<tr>
+    <td colspan="2">
+      <% if hole.image %>
+          <%=  image_tag "holes/" << hole.image, :alt => hole.course.name + " - " + hole.number, :class => 'img-polaroid' %>
+      <% end %>
+    </td>
+    <td colspan="4"><%= hole.strokesaver %></td>
+</tr>

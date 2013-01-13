@@ -1,5 +1,5 @@
 <%= form_for Signup.new do |f| %>
 	<%= f.hidden_field :user_id, :value => current_user.id %>
 	<%= f.hidden_field :competition_id, :value => next_competition.id %>
-	<%= f.submit "Sign Up!", :class=>'btn btn-success btn-large pull-right' %>
+	<%= f.submit "Sign Up!", :class=>'btn btn-primary btn-large pull-right' %>
 <% end %>

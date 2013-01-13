@@ -38,10 +38,13 @@
         <%=  image_tag current_user.avatar(:micro), :class => "img-polaroid" %>
       </div>
       <div class="span6">
-        <%= form_for @comment do |f| %>
+        <p><b>Add Comment</b></p>
+        <%= form_for @comment, :class=>"form-search" do |f| %>
             <%=  f.hidden_field :post_id, :value => post.id %>
-            <%=  f.text_field :comment, :placeholder => "Write a comment...", :class => "text_area pull-left" %>
-            <%=  f.submit "Add Comment", :class=>'btn btn-primary pull-right' %>
+            <div class="input-append">
+              <%=  f.text_field :comment, :placeholder => "Write a comment...", :class => "span5" %>
+              <%=  f.submit "Add Comment", :class=>'btn' %>
+            </div>
         <% end %>
       </div>
     </div>

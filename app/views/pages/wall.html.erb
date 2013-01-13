@@ -1,7 +1,7 @@
 <% provide(:title, 'Wall') %>
 
 <% unless next_competition.nil? %>
-  <div class="hero-unit" id="wall">
+  <div class="hero-unit" style="background-image: url('<%= next_competition.course.photo %>')">
     <div class="row">
       <div class="span11">
         <div class="row">
@@ -32,12 +32,12 @@
     </div>
 
     <div id="posts">
-
         <%= render @posts %>
-
+        <%= will_paginate @posts %>
     </div>
   </div>
 
+  <!-- Right side column -->
   <div class="span3">
 
     <div class="row">
@@ -61,22 +61,24 @@
       </div>
       <% unless prev_competition.nil? %>
           <div class="widget span3">
-            <h3>Last Competition</h3>
+            <h3>Last Competition - Top 5</h3>
             <h4><%= prev_competition.course.name %></h4>
             <p><%= prev_competition.competition_date %></p>
             <table class="table table-hover">
               <thead>
+              <th>Pos.</th>
               <th>Name</th>
-              <th>Points</th>
               <th>Back 9</th>
+              <th>Pts</th>
               </thead>
               <tbody>
-              <% prev_competition.results.each do |round| %>
+              <% prev_competition.top5.each_with_index do |round, index| %>
 
                   <tr>
+                    <td><%= index+1 %></td>
                     <td><%= round.user.fullname %></td>
-                    <td><%= round.total_score %></td>
                     <td><%= round.back_nine %></td>
+                    <td><%= round.total_score %></td>
                   </tr>
 
               <% end %>

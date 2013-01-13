@@ -3,15 +3,13 @@
   <table class="table">
     <tr>
       <th><%= f.label :course_id %></th>
-      <th><%= f.label :competition_id %></th>
       <th><%= f.label :date_played %></th>
       <th><%= f.label :tee %></th>
       <th><%= f.hidden_field :user_id, {:value => current_user.id} %></th>
     </tr>
     <tr>
-      <td><%= f.collection_select :course_id, @courses, :id, :name, {:include_blank => 'Select Course'}, remote: true %></td>
-      <td><%= f.collection_select :competition_id, Competition.order("competition_date DESC"), :id, :name, {:include_blank => 'Please Select'} %></td>
-      <td><%= f.date_select :date_played, :class => 'text_field' %></td>
+      <td><%= f.collection_select :course_id, @courses, :id, :name, {:include_blank => 'Select Course'} %></td>
+       <td><%= f.text_field :date_played, :class => 'text_field' %></td>
       <td><%= f.select :tee, [] %></td>
       <td><%= f.submit nil, :class => 'btn btn-primary' %></td>
     </tr>
