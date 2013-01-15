@@ -17,11 +17,11 @@ class ApplicationController < ActionController::Base
 
 
   # Determine if the current_user is an admin type
-  def is_admin
+  def is_admin?
     return current_user.role == 'admin'
   end
 
-  helper_method :is_admin
+  helper_method :is_admin?
 
 
 

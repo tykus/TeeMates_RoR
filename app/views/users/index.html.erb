@@ -30,11 +30,7 @@
             </td>
             <td><%= user.firstname %> <%= user.surname %></td>
             <td><%= user.email %></td>
-            <td>
-              <%= link_to 'Profile', user_path(user), :class => 'btn' %>
-              <% if is_admin %>
-              <% end %>
-            </td>
+            <td><%= link_to 'Profile', user_path(user), :class => 'btn' %></td>
           </tr>
         <% end %>
       </tbody>
@@ -42,7 +38,7 @@
     <%= will_paginate %>
   </div>  
   <div class="span6">  
-    <% if is_admin %>
+    <% if is_admin? %>
       <!-- render the new user form -->
       <div class="well">
         <h3>New User</h3>

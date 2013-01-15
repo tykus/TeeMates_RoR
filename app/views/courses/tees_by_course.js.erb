@@ -1,0 +1,3 @@
+<% @tees.each do |t| %>
+    $("#round_tee").append('<option value="<%= t %>"><%= t.capitalize %></option>');
+<% end %>

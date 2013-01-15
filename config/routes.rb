@@ -28,6 +28,10 @@ TeeMates::Application.routes.draw do
   get 'wall' => 'pages#wall', :as => 'wall'
 
 
+  # This route is called by the onChange event on the course_id control on the rounds#new form
+  get 'tees' => 'courses#tees_by_course', :as => 'tees'
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -5,9 +5,9 @@
 $(function() {
 
     $('#round_course_id').change( function() {
+
         $('#round_tee').empty();
-        $.get("/courses/tees", { course_id: $(this).val() } );
-        $("#round_tee").append('<option value="red">red</option>');
+        $.get("/tees", { id: $(this).val() } );
     });
 
 });

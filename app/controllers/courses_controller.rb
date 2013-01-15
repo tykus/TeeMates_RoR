@@ -83,11 +83,15 @@ class CoursesController < ApplicationController
   end
 
 
-  def tees
-    @tees = Course.find(params[:course_id]).tees
+  def tees_by_course
+    if params[:id].present?
+      @tees = Course.find(params[:id]).tees
+    else
+      @tees = []
+    end
 
     respond_to do |format|
-      format.json { @tees.to_json }
+      format.js
     end
 
   end

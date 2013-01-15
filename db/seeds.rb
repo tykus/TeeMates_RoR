@@ -3976,7 +3976,7 @@ Competition.delete_all
 
 Competition.create(:name => "Knightsbrook Turkey Shoot", :message => "Turkey shoot-out is set for 13 November at Knightsbrook - playing scramble, teams will be allocated on the day.  Please sign up early as places are limited due to limited tee times.", :course_id => 7,   :competition_date => '2012-11-13', :css => 72)
 Competition.create(:name => "Captain's Day 2013", :message => "We're getting Captain's Day out of the way early this year.  Tee times from 12pm at Luttrellstown.  Please sign up early.",:course_id => 12,  :competition_date => '2013-02-28', :css => 72)
-Competition.create(:name => "CityWest Golf Club", :message => "We're back to Citywest for the NAMA challenge (if they're still in business!)",:course_id => 5,   :competition_date => '2013-02-22', :css => 70)
+Competition.create(:name => "CityWest Golf Club", :message => "The first outing of 2013 will be at Rathcore Golf Club on 22 February. We will have tee times from 10am until 11.30 allowing us plenty of scope to get everyone out. Please sign up early nonetheless so that we can confirm numbers!",:course_id => 19,   :competition_date => '2013-02-22', :css => 70)
 
 
 

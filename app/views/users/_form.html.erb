@@ -49,10 +49,8 @@
     </div>
   </div>
 
-
-  <% # Only allow an admin user the opportunity to determine the user role
-     if is_admin
-  %>
+  # Only allow an admin user the opportunity to determine the user role
+  <% if is_admin? %>
     <div class="control-group">
       <%= f.label :role, :class => 'control-label' %>
       <div class="controls">
