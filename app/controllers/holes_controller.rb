@@ -81,4 +81,15 @@ class HolesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  def holes_for_scorecard
+    @holes = Course.find(params[:course_id]).holes.where("tee = ?", params[:tee])
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
+
 end

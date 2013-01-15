@@ -1,0 +1,10 @@
+<% @holes.reverse.each do |hole| %>
+$('#scorecard').after("<tr>" +
+        "<td><%= hole.number %></td>" +
+        "<td><%= hole.par %></td>" +
+        "<td><%= hole.distance %></td>" +
+        "<td><%= hole.handicap %></td>" +
+        "<td><input type='text'></td>" +
+        "<td><input type='text'></td>" +
+        "</tr>");
+<% end %>

@@ -1,5 +1,5 @@
 class Round < ActiveRecord::Base
-  attr_accessible :competition_id, :course_id, :date_played, :user_id, :handicap, :tee
+  attr_accessible :competition_id, :course_id, :date_played, :user_id, :handicap, :tee, :scorecards_attributes
 
   # ===================================================================================================================
   # ASSOCIATIONS
@@ -9,6 +9,10 @@ class Round < ActiveRecord::Base
   belongs_to :competition
 
   has_many :scorecards, :dependent => :destroy
+
+  # Nested form
+  accepts_nested_attributes_for :scorecards
+
 
   # ===================================================================================================================
   # VALIDATION

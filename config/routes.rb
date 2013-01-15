@@ -30,6 +30,7 @@ TeeMates::Application.routes.draw do
 
   # This route is called by the onChange event on the course_id control on the rounds#new form
   get 'tees' => 'courses#tees_by_course', :as => 'tees'
+  get 'h_sc' => 'holes#holes_for_scorecard', :as => 'h_sc'
 
 
 

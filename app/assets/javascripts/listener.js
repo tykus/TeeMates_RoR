@@ -7,7 +7,12 @@ $(function() {
     $('#round_course_id').change( function() {
 
         $('#round_tee').empty();
+        $("#round_tee").append('<option>(Select tee)</option>');
         $.get("/tees", { id: $(this).val() } );
+    });
+
+    $('#round_tee').change( function() {
+        $.get("/h_sc", { course_id: $('#round_course_id').val(), tee: $(this).val() } );
     });
 
 });
