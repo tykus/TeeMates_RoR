@@ -48,11 +48,13 @@
                 <div class="btn-group btn-group-vertical">
                   <%= link_to "Details", round_path(round), :class => "btn" %>
                   <%= link_to "Edit", rounds_path, :class => "btn" %>
+                  <% if round.competition_id.blank? %>
                   <%= link_to "Delete", round_path(round),
                               remote: true,
                               :method => :delete,
                               :data => { :confirm => 'Are you sure?' },
                               :class => 'btn btn-danger' %>
+                  <% end %>
                 </div>
               </td>
             </tr>

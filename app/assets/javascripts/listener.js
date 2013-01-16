@@ -43,4 +43,23 @@ $(function() {
         $(this).next(".prompt").css('display','inline').fadeOut(2000);
     });
 
+
+
+
+    // Courses#Show - reveals strokesaver & hole image
+    $('.details_btn').click(function () {
+        $(this).toggleClass('btn-primary', function() {
+            $('#map').fadeOut('slow', function(){
+                $(this).after("<div class='span4 offset1' id='hole'><h3>Details for Hole</h3>" +
+                    // DO A BIG AJAX QUERY HERE!
+                    "</div>");
+            });
+            $('#map').fadeIn('slow', function(){
+                $('#hole').fadeOut(1000);
+            });
+        });
+
+    });
+
+
 });

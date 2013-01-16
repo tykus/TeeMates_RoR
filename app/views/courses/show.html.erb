@@ -30,7 +30,7 @@
                 <tbody>
                 <% @course.tee(color).each do |hole| %>
                     <!-- Display holes for the current course -->
-                    <tr id="hole_<%= hole.number %>_<%= hole.tee %>">
+                    <tr>
                       <td>
                         <%= image_tag hole.tee + ".jpg", :alt => hole.tee.capitalize + " tees", :title => hole.tee.capitalize + " tees", :size => "20x20" %>
                       </td>
@@ -40,17 +40,9 @@
                       <td><%= hole.distance %></td>
                       <td>
                         <% if hole.strokesaver or hole.image %>
-                            <%= link_to 'Details', hole_path(hole), :class => 'btn btn-mini', remote: true %>
+                            <%= link_to 'Details', hole_path(hole), :class => 'btn btn-mini details_btn', remote: true %>
                         <% end %>
                       </td>
-                    </tr>
-                    <tr>
-                      <td colspan="2">
-                        <% if hole.image %>
-                            <%=  image_tag "holes/" << hole.image, :alt => hole.course.name + " - " + hole.number.to_s, :class => 'img-polaroid' %>
-                        <% end %>
-                      </td>
-                      <td colspan="4"><%= hole.strokesaver %></td>
                     </tr>
                 <% end %>
                 </tbody>
