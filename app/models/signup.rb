@@ -12,7 +12,7 @@ class Signup < ActiveRecord::Base
   # ===================================================================================================================
   # VALIDATION
   # ===================================================================================================================
-  validates :user_id, :uniqueness => {:scope => :competition_id} # user can sign up to competition only once
+  validates :user_id, :uniqueness => { :scope => :competition_id } # user can sign up to competition only once
 
   
 end

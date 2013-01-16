@@ -1,38 +1,17 @@
 <h1>Edit User</h1>
 
 <div class="row">
-  <div class="span12">
-    <%=  image_tag @user.avatar.url(:micro), :class => "img-polaroid pull-left" %>
-    <h3><%=  @user.firstname %> <%= @user.surname %></h3>
-  </div>
-</div>
-
-<div class="row">
   <div class="span4">
-    <h3>Edit Details</h3>
-    <%= form_for @user, :html => { :multipart => true, :class => 'form-horizontal' } do |f| %>
-      <table>
-        <tr>
-          <td>Name: </td>
-          <td><%= f.text_field :firstname, :placeholder => "Enter firstname", :class => 'text_field' %></td>
-        </tr>
-        <tr>
-          <td>Surname: </td>
-          <td><%= f.text_field :surname, :placeholder => "Enter surname", :class => 'text_field' %></td>
-        </tr>
-        <tr>
-          <td>Email: </td>
-          <td><%= f.text_field :email, :placeholder => "Enter email address", :class => 'text_field' %></td>
-        </tr>
-        <tr>
-          <td>Avatar: </td>
-          <td><%= f.file_field :avatar, :class => 'text_field' %></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td><%=  f.submit "Update Details", :class => "btn btn-primary" %></td>
-        </tr>
-      </table>
+    <% if @user.avatar.exists? %>
+        <%= image_tag @user.avatar.url(:thumb), :class => "img-polaroid center" %>
+    <% else %>
+        <%= image_tag 'user.png', :class => 'img-polaroid center', :size => '100x100' %>  <!-- displaying the default user image -->
     <% end %>
+    <h3><%=  @user.fullname %></h3>
+  </div>
+
+  <div class="span8">
+    <h3>Edit Details</h3>
+    <%= render 'form' %>
   </div>
 </div>

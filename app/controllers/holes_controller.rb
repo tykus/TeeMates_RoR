@@ -83,13 +83,5 @@ class HolesController < ApplicationController
   end
 
 
-  def holes_for_scorecard
-    @holes = Course.find(params[:course_id]).holes.where("tee = ?", params[:tee])
-
-    respond_to do |format|
-      format.js
-    end
-  end
-
 
 end

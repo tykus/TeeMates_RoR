@@ -1,2 +1,25 @@
-<h1>Scorecards#new</h1>
-<p>Find me in app/views/scorecards/new.html.erb</p>
+<h1>Scorecard</h1>
+<%= @round.course.name %> on <%= @round.date_played %>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Hole</th>
+    <th>Index</th>
+    <th>Length</th>
+    <th>Par</th>
+    <th>Strokes</th>
+    <th>Putts</th>
+  </tr>
+  </thead>
+  <tbody>
+  <%= form_for ([@round, @scorecards]) do |f| %>
+      <% @scorecards.each do |scorecard| %>
+          <%= scorecard.hole.number %>
+          <%= fields_for scorecard do |builder| %>
+              <%= render 'scorecards/form', f: builder %>
+          <% end %>
+      <% end %>
+  <% end %>
+  </tbody>
+</table>

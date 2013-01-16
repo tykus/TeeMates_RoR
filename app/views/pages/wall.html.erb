@@ -46,15 +46,13 @@
         <ul class="nav nav-list">
           <li class="nav-header">Actions</li>
           <li><%= link_to "Post to your wall", new_post_path, id: "new_post", remote: true %></li>
-          <li><%= link_to "Post a picture on your wall", new_post_path %></li>
-          <li><%= link_to "Add a video to your wall", new_post_path %></li>
           <li><%= link_to "Record New Round", new_round_path %></li>
           <% if is_admin? %>
               <li><%= link_to "Users Administration", users_path %></li>
-              <li><%= link_to "Create a new competition" %></li>
-              <li><%= link_to "Competition Administration" %></li>
+              <li><%= link_to "Create a new competition", new_competition_path %></li>
+              <li><%= link_to "Competition Administration", competitions_path %></li>
               <li><%= link_to "Create a new course", new_course_path %></li>
-              <li><%= link_to "Course Administration", new_course_path %></li>
+              <li><%= link_to "Course Administration", courses_path %></li>
           <% end %>
         </ul>
 

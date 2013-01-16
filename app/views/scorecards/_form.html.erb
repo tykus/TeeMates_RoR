@@ -1,26 +1,4 @@
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th>Hole</th>
-    <th>Par</th>
-    <th>Handicap</th>
-    <th>Length</th>
-    <th>Strokes</th>
-    <th>Putts</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @holes.each do |hole| %>
-    <%= form_for Scorecard.new do |f| %>
-      <tr>
-        <td><%= hole.number %></td>
-        <td><%= hole.par %></td>
-        <td><%= hole.handicap %></td>
-        <td><%= hole.distance %></td>
-        <td><%= f.text_field :strokes, :class => 'input-mini' %></td>
-        <td><%= f.text_field :putts, :class => 'input-mini' %></td>
-      </tr>
-    <% end %>
-  <% end %>
-  </tbody>
-</table>
+<fieldset>
+    <%= f.text_field :strokes, :class => 'input-mini' %>
+    <%= f.text_field :putts, :class => 'input-mini' %>
+</fieldset>

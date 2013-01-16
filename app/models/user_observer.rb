@@ -1,12 +1,5 @@
   class UserObserver < ActiveRecord::Observer
 
-    def before_create(user)
-      # Generate a random password to send to the user by email.
-
-
-    end
-
-
     def after_create(user)
 
       # Send a welcome email to the new user

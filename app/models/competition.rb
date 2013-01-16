@@ -5,7 +5,8 @@ class Competition < ActiveRecord::Base
   # ASSOCIATIONS
   # ===================================================================================================================
   has_many :rounds, :dependent => :destroy
-  has_many :users, :through => :rounds
+  has_many :users, :through => :signups
+  has_many :signups
   belongs_to :course
 
 

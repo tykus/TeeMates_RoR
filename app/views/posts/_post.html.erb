@@ -12,8 +12,8 @@
               <%= h(post.title) %>
             </span>
       <% if is_admin? or post.user == current_user %>
-          <%= link_to '<i class="icon-remove"></i>'.html_safe, post, method: :delete, data: { confirm: 'Are you sure, all comments will also be deleted?' }, :class => "pull-right", :title => "Delete Post", remote: true %>
-          <%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_post_path(post), :class => "pull-right", :title => "Edit Post" %>
+          <%= link_to '<i class="icon-remove muted"></i>'.html_safe, post, method: :delete, data: { confirm: 'Are you sure, all comments will also be deleted?' }, :class => "pull-right", :title => "Delete Post", remote: true %>
+          <%= link_to '<i class="icon-pencil muted"></i>'.html_safe, edit_post_path(post), :class => "pull-right", :title => "Edit Post" %>
       <% end %>
     </p>
 

@@ -20,9 +20,9 @@ class RoundsController < ApplicationController
 
   def new
     @round = Round.new
-    @holes = Course.find(12).holes
+
     # Provide a list of all courses to the form collection_select control
-    @courses = Course.all
+    @courses = Course.order("name")
   end
 
   def create
@@ -30,7 +30,7 @@ class RoundsController < ApplicationController
 
     respond_to do |format|
       if @round.save
-        format.html { redirect_to rounds_path, notice: 'Round was successfully created.' }
+        format.html { redirect_to new_scorecard_path, notice: 'Round was successfully created, please enter scores.' }
         format.json { render json: @round, status: :created }
       else
         format.html { render action: "new" }
@@ -45,6 +45,16 @@ class RoundsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to rounds_path }
+      format.js
+    end
+  end
+
+
+
+  def holes_for_scorecard
+    @holes = Course.find(params[:course_id]).holes.where("tee = ?", params[:tee])
+
+    respond_to do |format|
       format.js
     end
   end

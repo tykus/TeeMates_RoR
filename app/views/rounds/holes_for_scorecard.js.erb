@@ -1,0 +1,11 @@
+$('#scorecard').empty();
+$('#scorecard').html("<tr><th>Number</th><th>Length</th><th>Index</th><th>Par</th></tr>");
+
+<% @holes.each do |hole| %>
+    $('#scorecard tr:last').after('<tr>' +
+            '<td><%= hole.number %></td>' +
+            '<td><%= hole.distance %> yards</td>' +
+            '<td><%= hole.handicap %></td>' +
+            '<td><%= hole.par %></td>' +
+            '</tr>');
+<% end %>

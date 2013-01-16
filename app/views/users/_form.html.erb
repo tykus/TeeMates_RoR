@@ -1,7 +1,7 @@
 <%= form_for @user, :html => { :multipart => true, :class => 'form-horizontal' } do |f| %>
 
     <% if @user.errors.any? %>
-        <div class="alert alert-error" xmlns="http://www.w3.org/1999/html">
+        <div class="alert alert-error">
           <p><%= pluralize(@user.errors.count, "error") %> prohibited this post from being saved:</p>
           <ul>
             <% @user.errors.full_messages.each do |msg| %>
@@ -30,16 +30,20 @@
       <%= f.text_field :email, :class => 'text_field' %>
     </div>
   </div>
+    <% if @user == current_user %>
+
     <div class="control-group">
       <%= f.label :password, :class => 'control-label' %>
       <div class="controls">
         <%= f.password_field :password, :class => 'text_field' %>
+        <span class="prompt">only if you wish to change current password.</span>
       </div>
     </div>
     <div class="control-group">
       <%= f.label :password_confirmation, :class => 'control-label' %>
       <div class="controls">
         <%= f.password_field :password_confirmation, :class => 'text_field' %>
+        <span class="prompt">only if you wish to change current password.</span>
       </div>
     </div>
   <div class="control-group">
@@ -49,7 +53,7 @@
     </div>
   </div>
 
-  # Only allow an admin user the opportunity to determine the user role
+  <% end %>
   <% if is_admin? %>
     <div class="control-group">
       <%= f.label :role, :class => 'control-label' %>

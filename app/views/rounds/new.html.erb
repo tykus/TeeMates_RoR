@@ -2,35 +2,19 @@
 
   <div class="row">
 
-    <div class="span12">
+    <div class="span3">
       <div class="page-header">
         <h1>New Round</h1>
       </div>
         <!-- Create round form -->
-        <%= render :partial => 'form' %>
+        <%= render 'form' %>
     </div>
 
-  </div>
-
-  <div class="row">
-
-    <div class="span12">
-      <h1 id="course_name"></h1>
-      <table class="table table-striped">
-        <thead>
-        <tr>
-          <th>Hole</th>
-          <th>Par</th>
-          <th>Length</th>
-          <th>Handicap</th>
-          <th>Strokes</th>
-          <th>Putts</th>
-        </tr>
-        </thead>
-
-        <tbody id="scorecard">
-            
-        </tbody>
+    <div class="span9">
+      <div class="page-header">
+        <h1>Scorecard</h1>
+      </div>
+      <table class="table table-striped" id="scorecard">
       </table>
 
     </div>

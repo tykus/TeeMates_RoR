@@ -23,7 +23,7 @@ module ApplicationHelper
 
 
   # label_color(color)
-  # ==========
+  # ==================
   # Takes a handicap object and returns the handicap number rounded to the nerest integer
   def label_color(color)
     case color
@@ -66,6 +66,18 @@ module ApplicationHelper
   # Returns the most recent competition
   def prev_competition
     Competition.where("competition_date < ?", Time.now).order("competition_date").last
+  end
+
+
+  # past_or_future(competition)
+  # ===========================
+  def past_or_future(competition)
+    date = competition.competition_date
+    if date < DateTime.now
+      return "played at #{competition.course.name}."
+    else
+      return "has signed up to play."
+    end
   end
 
 end

@@ -1,11 +1,12 @@
 class ScorecardsController < ApplicationController
   def new
-    @scorecard = Scorecard.new
     @round = Round.last
+    @scorecards = Array.new(18){ @round.scorecards.build }
   end
 
   def create
-    @scorecard = Scorecard.new(params[:scorecard])
+    @round = Round.last
+    @scorecard = @round.scorecard.new(params[:scorecard])
 
     respond_to do |format|
       if @scorecard.save

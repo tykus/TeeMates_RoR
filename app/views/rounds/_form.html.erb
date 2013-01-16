@@ -1,20 +1,18 @@
 <%= form_for @round, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.hidden_field :user_id, {:value => current_user.id} %>
-  <table class="table">
-    <tr>
-      <th><%= f.label :course_id %></th>
-      <th><%= f.label :date_played %></th>
-      <th><%= f.label :tee %></th>
-      <th></th>
-    </tr>
-    <tr>
-      <td><%= f.collection_select :course_id, @courses, :id, :name, {:include_blank => 'Select Course'}, :input_html => { :rel => "/courses/tees_by_course" } %></td>
-      <td><%= f.text_field :date_played, :class => 'text_field' %></td>
-      <td><%= f.select :tee,[], {:include_blank => '(Select course first)'} %></td>
-      <td><%= f.submit nil, :class => 'btn btn-primary' %></td>
-    </tr>
-  </table>
 
+    <%= f.hidden_field :user_id, { :value => current_user.id } %>
+    <p>
+      <%= f.label :date_played %>
+      <%= f.text_field :date_played, :class => 'text_field' %>
+    </p>
+    <p>
+      <%= f.label :course_id %>
+      <%= f.collection_select :course_id, @courses, :id, :name, {:include_blank => 'Select Course'} %>
+    </p>
+    <p>
+      <%= f.label :tee %>
+      <%= f.select :tee,[], {:include_blank => '(Select course first)'} %>
+    </p>
+    <p><%= f.submit nil, :class => 'btn btn-primary', :id => 'new_round_btn', :disabled => true %></p>
 <% end %>
 
-<hr />

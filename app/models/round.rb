@@ -7,12 +7,9 @@ class Round < ActiveRecord::Base
   belongs_to :user
   belongs_to :course
   belongs_to :competition
+  has_many   :scorecards, :dependent => :destroy
 
-  has_many :scorecards, :dependent => :destroy
-
-  # Nested form
   accepts_nested_attributes_for :scorecards
-
 
   # ===================================================================================================================
   # VALIDATION

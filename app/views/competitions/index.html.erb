@@ -2,35 +2,42 @@
   <h1>Competitions</h1>
 </div>
 <% if is_admin? %>
-    <%= link_to "New Competition", new_competition_path, :class => "btn btn-primary pull-right" %>
+    <%= link_to "New Competition", new_competition_path, :class => "btn btn-primary" %>
 <% end %>
-<table class="table table-hover">
+<table class="table table-striped">
   <thead>
     <tr>
       <th></th>
       <th>Date</th>
       <th>Course</th>
       <th>CSS</th>
-      <th></th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @competitions.each do |competition| %>
       <tr>
-        <td><%= link_to (image_tag competition.course.crest, :class => "img img-polaroid"), competition_path(competition) %></td>
+        <td rowspan="2"><%= link_to (image_tag competition.course.crest, :class => "img img-polaroid"), competition_path(competition) %></td>
         <td><%= competition.competition_date %></td>
         <td><%= competition.course.name %></td>
         <td><%= competition.css %></td>
-        <td class="btn-group btn-group-vertical">
+        <td class="btn-group btn-group pull-right">
             <%= link_to "Details", competition_path(competition), :class => "btn" %>
-            <% if is_admin? %>
+          <% if is_admin? %>
               <%= link_to "Edit", edit_competition_path(competition), :class => "btn" %>
-              <%= link_to "Handicaps", admin_path(competition), :class => "btn #{disabled(competition)}", :id => "hcpLink" %>
+              <%= link_to "Handicaps", admin_path(competition), :disabled => true, :id => "hcpLink" %>
               <%= link_to "Delete", competition_path(competition),
                           :method => :delete,
                           :data => { :confirm => 'Are you sure?' },
                           :class => 'btn btn-danger' %>
             <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <% competition.users.each do |player| %>
+            <%= link_to (image_tag player.avatar(:micro), :class => "img img-polaroid pull-left", :title => "#{player.fullname} #{past_or_future(competition)}"), user_path(player) %>
+          <% end %>
         </td>
       </tr>
     <% end %>

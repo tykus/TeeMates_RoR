@@ -4,7 +4,7 @@ class SignupsController < ApplicationController
   end
 
   def create
-  	@signup = Signup.new(next_competition, current_user)
+  	@signup = Signup.new(params[:signup])
     respond_to do |format|
       if @signup.save
         format.html { redirect_to wall_path, notice: 'Thank you for signing up - looking forward to seeing you there.' }

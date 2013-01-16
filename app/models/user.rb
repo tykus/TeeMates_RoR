@@ -27,6 +27,7 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :rounds
   has_many :handicaps
+  has_many :competitions, :through => :signups
 
 
   # ===================================================================================================================
@@ -46,8 +47,10 @@ class User < ActiveRecord::Base
   validates :password,
             :confirmation => true,
             :length => {:within => 5..20},
-            :presence => true
+            :presence => true,
+            :on => :create
 
+  validates_attachment_content_type :avatar, :content_type => /image/
 
   # ===================================================================================================================
   # METHODS
@@ -89,14 +92,5 @@ class User < ActiveRecord::Base
   def fullname
     firstname + " " + surname
   end
-
-
-
-  private
-
-  def generate_random_password
-    @rnd_passwd ||= (0...8).map{65.+(rand(52)).chr}.join
-  end
-
 
 end

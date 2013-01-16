@@ -52,6 +52,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
 
+    # Generate a random password for the user (will be email to them)
+    @user.password = (0...8).map{65.+(rand(26)).chr}.join
+
     respond_to do |format|
       if @user.save
         format.html { redirect_to users_path, notice: 'User was successfully created.' }
@@ -61,12 +64,17 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PUT /users/1
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
+    params[:user].delete(:avatar) if params[:user][:avatar].blank?
+    params[:user].delete(:password) if params[:user][:password].blank?
+    params[:user].delete(:password_confirmation) if params[:user][:password_confirmation].blank?
+
     if @user.update_attributes(params[:user])
       flash[:success] = "Edit Successful."
       redirect_to @user
@@ -75,6 +83,7 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
+
 
 
   # DELETE /users/1
