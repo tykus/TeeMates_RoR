@@ -1,44 +1,81 @@
 <%= form_for @course, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :name, :class => 'text_field' %>
-    </div>
-  </div>
-    <div class="control-group">
-      <%= f.label :address, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :address, :class => 'text_field' %>
-      </div>
-    </div>
-    <div class="control-group">
-    <%= f.label :crest, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :crest, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :photo, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :photo, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :latitude, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :latitude, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :longitude, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :longitude, :class => 'text_field' %>
-    </div>
-  </div>
+  <div class="row">
+    <% if @course.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
 
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                courses_path, :class => 'btn' %>
+          <ul>
+            <% @course.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="span4">
+      <h3>Course Details</h3>
+      <p>
+        <%= f.label :name %>
+        <%= f.text_field :name, :class => 'text_field' %>
+      </p>
+      <p>
+        <%= f.label :address %>
+        <%= f.text_field :address, :class => 'text_field' %>
+      </p>
+      <p>
+        <%= f.label :crest %>
+        <%= f.text_field :crest, :class => 'text_field' %>
+      </p>
+      <p>
+        <%= f.label :photo %>
+        <%= f.text_field :photo, :class => 'text_field' %>
+      </p>
+      <p>
+        <%= f.label :latitude %>
+        <%= f.text_field :latitude, :class => 'text_field' %>
+      </p>
+      <p>
+        <%= f.label :longitude %>
+        <%= f.text_field :longitude, :class => 'text_field' %>
+      </p>
+      <hr />
+        <%= f.submit nil, :class => 'btn btn-primary pull-left' %>
+
+    </div>
+
+    <div class="span8">
+      <h3>Holes</h3>
+      <div class="well">
+        <span>Select a tee color for the holes to be created </span>
+          <select class="tee_select" >
+            <option value="">Select Tee</option>
+            <option value="blue">blue</option>
+            <option value="white">white</option>
+            <option value="green">green</option>
+            <option value="yellow">yellow</option>
+            <option value="red">red</option>
+          </select>
+      </div>
+
+      <table class="table table-striped">
+        <tr>
+          <th>Number</th>
+          <th>Par</th>
+          <th>Index</th>
+          <th>Length</th>
+        </tr>
+      <%= f.fields_for :holes do |builder| %>
+        <tr>
+          <td>
+            <%= (builder.object_name.gsub(/[^0-9]+/,'').to_i + 1) %>
+            <%= builder.hidden_field :number, :value => (builder.object_name.gsub(/[^0-9]+/,'').to_i + 1) %>
+            <%= builder.hidden_field :tee, :value => "", :class => "tee_color" %>
+          </td>
+          <td><%=  builder.number_field :par, :min => 3, :max => 5, :class => 'input-mini text_field' %> </td>
+          <td><%=  builder.number_field :handicap, :min => 1, :max => 18, :class => 'input-mini text_field' %></td>
+          <td><%=  builder.number_field :distance, :class => 'input-mini number_field' %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
   </div>
 <% end %>

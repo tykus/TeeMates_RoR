@@ -6,7 +6,7 @@ class Competition < ActiveRecord::Base
   # ===================================================================================================================
   has_many :rounds, :dependent => :destroy
   has_many :users, :through => :signups
-  has_many :signups
+  has_many :signups, :dependent => :destroy
   belongs_to :course
 
 
@@ -37,9 +37,17 @@ class Competition < ActiveRecord::Base
     end
   end
 
+
+
+  # top5
+  # ----
+  # Returns top five results from competion
   def top5
     results[0..4]
   end
+
+
+
   # adjust_handicaps
   # ----------------
   # Adjusts the handicaps for the rounds played in the competition
@@ -73,7 +81,9 @@ class Competition < ActiveRecord::Base
   end
   
     
-  
+  # signed_up?
+  # ----------
+  # Determines if a user is signed up to competition
   def signed_up?(user)
   	 Signup.where("user_id = ? AND competition_id = ?", user.id, id).exists?
   end

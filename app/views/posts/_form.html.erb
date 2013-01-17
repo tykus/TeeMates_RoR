@@ -12,7 +12,10 @@
   <% end %>
 
   <p><%= f.text_field :title, :class => "text_area", :placeholder => "Title" %></p>
-  <p><%= f.text_area :message, :class => "text_area", :placeholder => "Your message."  %></p>
-  <p><%= f.file_field :photo %></p>
+  <p><%= f.text_area :message, :class => "text_area", :placeholder => "Your message.", :rows => 3  %></p>
+  <p>
+    <%= f.label :photo %>
+    <%= f.file_field :photo %>
+  </p>
   <p><%= f.submit "Submit", :class => "btn btn-success" %></p>
 <% end %>

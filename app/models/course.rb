@@ -1,5 +1,5 @@
 class Course < ActiveRecord::Base
-  attr_accessible :crest, :latitude, :longitude, :name, :photo, :address
+  attr_accessible :crest, :latitude, :longitude, :name, :photo, :address, :holes_attributes
 
 # ===================================================================================================================
 # ASSOCIATIONS
@@ -8,7 +8,7 @@ class Course < ActiveRecord::Base
   has_many :rounds, :dependent => :destroy
   has_many :competitions, :dependent => :destroy
 
-
+  accepts_nested_attributes_for :holes, :reject_if => lambda { |h| h[:par].blank? }, :allow_destroy => true
 
 # ===================================================================================================================
 # METHODS
@@ -46,7 +46,7 @@ class Course < ActiveRecord::Base
 
 
   # tee(tee)
-  # ========
+  # --------
   # Returns the holes associated with a particular tee color
   def tee(color)
     holes.where("tee = ?", color)

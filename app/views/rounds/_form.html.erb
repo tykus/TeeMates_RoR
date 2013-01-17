@@ -13,6 +13,18 @@
       <%= f.label :tee %>
       <%= f.select :tee,[], {:include_blank => '(Select course first)'} %>
     </p>
+    
+    <!-- forms for scorecards -->
+      <%= f.fields_for :scorecards do |builder| %>
+        <p>
+          <%=  builder.hidden_field :hole_id, :value => @round.course %>
+          Strokes: <%= builder.text_field :strokes %><br />>
+          Putts: <%= builder.text_field :putts %>
+        </p>
+      <% end %>
+    
+    
+    
     <p><%= f.submit nil, :class => 'btn btn-primary', :id => 'new_round_btn', :disabled => true %></p>
 <% end %>
 

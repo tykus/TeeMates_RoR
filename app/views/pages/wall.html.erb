@@ -43,8 +43,8 @@
     <div class="row">
 
       <div class="widget span3">
+        <h3>Actions</h3>
         <ul class="nav nav-list">
-          <li class="nav-header">Actions</li>
           <li><%= link_to "Post to your wall", new_post_path, id: "new_post", remote: true %></li>
           <li><%= link_to "Record New Round", new_round_path %></li>
           <% if is_admin? %>
@@ -59,7 +59,7 @@
       </div>
       <% unless prev_competition.nil? %>
           <div class="widget span3">
-            <h3>Last Competition - Top 5</h3>
+            <h3>Last Competition</h3>
             <h4><%= prev_competition.course.name %></h4>
             <p><%= prev_competition.competition_date %></p>
             <table class="table table-hover">

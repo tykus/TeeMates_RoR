@@ -1,15 +1,23 @@
 class Scorecard < ActiveRecord::Base
   attr_accessible :hole_id, :putts, :round_id, :strokes
 
-  # Associations
-  # ============
+  # ===================================================================================================================
+  # ASSOCIATIONS
+  # ===================================================================================================================
+
   belongs_to :round
   belongs_to :hole
 
 
-  # Methods
-  # =======
 
+
+  # ===================================================================================================================
+  # METHODS
+  # ===================================================================================================================
+
+  # stableford
+  # ==========
+  # Determine the stableford score
   def stableford
     # The stableford score is calculated based on the strokes taken relative to par adjusted for the player's handicap
     hcap = round.user.handicap_on(round.date_played).to_i
@@ -31,8 +39,8 @@ class Scorecard < ActiveRecord::Base
 
   end
 
-
-
+  # score_type
+  # ==========
   # Determine if the score is a birdie, par, bogey etc
   def score_type
 

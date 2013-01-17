@@ -7,10 +7,12 @@ class User < ActiveRecord::Base
   # ===================================================================================================================
   has_attached_file :avatar,
                     :styles => {
+                        :original => "",
                         :thumb => "",
                         :micro => ""
                     },
                     :convert_options => {
+                        :original => "-gravity north -thumbnail 165x219^ -extent 165x219" ,
                         :thumb => "-gravity north -thumbnail 100x100^ -extent 100x100" ,
                         :micro => "-gravity north -thumbnail 50x50^ -extent 50x50"
                     }

@@ -20,6 +20,7 @@ class RoundsController < ApplicationController
 
   def new
     @round = Round.new
+    3.times { @round.scorecards.build }
 
     # Provide a list of all courses to the form collection_select control
     @courses = Course.order("name")

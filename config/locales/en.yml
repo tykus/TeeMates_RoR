@@ -4,6 +4,6 @@
 en:
   time:
     formats:
-      default: "%d/%m/%Y"
+      irish: "%d/%m/%Y"
       short: "%b %d"
       long: "%B %d, %Y"

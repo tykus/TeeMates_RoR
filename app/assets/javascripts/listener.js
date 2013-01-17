@@ -62,4 +62,13 @@ $(function() {
     });
 
 
+    // Tee Select in Courses#New
+    $('.tee_select').change( function() {
+       var color = $(this).val();
+       $('.tee_color').each(function() {
+          $(this).val(color);
+       });
+    });
+
+
 });

@@ -26,6 +26,7 @@ class CoursesController < ApplicationController
   # GET /courses/new.json
   def new
     @course = Course.new
+    18.times { @course.holes.build }  # builds 18 holes for the course in memory
 
     respond_to do |format|
       format.html # new.html.erb
@@ -48,7 +49,7 @@ class CoursesController < ApplicationController
         format.html { redirect_to @course, notice: 'Course was successfully created.' }
         format.json { render json: @course, status: :created, location: @course }
       else
-        format.html { render action: "new" }
+        format.html { render action: "new", notice: "There was a problem" }
         format.json { render json: @course.errors, status: :unprocessable_entity }
       end
     end

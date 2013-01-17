@@ -1,0 +1,9 @@
+<%= form_for Round.new do |f| %>
+    <%= f.collection_select :user_id, User.all, :id, :fullname, {:include_blank => "Select User" } %>
+    <%= f.hidden_field :date_played, :value => @competition.competition_date %>
+    <%= f.hidden_field :course_id, :value => @competition.course.id %>
+    <%= f.hidden_field :tee, :value => @competition.course.tees.first %>
+
+    <%= f.submit nil %>
+
+<% end %>

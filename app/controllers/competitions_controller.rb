@@ -95,9 +95,12 @@ class CompetitionsController < ApplicationController
     end
   end
   
-  def last_result
-  	@competition = Competition.last
+  def comp_round
+    @competition = Competition.find(params[:id])
+    @round = Round.new
   end
+
+
   
 
 end

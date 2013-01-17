@@ -31,7 +31,7 @@ TeeMates::Application.routes.draw do
   # This route is called by the onChange event on the course_id control on the rounds#new form
   get 'tees' => 'courses#tees_by_course', :as => 'tees'
   get 'card' => 'rounds#holes_for_scorecard', :as => 'card'
-
+  get 'comp_round' => 'competitions#comp_round', :as => 'comp_round'
 
 
   # The priority is based upon order of creation:

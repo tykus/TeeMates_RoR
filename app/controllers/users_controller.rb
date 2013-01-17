@@ -3,8 +3,6 @@ class UsersController < ApplicationController
   # Only an admin user should be able to view a full list of users
   before_filter :admin_only, :except => [:show, :edit, :update]
 
-
-
   # GET /users
   # GET /users.json
   def index
@@ -44,7 +42,11 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
+    if is_admin?
+      @user = User.find(params[:id])
+    else
+      @user = current_user
+    end
   end
 
   # POST /users
